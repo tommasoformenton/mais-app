@@ -1205,6 +1205,19 @@
     if(expandBtn) actions.appendChild(expandBtn);
     foot.appendChild(actions);
   });
+
+  // AUTO-REFRESH: ricarica la pagina quando è visibile sullo schermo (es. riaperta
+  // dalla home del telefono) se sono passati almeno 20 minuti dall'ultimo caricamento,
+  // senza interrompere un ascolto vocale in corso.
+  const AUTO_REFRESH_MS = 20 * 60 * 1000;
+  const pageLoadedAt = Date.now();
+  function maybeAutoRefresh(){
+    if(document.hidden) return;
+    if(window.speechSynthesis && window.speechSynthesis.speaking) return;
+    if(Date.now() - pageLoadedAt >= AUTO_REFRESH_MS) location.reload();
+  }
+  setInterval(maybeAutoRefresh, 60 * 1000);
+  document.addEventListener('visibilitychange', () => { if(!document.hidden) maybeAutoRefresh(); });
 </script>
 
 </body>
