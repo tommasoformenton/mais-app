@@ -96,10 +96,7 @@
 
   .hero-worldmap{
     position:absolute; inset:0;
-    background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/World_map_blank_without_borders.svg?width=1600');
-    background-size:cover; background-position:center;
-    filter:invert(1) brightness(1.6) saturate(0);
-    opacity:.16;
+    width:100%; height:100%;
     pointer-events:none;
   }
   .corn-illustration{
@@ -381,7 +378,20 @@
       <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"/></svg>
     </button>
   </div>
-  <div class="hero-worldmap" aria-hidden="true"></div>
+  <svg class="hero-worldmap" viewBox="0 0 1040 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#dce8fb" stroke-width="1.6">
+      <circle cx="520" cy="200" r="260" stroke-opacity="0.22"/>
+      <line x1="520" y1="-60" x2="520" y2="460" stroke-opacity="0.16"/>
+      <ellipse cx="520" cy="200" rx="203" ry="260" stroke-opacity="0.16"/>
+      <ellipse cx="520" cy="200" rx="135" ry="260" stroke-opacity="0.16"/>
+      <ellipse cx="520" cy="200" rx="68" ry="260" stroke-opacity="0.16"/>
+      <line x1="260" y1="200" x2="780" y2="200" stroke-opacity="0.16"/>
+      <line x1="274.6" y1="114" x2="765.4" y2="114" stroke-opacity="0.16"/>
+      <line x1="274.6" y1="286" x2="765.4" y2="286" stroke-opacity="0.16"/>
+      <line x1="325" y1="28" x2="715" y2="28" stroke-opacity="0.16"/>
+      <line x1="325" y1="372" x2="715" y2="372" stroke-opacity="0.16"/>
+    </g>
+  </svg>
   <svg class="corn-illustration" viewBox="0 -30 200 390" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs>
       <clipPath id="cobClip">
