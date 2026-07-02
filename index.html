@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mais — Rassegna quotidiana, 1 Luglio 2026</title>
+<link rel="icon" type="image/svg+xml" href="mais-icon.svg">
+<style>
+  :root{
+    --navy:#12213a;
+    --navy-2:#1c3357;
+    --bg:#f4f2ec;
+    --card:#ffffff;
+    --ink:#14161c;
+    --body-txt:#4b4f58;
+    --muted:#8b8f99;
+    --gold:#b8862c;
+    --line:#e9e6dd;
+    --red:#e5484d; --red-dk:#8c2f2f;
+    --blue:#3b82c4; --blue-dk:#1c5f8c;
+    --green:#1c9d63; --green-dk:#1c7a4b;
+    --purple:#9b5de5; --purple-dk:#7a3e9d;
+    --teal:#14b8a6; --teal-dk:#0f7a76;
+    --orange:#e8871e; --orange-dk:#b5650f;
+    --shadow-sm:0 1px 2px rgba(20,22,30,0.04), 0 1px 1px rgba(20,22,30,0.03);
+    --shadow-md:0 10px 30px -10px rgba(20,22,30,0.16);
+    --shadow-lg:0 20px 50px -12px rgba(20,22,30,0.22);
+    --radius:22px;
+  }
+  html.dark{
+    --bg:#0b0d12;
+    --card:#151822;
+    --ink:#f2f3f5;
+    --body-txt:#c3c6cf;
+    --muted:#7c8190;
+    --line:#232735;
+    --shadow-sm:0 1px 2px rgba(0,0,0,0.3);
+    --shadow-md:0 10px 30px -10px rgba(0,0,0,0.55);
+    --shadow-lg:0 24px 60px -14px rgba(0,0,0,0.65);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    transition:background .4s ease, color .4s ease;
+  }
+  ::selection{background:rgba(184,134,44,0.25);}
+  a{color:inherit;}
+  svg{display:block;}
+
+  #progress{
+    position:fixed; top:0; left:0; height:3px; width:0%;
+    background:linear-gradient(90deg,var(--gold),#e6b955);
+    z-index:200; transition:width .1s linear;
+  }
+
+  /* ===== HERO / HEADER ===== */
+  .hero{
+    position:relative;
+    padding:64px 20px 40px;
+    overflow:hidden;
+    background:
+      radial-gradient(1100px 420px at 12% -10%, rgba(184,134,44,0.35), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, rgba(59,130,196,0.28), transparent 55%),
+      linear-gradient(160deg,var(--navy) 0%, var(--navy-2) 60%, #101c33 100%);
+    color:#f4f2ec;
+  }
+  html.dark .hero{
+    background:
+      radial-gradient(1100px 420px at 12% -10%, rgba(184,134,44,0.28), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, rgba(59,130,196,0.22), transparent 55%),
+      linear-gradient(160deg,#060a12 0%, #0c1526 100%);
+  }
+  .hero-top{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    max-width:1040px; margin:0 auto;
+    position:relative; z-index:2;
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-size:13px; font-weight:600; letter-spacing:.3px; color:rgba(244,242,236,0.75);}
+  .brand .dot{width:7px;height:7px;border-radius:50%;background:var(--gold); box-shadow:0 0 0 4px rgba(184,134,44,0.25);}
+
+  .icon-btn{
+    width:38px; height:38px; border-radius:12px;
+    border:1px solid rgba(244,242,236,0.18);
+    background:rgba(244,242,236,0.08);
+    color:#f4f2ec;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .icon-btn:hover{background:rgba(244,242,236,0.18); transform:translateY(-1px);}
+
+  .hero-worldmap{
+    position:absolute; inset:0;
+    background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/World_map_blank_without_borders.svg?width=1600');
+    background-size:cover; background-position:center;
+    filter:invert(1) brightness(1.6) saturate(0);
+    opacity:.16;
+    pointer-events:none;
+  }
+  .corn-illustration{
+    position:absolute; right:4%; bottom:-26px; z-index:1;
+    width:170px; height:auto;
+    filter:drop-shadow(0 16px 26px rgba(0,0,0,0.35));
+    pointer-events:none;
+  }
+
+  .hero-body{max-width:1040px; margin:34px auto 0; position:relative; z-index:2;}
+  h1.title{
+    font-size:clamp(34px,6vw,58px);
+    font-weight:800;
+    letter-spacing:-1.5px;
+    line-height:1.02;
+    margin:0 0 14px;
+    background:linear-gradient(180deg,#ffffff, #d9e0f0 130%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero-sub{
+    font-size:16px; color:rgba(244,242,236,0.72); max-width:520px; margin:0 0 26px;
+    font-weight:450;
+  }
+  .meta-chips{display:flex; flex-wrap:wrap; gap:10px;}
+  .chip{
+    display:inline-flex; align-items:center; gap:7px;
+    padding:8px 14px; border-radius:999px;
+    background:rgba(244,242,236,0.09);
+    border:1px solid rgba(244,242,236,0.14);
+    font-size:12.5px; font-weight:600; color:rgba(244,242,236,0.88);
+    backdrop-filter:blur(6px);
+  }
+  .chip svg{width:14px;height:14px;opacity:.85;}
+
+  /* ===== NAV ===== */
+  .navbar-wrap{position:sticky; top:0; z-index:100; padding:14px 20px; background:linear-gradient(var(--bg) 62%, transparent); }
+  nav{
+    max-width:1040px; margin:0 auto;
+    display:flex; gap:6px; overflow-x:auto; -webkit-overflow-scrolling:touch;
+    padding:6px; border-radius:999px;
+    background:var(--card);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow-sm);
+    scrollbar-width:none;
+  }
+  nav::-webkit-scrollbar{display:none;}
+  nav a{
+    flex:0 0 auto;
+    display:flex; align-items:center; gap:7px;
+    padding:10px 16px;
+    border-radius:999px;
+    font-size:13px; font-weight:600;
+    text-decoration:none;
+    color:var(--body-txt);
+    white-space:nowrap;
+    transition:background .2s ease, color .2s ease;
+  }
+  nav a svg{width:15px;height:15px;}
+  nav a.active{background:var(--navy); color:#fff;}
+  html.dark nav a.active{background:#2a3652;}
+  nav a:not(.active):hover{background:var(--bg);}
+
+  main{max-width:1040px;margin:0 auto;padding:44px 20px 70px;}
+
+  /* ===== SECTION HEAD ===== */
+  section.topic{padding-top:64px;}
+  section.topic:first-of-type{padding-top:8px;}
+  .sec-head{display:flex; align-items:center; gap:16px; margin-bottom:26px;}
+  .sec-badge{
+    width:48px;height:48px;border-radius:16px;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff; flex:0 0 auto;
+    box-shadow:var(--shadow-sm);
+  }
+  .sec-badge svg{width:23px;height:23px;}
+  .sec-head h2{font-size:26px; font-weight:800; letter-spacing:-.5px; margin:0;}
+  .sec-count{
+    font-size:12px; font-weight:700; color:var(--muted);
+    background:var(--card); border:1px solid var(--line);
+    padding:4px 10px; border-radius:999px; margin-left:auto;
+  }
+
+  #politica .sec-badge{background:linear-gradient(135deg,var(--red),var(--red-dk));}
+  #geopolitica .sec-badge{background:linear-gradient(135deg,var(--blue),var(--blue-dk));}
+  #economia .sec-badge{background:linear-gradient(135deg,var(--green),var(--green-dk));}
+  #cultura .sec-badge{background:linear-gradient(135deg,var(--purple),var(--purple-dk));}
+  #scienza .sec-badge{background:linear-gradient(135deg,var(--teal),var(--teal-dk));}
+  #ciclismo .sec-badge{background:linear-gradient(135deg,var(--orange),var(--orange-dk));}
+
+  /* ===== CARDS ===== */
+  .cards{display:flex; flex-direction:column; gap:16px;}
+  article.card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);
+    overflow:hidden;
+    opacity:0; transform:translateY(16px) scale(.99);
+    transition:opacity .5s ease, transform .5s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  article.card.visible{opacity:1; transform:translateY(0) scale(1);}
+  article.card:hover{box-shadow:var(--shadow-md); border-color:transparent;}
+  .card-img-wrap{overflow:hidden; height:230px;}
+  .card-img{width:100%;height:100%;object-fit:cover; transition:transform .7s ease;}
+  article.card:hover .card-img{transform:scale(1.05);}
+  .card-body{padding:26px 26px 22px;}
+  .card-body.no-img{padding-top:24px;}
+
+  .tag{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:11px; font-weight:800; letter-spacing:.4px; text-transform:uppercase;
+    padding:5px 10px; border-radius:8px; margin-bottom:14px;
+  }
+  #politica .tag{background:rgba(229,72,77,0.12); color:var(--red-dk);}
+  #geopolitica .tag{background:rgba(59,130,196,0.12); color:var(--blue-dk);}
+  #economia .tag{background:rgba(28,157,99,0.12); color:var(--green-dk);}
+  #cultura .tag{background:rgba(155,93,229,0.12); color:var(--purple-dk);}
+  #scienza .tag{background:rgba(20,184,166,0.12); color:var(--teal-dk);}
+  html.dark #politica .tag{color:#ff8b8e;}
+  html.dark #geopolitica .tag{color:#8ec3ec;}
+  html.dark #economia .tag{color:#6fe0a8;}
+  html.dark #cultura .tag{color:#c9a3f5;}
+  html.dark #scienza .tag{color:#6fe0d4;}
+  #ciclismo .tag{background:rgba(232,135,30,0.12); color:var(--orange-dk);}
+  html.dark #ciclismo .tag{color:#f5b361;}
+
+  article.card h3{font-size:19px; font-weight:750; letter-spacing:-.2px; margin:0 0 10px; line-height:1.3;}
+  article.card p.excerpt{font-size:15px; color:var(--body-txt); line-height:1.62; margin:0 0 18px;}
+
+  .card-foot{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+  .src-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .src-pill{
+    display:inline-flex; align-items:center; gap:5px;
+    font-size:11.5px; font-weight:700;
+    padding:6px 11px; border-radius:999px;
+    background:var(--bg); border:1px solid var(--line); color:var(--body-txt);
+    text-decoration:none;
+    transition:background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .src-pill svg{width:11px;height:11px;}
+  .src-pill:hover{background:var(--navy); color:#fff; border-color:var(--navy);}
+  .src-pill.en{}
+  .src-pill .flag{font-size:11px;}
+
+  .expand-btn{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:12.5px; font-weight:700; color:var(--gold);
+    background:none; border:none; cursor:pointer; padding:6px 4px;
+    font-family:inherit;
+  }
+  .expand-btn svg{width:14px;height:14px; transition:transform .3s ease;}
+  .expand-btn.open svg{transform:rotate(180deg);}
+
+  .expand-wrap{display:grid; grid-template-rows:0fr; transition:grid-template-rows .38s ease;}
+  .expand-wrap.open{grid-template-rows:1fr;}
+  .expand-inner{overflow:hidden;}
+  .expand-content{
+    margin-top:16px; padding-top:16px; border-top:1px dashed var(--line);
+    font-size:14.5px; color:var(--body-txt); line-height:1.65;
+  }
+
+  /* ===== DEEPDIVE ===== */
+  .deepdive{margin-top:76px;}
+  .dd-head{display:flex; align-items:center; gap:16px; margin-bottom:24px;}
+  .dd-badge{
+    width:48px;height:48px;border-radius:16px;
+    background:linear-gradient(135deg,var(--gold),#8a611e);
+    display:flex;align-items:center;justify-content:center; color:#fff;
+    box-shadow:var(--shadow-sm);
+  }
+  .dd-badge svg{width:22px;height:22px;}
+  .dd-head h2{font-size:26px; font-weight:800; letter-spacing:-.5px; margin:0;}
+  .dd-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  .dd-card{
+    background:linear-gradient(160deg,var(--navy),var(--navy-2));
+    color:#f4f2ec;
+    border-radius:var(--radius);
+    padding:24px 22px;
+    box-shadow:var(--shadow-sm);
+    opacity:0; transform:translateY(16px);
+    transition:opacity .5s ease, transform .5s ease, box-shadow .25s ease;
+  }
+  .dd-card.visible{opacity:1; transform:translateY(0);}
+  .dd-card:hover{box-shadow:var(--shadow-md);}
+  .dd-num{font-size:12px; font-weight:800; color:var(--gold); letter-spacing:1px;}
+  .dd-card h4{font-size:16.5px; font-weight:750; margin:10px 0 10px; letter-spacing:-.2px;}
+  .dd-card p{font-size:14px; color:rgba(244,242,236,0.78); line-height:1.6; margin:0;}
+
+  footer{
+    text-align:center; padding:40px 20px 60px;
+    font-size:12px; color:var(--muted);
+  }
+
+  #toTop{
+    position:fixed; right:22px; bottom:22px; z-index:150;
+    width:46px; height:46px; border-radius:16px;
+    background:var(--navy); color:#fff; border:none;
+    box-shadow:var(--shadow-md);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    opacity:0; pointer-events:none; transform:translateY(10px) scale(.9);
+    transition:opacity .25s ease, transform .25s ease, background .2s ease;
+  }
+  #toTop svg{width:18px;height:18px;}
+  #toTop.show{opacity:1; pointer-events:auto; transform:translateY(0) scale(1);}
+  #toTop:hover{background:var(--gold);}
+
+  /* LISTEN-ALL FLOATING BUTTON */
+  #listenAll{
+    position:fixed; right:22px; bottom:78px; z-index:150;
+    width:46px; height:46px; border-radius:16px;
+    background:var(--gold); color:#fff; border:none;
+    box-shadow:var(--shadow-md);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    transition:transform .2s ease, background .2s ease;
+  }
+  #listenAll svg{width:19px;height:19px;}
+  #listenAll:hover{transform:translateY(-2px);}
+  #listenAll.playing{background:var(--navy);}
+  #listenAll .pulse{
+    position:absolute; inset:-4px; border-radius:18px;
+    border:2px solid var(--gold); opacity:0;
+  }
+  #listenAll.playing .pulse{animation:pulseRing 1.6s ease-out infinite;}
+  @keyframes pulseRing{
+    0%{opacity:.55; transform:scale(.9);}
+    100%{opacity:0; transform:scale(1.25);}
+  }
+
+  /* CARD ACTIONS: listen + share */
+  .card-actions{display:flex; align-items:center; gap:6px; margin-left:auto;}
+  .icon-action{
+    width:34px; height:34px; border-radius:10px;
+    border:1px solid var(--line); background:var(--bg); color:var(--body-txt);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; flex:0 0 auto;
+    transition:background .2s ease, color .2s ease, border-color .2s ease, transform .15s ease;
+  }
+  .icon-action svg{width:15px;height:15px;}
+  .icon-action:hover{border-color:var(--gold); color:var(--gold); transform:translateY(-1px);}
+  .icon-action.active{background:var(--gold); color:#fff; border-color:var(--gold);}
+  article.card.speaking{outline:2px solid var(--gold); outline-offset:-1px;}
+
+  /* TOAST */
+  #toast{
+    position:fixed; left:50%; bottom:24px; z-index:250;
+    transform:translate(-50%,16px);
+    background:var(--navy); color:#fff; padding:12px 20px; border-radius:14px;
+    font-size:13px; font-weight:600; box-shadow:var(--shadow-md);
+    opacity:0; pointer-events:none; transition:opacity .25s ease, transform .25s ease;
+    max-width:88vw;
+  }
+  #toast.show{opacity:1; transform:translate(-50%,0);}
+  html.dark #toast{background:#232735;}
+
+  @media(max-width:720px){
+    .dd-grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:600px){
+    .hero{padding:52px 16px 30px;}
+    .card-img-wrap{height:170px;}
+    .card-body{padding:20px 18px 18px;}
+    .sec-head h2{font-size:22px;}
+    .icon-btn{width:34px;height:34px;}
+    .corn-illustration{width:96px; right:2%; bottom:-10px; opacity:.92;}
+  }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<header class="hero">
+  <div class="hero-top">
+    <div class="brand"><span class="dot"></span> RASSEGNA QUOTIDIANA</div>
+    <button class="icon-btn" id="themeToggle" title="Cambia tema" aria-label="Cambia tema chiaro/scuro">
+      <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+      <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"/></svg>
+    </button>
+  </div>
+  <div class="hero-worldmap" aria-hidden="true"></div>
+  <svg class="corn-illustration" viewBox="0 -30 200 390" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <clipPath id="cobClip">
+        <path d="M100,18 C132,18 140,58 140,120 C140,182 133,232 118,272 C111,292 106,304 100,316 C94,304 89,292 82,272 C67,232 60,182 60,120 C60,58 68,18 100,18 Z"/>
+      </clipPath>
+      <linearGradient id="cobShade" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#a86e12" stop-opacity=".38"/>
+        <stop offset=".5" stop-color="#a86e12" stop-opacity="0"/>
+        <stop offset="1" stop-color="#a86e12" stop-opacity=".38"/>
+      </linearGradient>
+    </defs>
+
+    <path d="M96,300 C55,306 12,338 2,346 C38,320 74,304 96,300 Z" fill="#1f4f27"/>
+    <path d="M100,302 C68,318 40,348 28,354 C62,334 88,312 100,302 Z" fill="#2f7a37"/>
+    <path d="M104,302 C136,318 164,348 176,354 C142,334 116,312 104,302 Z" fill="#2f7a37"/>
+    <path d="M108,300 C149,306 192,338 202,346 C166,320 130,304 108,300 Z" fill="#1f4f27"/>
+
+    <path d="M100,18 C132,18 140,58 140,120 C140,182 133,232 118,272 C111,292 106,304 100,316 C94,304 89,292 82,272 C67,232 60,182 60,120 C60,58 68,18 100,18 Z" fill="#f6c344"/>
+
+    <g clip-path="url(#cobClip)">
+      <ellipse cx="88.8" cy="38.0" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="93.2" cy="38.0" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="97.6" cy="38.0" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="102.0" cy="38.0" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="106.4" cy="38.0" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="110.8" cy="38.0" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="115.2" cy="38.0" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="74.3" cy="60.5" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="82.2" cy="60.5" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="90.1" cy="60.5" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="98.0" cy="60.5" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="105.9" cy="60.5" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="113.8" cy="60.5" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="121.7" cy="60.5" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="74.2" cy="82.9" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="83.5" cy="82.9" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="92.7" cy="82.9" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="102.0" cy="82.9" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="111.3" cy="82.9" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="120.5" cy="82.9" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="129.8" cy="82.9" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="67.6" cy="105.4" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="77.7" cy="105.4" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="87.9" cy="105.4" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="98.0" cy="105.4" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="108.1" cy="105.4" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="118.3" cy="105.4" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="128.4" cy="105.4" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="69.9" cy="127.8" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="80.6" cy="127.8" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="91.3" cy="127.8" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="102.0" cy="127.8" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="112.7" cy="127.8" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="123.4" cy="127.8" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="134.1" cy="127.8" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="65.1" cy="150.3" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="76.1" cy="150.3" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="87.0" cy="150.3" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="98.0" cy="150.3" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="109.0" cy="150.3" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="119.9" cy="150.3" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="130.9" cy="150.3" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="69.1" cy="172.7" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="80.1" cy="172.7" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="91.0" cy="172.7" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="102.0" cy="172.7" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="113.0" cy="172.7" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="123.9" cy="172.7" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="134.9" cy="172.7" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="65.9" cy="195.2" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="76.6" cy="195.2" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="87.3" cy="195.2" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="98.0" cy="195.2" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="108.7" cy="195.2" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="119.4" cy="195.2" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="130.1" cy="195.2" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="71.6" cy="217.6" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="81.7" cy="217.6" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="91.9" cy="217.6" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="102.0" cy="217.6" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="112.1" cy="217.6" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="122.3" cy="217.6" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="132.4" cy="217.6" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="70.2" cy="240.1" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="79.5" cy="240.1" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="88.7" cy="240.1" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="98.0" cy="240.1" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="107.3" cy="240.1" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="116.5" cy="240.1" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="125.8" cy="240.1" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="78.3" cy="262.5" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="86.2" cy="262.5" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="94.1" cy="262.5" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="102.0" cy="262.5" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="109.9" cy="262.5" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="117.8" cy="262.5" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="125.7" cy="262.5" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="84.8" cy="285.0" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="89.2" cy="285.0" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="93.6" cy="285.0" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="98.0" cy="285.0" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="102.4" cy="285.0" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="106.8" cy="285.0" rx="6.6" ry="8.8" fill="#ffd76b" stroke="#dfa32a" stroke-width="0.6"/>
+      <ellipse cx="111.2" cy="285.0" rx="6.6" ry="8.8" fill="#f6c344" stroke="#dfa32a" stroke-width="0.6"/>
+      <rect x="60" y="18" width="80" height="300" fill="url(#cobShade)"/>
+    </g>
+
+    <path d="M92,18 C86,4 90,-8 84,-18" stroke="#ecdca0" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <path d="M100,16 C100,2 96,-10 98,-24" stroke="#dcc077" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <path d="M108,18 C114,4 110,-8 116,-18" stroke="#ecdca0" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  </svg>
+
+  <div class="hero-body">
+    <h1 class="title">Mais</h1>
+    <p class="hero-sub">La rassegna quotidiana che raccoglie le notizie che contano, con contesto e fonti verificate.</p>
+    <div class="meta-chips">
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> Mercoledì 1 luglio 2026</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> <span id="readTime">— min</span> di lettura</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg> 6 ambiti · 24 notizie</span>
+    </div>
+  </div>
+</header>
+
+<div class="navbar-wrap">
+  <nav id="mainnav">
+    <a href="#politica"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21h16M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg>Politica</a>
+    <a href="#geopolitica"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.8 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.8-3.8-9s1.3-6.4 3.8-9Z"/></svg>Geopolitica</a>
+    <a href="#economia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M10 20V4M16 20v-7M22 20V8" stroke-linecap="round"/></svg>Economia</a>
+    <a href="#cultura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5V6a2 2 0 0 1 2-2h13v15.5M4 19.5A1.5 1.5 0 0 0 5.5 21H19M4 19.5A1.5 1.5 0 0 1 5.5 18H19"/></svg>Cultura</a>
+    <a href="#scienza"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v6.2L4.8 18a1.8 1.8 0 0 0 1.5 2.8h11.4a1.8 1.8 0 0 0 1.5-2.8L14 9.2V3"/></svg>Scienza</a>
+    <a href="#ciclismo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 9 9h5l3.5 8.5M9 9 7 6h3M9 9l3 5" stroke-linecap="round" stroke-linejoin="round"/></svg>Ciclismo</a>
+    <a href="#approfondire"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg>Da approfondire</a>
+  </nav>
+</div>
+
+<main id="reading-content">
+
+  <!-- POLITICA -->
+  <section class="topic" id="politica">
+    <div class="sec-head">
+      <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21h16M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg></div>
+      <h2>Politica italiana</h2>
+      <span class="sec-count">5 notizie</span>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-img-wrap">
+          <img class="card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Palazzo_del_Quirinale_Roma.jpg?width=1400" alt="Palazzo del Quirinale, Roma" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#politica .cards article:nth-child(1) .card-body').classList.add('no-img');">
+        </div>
+        <div class="card-body">
+          <span class="tag">Politica</span>
+          <h3>La riforma elettorale "Melonellum" verso il voto del 7-9 luglio</h3>
+          <p class="excerpt">Il governo punta ad abbandonare il Rosatellum per un sistema proporzionale con premio di maggioranza e indicazione esplicita del candidato premier. Il voto alla Camera è atteso per il 7-9 luglio, ma nella maggioranza è aperto un nodo sulle preferenze che ha fatto slittare l'esame in Parlamento: FdI vorrebbe liste bloccate, Lega e Forza Italia frenano. Giuseppe Conte ha preannunciato ricorso alla Corte Costituzionale.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://tg24.sky.it/politica/2026/07/01/legge-elettorale-preferenze-vertice-maggioranza" target="_blank" rel="noopener">Sky TG24 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill en" href="https://www.epc.eu/publication/meloni-the-beginning-of-the-end-or-the-end-of-the-beginning/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> EPC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            La riforma incrocia anche le prerogative del Quirinale, tanto che il testo è stato modificato per tutelarle esplicitamente. Secondo un'analisi dell'European Policy Centre, priva della forza di una vittoria referendaria Meloni non potrà imporre la riforma ai suoi alleati ma dovrà necessariamente trattare un compromesso con Lega e Forza Italia — un dettaglio che spiega perché il nodo delle preferenze si sia rivelato più difficile del previsto.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Politica</span>
+          <h3>Meloni: "Un presidente della Repubblica di destra non è più un tabù"</h3>
+          <p class="excerpt">Una dichiarazione che ha fatto discutere: la premier sostiene che il centrodestra potrebbe esprimere "egregiamente" il Capo dello Stato. Va letta nel quadro delle manovre in vista del rinnovo del Colle e della battaglia sulla riforma elettorale.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.ansa.it/sito/notizie/politica/2026/06/29/meloni-un-presidente-della-repubblica-di-destra-potrebbe-non-essere-piu-un-tabu_b21115e2-bf0c-40f0-b921-bdc362ebaeaf.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            La frase segnala che Meloni considera ormai normalizzata l'idea di una figura istituzionale non necessariamente di area centrista, rompendo con una prassi che dal dopoguerra ha visto il Colle occupato da personalità percepite come super partes. È una mossa che va letta insieme alla riforma elettorale, entrambe parte di un disegno più ampio di riequilibrio dei poteri istituzionali.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Politica</span>
+          <h3>Schlein: "La priorità di Meloni è il potere, il Colle"</h3>
+          <p class="excerpt">La segretaria del Pd attacca le priorità dell'esecutivo: mentre mancano 70mila infermieri e le liste d'attesa per una gastroscopia arrivano a diciotto mesi, il governo si concentrerebbe sulle riforme istituzionali.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.ansa.it/sito/notizie/politica/2026/06/30/legge-elettorale-schlein-la-priorita-di-meloni-e-il-potere-il-colle_83171c5a-1e97-4c41-9ae5-89eff94b44f4.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            L'attacco si inserisce nella narrazione più ampia del Pd sulla sanità pubblica in affanno, usata sistematicamente come contraltare alle riforme istituzionali del governo. È una strategia comunicativa che punta a spostare il dibattito dai temi identitari a quelli percepiti come più vicini alla vita quotidiana degli elettori.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Politica</span>
+          <h3>Dal 1° luglio: previdenza complementare automatica e taglio Irpef</h3>
+          <p class="excerpt">Scatta l'iscrizione automatica alla previdenza complementare per i neoassunti del settore privato che non esprimano scelta diversa entro 60 giorni. È una misura della manovra 2026 (circa 22 miliardi di interventi) che affianca il taglio dell'aliquota Irpef dal 35% al 33% per i redditi fino a 50mila euro.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://www.mef.gov.it/focus/Principali-misure-della-legge-di-bilancio-2026/" target="_blank" rel="noopener">MEF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.today.it/economia/manovra-2026-legge-bilancio.html" target="_blank" rel="noopener">Today.it <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Il meccanismo di adesione automatica (silenzio-assenso) ricalca modelli già sperimentati in altri paesi europei per aumentare la copertura previdenziale complementare, storicamente bassa in Italia rispetto alla media Ue. Il taglio Irpef, pensato per il "ceto medio", si somma alle altre misure della manovra per sostenere il reddito disponibile in un contesto di crescita economica debole.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Politica</span>
+          <h3>Sondaggi: governo e premier in lieve rialzo, ma il Paese resta scettico</h3>
+          <p class="excerpt">Il gradimento del governo sale a 42 (da 40), quello di Meloni a 44 (da 42). Restano tuttavia dati in chiaroscuro: il 75% degli italiani continua a ritenere che il Paese vada nella direzione sbagliata, contro il 25% di ottimisti.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.ipsos.com/it-it/sondaggi-politici-oggi" target="_blank" rel="noopener">Ipsos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- GEOPOLITICA -->
+  <section class="topic" id="geopolitica">
+    <div class="sec-head">
+      <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.8 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.8-3.8-9s1.3-6.4 3.8-9Z"/></svg></div>
+      <h2>Geopolitica / Esteri</h2>
+      <span class="sec-count">5 notizie</span>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-img-wrap">
+          <img class="card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_hormuz_full.jpg?width=1400" alt="Stretto di Hormuz" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#geopolitica .cards article:nth-child(1) .card-body').classList.add('no-img');">
+        </div>
+        <div class="card-body">
+          <span class="tag">Geopolitica</span>
+          <h3>Doha, oggi il round decisivo tra Usa e Iran sullo Stretto di Hormuz</h3>
+          <p class="excerpt">Undici giorni dopo un memorandum d'intesa in 14 punti, il Golfo è tornato teatro di scontro: lanci di missili e droni iraniani contro basi in Kuwait e Bahrein hanno risposto a raid Usa nell'area dello Stretto. A Doha, colloqui indiretti mediati da Qatar e Pakistan. Il Wall Street Journal riporta che Trump avrebbe valutato un ritorno alla guerra totale.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://www.adnkronos.com/internazionale/esteri/iran-usa-guerra-news-oggi-1-luglio-2026_6EqkPC6Iy1xXUOEaKnf1Oz" target="_blank" rel="noopener">Adnkronos/WSJ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill en" href="https://www.nbcnews.com/world/iran/us-iran-new-talks-trump-hormuz-attacks-peace-deal-doha-qatar-rcna352182" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> NBC News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill en" href="https://www.cnbc.com/2026/06/29/trump-us-iran-talks-qatar-hormuz.html" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> CNBC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Il nodo centrale resta il controllo dello stretto: l'Iran punta al riconoscimento internazionale della propria autorità su Hormuz e alla facoltà di riscuotere pedaggi sul passaggio delle navi. Washington, al contrario, considera prioritario garantire il libero flusso del traffico marittimo. È uno scarto di interpretazione che rende la tregua strutturalmente instabile, con conseguenze dirette sui prezzi del petrolio.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Geopolitica</span>
+          <h3>I funerali di Khamenei iniziano il 4 luglio, dubbi sulla successione</h3>
+          <p class="excerpt">Ali Khamenei è stato ucciso il 28 febbraio in un raid congiunto Usa-Israele che ha aperto la guerra. I funerali di Stato, rinviati più volte per motivi di sicurezza, partiranno finalmente il 4 luglio a Teheran. La successione è passata al figlio Mojtaba, che sarebbe rimasto ferito negli attacchi e da allora comunica solo per iscritto.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.ilpost.it/2026/06/28/iran-funerali-repressione-khamenei/" target="_blank" rel="noopener">Il Post <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Il regime vuole usare le cerimonie per dare un'immagine di unità nazionale davanti ai leader stranieri attesi a Teheran, in un momento di grande fragilità interna. L'assenza pubblica di Mojtaba Khamenei da mesi alimenta interrogativi sulla reale tenuta della catena di comando iraniana proprio mentre il Paese negozia da una posizione di debolezza sul dossier Hormuz.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Geopolitica</span>
+          <h3>Ue, aperto il primo cluster di adesione per Ucraina e Moldavia</h3>
+          <p class="excerpt">Il 15 giugno a Lussemburgo è stato aperto il cluster sui "Fondamentali" (Stato di diritto, pubblica amministrazione, appalti pubblici). Passaggio simbolicamente importante ma solo l'inizio di un percorso lungo.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://www.ilsole24ore.com/art/ue-si-all-apertura-primo-cluster-l-adesione-ucraina-e-moldavia-AIS9RxdD" target="_blank" rel="noopener">Il Sole 24 Ore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill en" href="https://commission.europa.eu/topics/eu-solidarity-ukraine/ukraines-path-towards-eu-accession_en" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Commissione UE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Sul campo, la Russia dichiara di aver intercettato 419 droni ucraini ad ala fissa in tutto il Paese, mentre Kiev intensifica gli attacchi alle raffinerie russe — un terzo degli impianti sarebbe fermo — e utilizza i nuovi missili a lungo raggio Flamingo, capaci di colpire fino a 3mila chilometri. Gli attacchi russi delle ultime 24 ore hanno causato almeno 15 morti e 118 feriti.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Geopolitica</span>
+          <h3>Il G7 e un consenso più fragile di quanto sembri</h3>
+          <p class="excerpt">Un'analisi del Council on Foreign Relations segnala quanto sia fragile l'allineamento del G7 su Iran e Ucraina: il consenso raggiunto agli incontri di Évian-les-Bains poggia su un accordo quadro di cui gli europei dubitano in privato.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill en" href="https://www.cfr.org/articles/the-g7s-alignment-on-iran-and-ukraine-is-deeply-fragile" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> CFR <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Secondo l'analisi, gli europei temono in particolare che la finestra negoziale aperta sull'Ucraina possa essere sprecata da Washington, mentre sul fronte Iran il G7 avrebbe raggiunto un'intesa di massima su nuove sanzioni al petrolio e al gas russi, con attenzione alla "flotta ombra" usata da Mosca per aggirare l'embargo.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Geopolitica</span>
+          <h3>Germania, Merz: "Situazione molto critica in alcuni settori"</h3>
+          <p class="excerpt">La coalizione CDU/CSU-SPD lavora a un pacchetto di riforme per rilanciare la competitività, sullo sfondo di un'inflazione salita al 2,7% a marzo anche per il rincaro energetico legato alla guerra in Medio Oriente.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.handelsblatt.com/politik/deutschland/konjunktur-merz-sieht-lage-in-einigen-wirtschaftsbereichen-sehr-kritisch/100188932.html" target="_blank" rel="noopener">Handelsblatt <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Merz affronta una settimana di trattative interne alla coalizione con esito ancora incerto: giovedì 2 luglio il cancelliere sarà ospite del talk show "Maybrit Illner" su ZDF per rispondere sul pacchetto di riforme e sulla perdita di fiducia registrata nei sondaggi, dove solo il 43% degli elettori si dice soddisfatto del suo operato.
+          </div></div></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ECONOMIA -->
+  <section class="topic" id="economia">
+    <div class="sec-head">
+      <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M10 20V4M16 20v-7M22 20V8" stroke-linecap="round"/></svg></div>
+      <h2>Economia</h2>
+      <span class="sec-count">4 notizie</span>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-img-wrap">
+          <img class="card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Frankfurt_European_Central_Bank.JPG?width=1400" alt="Sede della Banca Centrale Europea, Francoforte" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#economia .cards article:nth-child(1) .card-body').classList.add('no-img');">
+        </div>
+        <div class="card-body">
+          <span class="tag">Economia</span>
+          <h3>Warsh a Sintra: "Inflazione ancora troppo alta" negli Usa</h3>
+          <p class="excerpt">Il nuovo presidente della Fed ha fatto il suo debutto internazionale al Forum Bce di Sintra, in un panel con Christine Lagarde, Andrew Bailey e Tiff Macklem. Warsh ha detto che i prezzi restano troppo alti, pur mostrandosi più aperto sull'idea che l'IA possa avere un effetto disinflazionistico nel medio periodo.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill en" href="https://www.cnbc.com/2026/07/01/kevin-warsh-ecb-forum-live-updates.html" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> CNBC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill en" href="https://money.usnews.com/investing/news/articles/2026-07-01/warsh-hits-the-international-stage-with-peers-sharing-an-inflation-problem" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> US News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Warsh ha segnalato l'intenzione di ridurre il ricorso alla forward guidance, definendo le previsioni economiche tradizionali "poco adatte all'attuale contesto di policy": ha pubblicato uno statement Fomc insolitamente breve e ha rinunciato al dot plot. Nove dei 19 membri Fed prevedono un rialzo dei tassi entro fine anno, contro nessuno a marzo — riflesso delle pressioni inflazionistiche legate alla guerra in Iran.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Economia</span>
+          <h3>Eurozona, inflazione di giugno giù al 2,8%: si raffreddano le attese sui tassi</h3>
+          <p class="excerpt">Il dato, sceso più del previsto, ha ridotto sensibilmente le scommesse dei mercati su un nuovo rialzo dei tassi Bce: per la prima volta da aprile gli swap non scontano più un intero rialzo da 25 punti base entro fine 2026.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.borsaitaliana.it/borsa/notizie/radiocor/economia/dettaglio/bce-mercati-riducono-scommesse-su-nuovi-rialzi-dei-tassi-di-interesse-nRC_26062026_1131_252190088.html" target="_blank" rel="noopener">Borsa Italiana <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Il quadro europeo va in direzione opposta rispetto agli Usa: la Bce, diversamente da Bank of England e Bank of Canada (ferme dopo i tagli del 2025), aveva già alzato il tasso sui depositi di 25 punti base. Le borse europee avevano aperto in rialzo su speranze di un accordo Usa-Iran e sul calo del greggio, ma il rally del semestre ha frenato in attesa delle parole di Warsh.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Economia</span>
+          <h3>Istat: Pil italiano a +0,7% nel 2026 e nel 2027, ma dipende dal conflitto</h3>
+          <p class="excerpt">Crescita debole ma positiva, condizionata dalla durata della crisi in Medio Oriente che pesa su energia e catene di approvvigionamento. Il debito pubblico è salito al 137,1% del Pil nel 2025.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.ilsole24ore.com/art/istat-pil-atteso-07percento-2026-e-2027-ma-dipende-durata-conflitto-AI24szTD" target="_blank" rel="noopener">Il Sole 24 Ore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Il deficit/Pil nel primo trimestre 2026 migliora leggermente al 7,8% (dall'8,4% dello stesso periodo 2025), un segnale incoraggiante per i conti pubblici ma ancora lontano dalla soglia del 3% fissata dalle regole europee, con l'Italia tuttora sotto procedura per disavanzo eccessivo.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Economia</span>
+          <h3>Inflazione italiana all'1,2%, ben sotto la media Ue</h3>
+          <p class="excerpt">Il dato resta contenuto rispetto al 2,3% medio dell'Eurozona: aiuta il potere d'acquisto ma riflette anche una domanda interna piuttosto fiacca, in linea con la crescita moderata segnalata dall'Istat.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.notizie.it/inflazione-a-luglio-2026-italia-sotto-la-media-ue/" target="_blank" rel="noopener">Notizie.it <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CULTURA -->
+  <section class="topic" id="cultura">
+    <div class="sec-head">
+      <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5V6a2 2 0 0 1 2-2h13v15.5M4 19.5A1.5 1.5 0 0 0 5.5 21H19M4 19.5A1.5 1.5 0 0 1 5.5 18H19"/></svg></div>
+      <h2>Cultura</h2>
+      <span class="sec-count">4 notizie</span>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-img-wrap">
+          <img class="card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Vincent_van_Gogh_-_L%27Arlesienne_%28Madame_Ginoux%29.jpg?width=1400" alt="Van Gogh, L'Arlesienne (Madame Ginoux)" loading="lazy" onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Van_Gogh_-_L%27Arl%C3%A9sienne.jpg?width=1400';">
+        </div>
+        <div class="card-body">
+          <span class="tag">Cultura</span>
+          <h3>La Milanesiana compie 27 edizioni, tra i 150 anni del Corriere</h3>
+          <p class="excerpt">Fino al 22 luglio in 18 città italiane, il festival ideato da Elisabetta Sgarbi intreccia letteratura, musica, cinema, scienza, arte e filosofia. L'edizione coincide con tre anniversari: 150 anni del Corriere della Sera, 125 del supplemento La Lettura, 25 della Fondazione Corriere.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://sestopotere.com/presentata-la-27-edizione-della-milanesiana-festival-di-letteratura-musica-cinema-scienza-arte-e-filosofia-in-18-citta/" target="_blank" rel="noopener">Sestopotere <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Tra gli ospiti già passati dal palco del Piccolo Teatro Paolo Grassi figurano Sandro Veronesi (Premio Strega), Christian Kracht (Premio Hermann Hesse 2016) e David Szalay (Booker Prize 2025) — un cast che conferma l'ambizione internazionale della rassegna, ormai tra i festival letterari più seguiti d'Europa.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Cultura</span>
+          <h3>Perugia, apre oggi "Van Gogh – L'Arlesiana e gli Italiani a Parigi"</h3>
+          <p class="excerpt">Alla Galleria Nazionale dell'Umbria, visitabile fino al 27 settembre. L'esposizione mette in dialogo l'opera di Van Gogh con sedici lavori di artisti italiani attivi a Parigi tra Otto e Novecento.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://siviaggia.it/notizie/mostre-luglio-2026-italia/593624/" target="_blank" rel="noopener">SiViaggia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Tra gli artisti in mostra: Giovanni Boldini, Giuseppe De Nittis, Silvestro Lega e Antonio Mancini. È un'occasione per rileggere l'influenza reciproca tra la scena parigina di fine Ottocento e la pittura italiana dell'epoca, meno nota al grande pubblico rispetto ai soli maestri francesi.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Cultura</span>
+          <h3>Torino, il MAO prepara "Paesaggi da sogno/Dreamscapes"</h3>
+          <p class="excerpt">Dal 24 luglio, il Museo d'Arte Orientale dedica una mostra alla celebre serie ukiyo-e delle 53 stazioni del Tōkaidō.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://siviaggia.it/notizie/mostre-luglio-2026-italia/593624/" target="_blank" rel="noopener">SiViaggia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            La mostra si inserisce nel filone, sempre più frequente nei musei italiani, di grandi rassegne di stampe giapponesi capaci di attrarre pubblico trasversale, complice anche la crescente popolarità dell'estetica ukiyo-e tra i più giovani grazie a cinema d'animazione e videogiochi.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Cultura</span>
+          <h3>Pistoia Capitale del Libro, verso la festa di San Jacopo</h3>
+          <p class="excerpt">Prosegue il programma estivo di Pistoia Capitale Italiana del Libro 2026, che culminerà il 25 luglio con la festa del patrono e la tradizionale Giostra dell'Orso.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.reportpistoia.com/leggere-raccontare-e-incontrarsi-al-via-il-programma-estivo-di-pistoia-capitale-italiana-del-libro/" target="_blank" rel="noopener">Report Pistoia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            È un modello di capitale del libro "diffuso" durante tutta la stagione estiva anziché concentrato in un singolo evento, che lega la promozione della lettura alle tradizioni cittadine più radicate, in un tentativo di allargare il pubblico oltre gli appassionati abituali.
+          </div></div></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SCIENZA -->
+  <section class="topic" id="scienza">
+    <div class="sec-head">
+      <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v6.2L4.8 18a1.8 1.8 0 0 0 1.5 2.8h11.4a1.8 1.8 0 0 0 1.5-2.8L14 9.2V3"/></svg></div>
+      <h2>Scienza e natura</h2>
+      <span class="sec-count">3 notizie</span>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-img-wrap">
+          <img class="card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Schematic_of_the_main_JUNO_detector.png?width=1400" alt="Schema del rivelatore di neutrini JUNO" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#scienza .cards article:nth-child(1) .card-body').classList.add('no-img');">
+        </div>
+        <div class="card-body">
+          <span class="tag">Scienza</span>
+          <h3>Il rivelatore di neutrini JUNO produce il primo risultato di rilievo</h3>
+          <p class="excerpt">L'osservatorio sotterraneo cinese ha ottenuto una delle misurazioni più precise mai realizzate sul comportamento dei neutrini, dati che collocano la Cina all'avanguardia in un campo storicamente dominato da Usa, Giappone ed Europa.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill en" href="https://www.nature.com/news" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Nature News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            I dati potrebbero aiutare a chiarire alcuni parametri ancora aperti nella fisica delle particelle, in particolare sulle masse relative dei tre tipi di neutrino — una delle domande aperte più importanti della fisica fondamentale, con implicazioni anche per la comprensione dell'asimmetria materia-antimateria nell'universo.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Scienza</span>
+          <h3>Europa, in funzione a BESSY II il primo spettrometro a raggi X superconduttivo</h3>
+          <p class="excerpt">Basato su sensori TES (Transition Edge Sensor), è il primo del suo genere in Europa e promette di aumentare fino a mille volte l'efficienza di rilevazione dei fotoni.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill en" href="https://www.sciencedaily.com/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> ScienceDaily <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Le ricadute attese riguardano soprattutto lo studio di materiali e processi chimici su scala nanometrica, un campo cruciale per lo sviluppo di nuove tecnologie energetiche, farmaceutiche e per l'elettronica di prossima generazione.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Scienza</span>
+          <h3>Le piante di caffè sempre più minacciate dal cambiamento climatico</h3>
+          <p class="excerpt">Diversi studi recenti confermano l'impatto del riscaldamento globale sulle coltivazioni di caffè, con i ricercatori al lavoro su varietà più resistenti a siccità e temperature estreme.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill en" href="https://www.nature.com/news" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Nature News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            È un tema che nei prossimi anni potrebbe tradursi in aumenti di prezzo e cambiamenti nella produzione globale, con conseguenze economiche significative per i paesi produttori dell'America Latina, dell'Africa orientale e del Sud-est asiatico.
+          </div></div></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CICLISMO -->
+  <section class="topic" id="ciclismo">
+    <div class="sec-head">
+      <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 9 9h5l3.5 8.5M9 9 7 6h3M9 9l3 5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h2>Ciclismo</h2>
+      <span class="sec-count">4 notizie</span>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-img-wrap">
+          <img class="card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Route_of_the_2026_Tour_de_France.png?width=1400" alt="Percorso del Tour de France 2026" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#ciclismo .cards article:nth-child(1) .card-body').classList.add('no-img');">
+        </div>
+        <div class="card-body">
+          <span class="tag">Ciclismo</span>
+          <h3>Tour de France 2026 al via da Barcellona: 12 italiani in gara</h3>
+          <p class="excerpt">La 113ª edizione scatta sabato 4 luglio da Barcellona con 184 corridori di 23 squadre su 21 tappe e 3.320,7 km, tra Pirenei, Massiccio Centrale, Vosgi, Giura e Alpi. Il movimento italiano torna a crescere: 12 corridori al via contro gli 8 del 2024 e i 7 del 2023.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://www.tuttobiciweb.it/article/2026/07/01/1782854005/tour-de-france-ciclismo-italia-tdf2026-corridori-italiani" target="_blank" rel="noopener">TuttoBiciWeb <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill en" href="https://www.cyclingnews.com/races/tour-de-france-2026/preview/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Cyclingnews <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            La presenza di giovani come Piganzoli e Germani, accanto a campioni affermati come Ganna, Affini, Trentin e Caruso, racconta di un movimento azzurro che sta ritrovando profondità dopo anni di scarsa rappresentanza alla Grande Boucle.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Ciclismo</span>
+          <h3>Affini recupera dalla caduta: sarà al via del Tour</h3>
+          <p class="excerpt">Dopo la caduta ai campionati italiani, Edoardo Affini ha avuto il via libera dallo staff medico per partire regolarmente da Barcellona con la sua squadra, come da programma.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.tuttobiciweb.it/article/2026/06/30/1782812262/edoardo-affini-tour-france-2026" target="_blank" rel="noopener">TuttoBiciWeb <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Ciclismo</span>
+          <h3>Ganna centra il settimo titolo italiano a cronometro</h3>
+          <p class="excerpt">Filippo Ganna non si ferma più: ai campionati italiani a cronometro conquista il suo settimo titolo tricolore, con Giaimi e Cattaneo sul podio a completare la festa azzurra in vista del Tour.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.tuttobiciweb.it/article/2026/06/25/1782394357/campionato-italiano-cronometro-2026-vittoria-filippo-ganna" target="_blank" rel="noopener">TuttoBiciWeb <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Il successo conferma Ganna come il miglior specialista italiano a cronometro dell'ultimo decennio e arriva nel momento migliore, a pochi giorni dalla prova a cronometro individuale in programma al Tour de France.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Ciclismo</span>
+          <h3>Pogačar-Vingegaard, il Tour come laboratorio della fatica</h3>
+          <p class="excerpt">La Grande Boucle 2026 non è solo il nuovo capitolo della rivalità tra Tadej Pogačar e Jonas Vingegaard, reduce dalla vittoria al Giro d'Italia: è una corsa costruita per misurare non il picco di potenza dei campioni, ma la loro capacità di restare competitivi lungo tre settimane. Remco Evenepoel proverà a sfruttare la sua forza a cronometro anche in salita.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill en" href="https://www.cyclingnews.com/races/tour-de-france-2026/preview/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Cyclingnews <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- APPROFONDIRE -->
+  <section id="approfondire" class="deepdive">
+    <div class="dd-head">
+      <div class="dd-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg></div>
+      <h2>Cosa approfondire oggi</h2>
+    </div>
+    <div class="dd-grid">
+      <div class="dd-card"><div class="dd-num">01</div><h4>Doha e la tregua Usa-Iran</h4><p>Il WSJ riporta che Trump ha concretamente valutato un ritorno alla guerra totale, e la tregua sullo Stretto di Hormuz appare più fragile del previsto. Con l'inizio dei funerali di Khamenei il 4 luglio, i prossimi giorni saranno decisivi per petrolio, inflazione e stabilità del Golfo.</p></div>
+      <div class="dd-card"><div class="dd-num">02</div><h4>La riforma elettorale italiana</h4><p>Il voto atteso il 7-9 luglio, il nodo delle preferenze irrisolto in maggioranza e la minaccia di ricorso alla Consulta ne fanno una partita che può ridisegnare gli equilibri istituzionali ben oltre la prossima legislatura.</p></div>
+      <div class="dd-card"><div class="dd-num">03</div><h4>Il nuovo corso della Fed con Warsh</h4><p>L'approccio più scettico verso gli strumenti statistici tradizionali e l'insistenza sull'inflazione "ancora troppo alta" segnalano un possibile cambio di stile della banca centrale americana, proprio mentre la Bce si muove in direzione opposta.</p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Briefing generato automaticamente il 1 luglio 2026 · Fonti: Corriere della Sera, Il Sole 24 Ore, ANSA, Sky TG24, Adnkronos, Il Post, NBC News, CNBC, US News, Handelsblatt, CFR, European Policy Centre, Commissione Europea, Nature, ScienceDaily, MEF, Ipsos, TuttoBiciWeb, Cyclingnews · Immagini: Wikimedia Commons
+</footer>
+
+<button id="toTop" aria-label="Torna su" title="Torna su"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<button id="listenAll" aria-label="Ascolta il briefing" title="Ascolta il briefing">
+  <span class="pulse"></span>
+  <svg id="listenIconPlay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 6a9 9 0 0 1 0 12"/></svg>
+  <svg id="listenIconStop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
+</button>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+  // NAV ACTIVE STATE + PROGRESS + BACK TO TOP
+  const links = Array.from(document.querySelectorAll('#mainnav a'));
+  const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+  const progress = document.getElementById('progress');
+  const toTop = document.getElementById('toTop');
+
+  function onScroll(){
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const height = doc.scrollHeight - doc.clientHeight;
+    progress.style.width = (height > 0 ? (scrollTop / height) * 100 : 0) + '%';
+    toTop.classList.toggle('show', scrollTop > 500);
+
+    let idx = 0;
+    const y = scrollTop + 140;
+    sections.forEach((s,i) => { if(s && s.offsetTop <= y) idx = i; });
+    links.forEach((a,i) => a.classList.toggle('active', i === idx));
+  }
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  // REVEAL ON SCROLL
+  const revealEls = document.querySelectorAll('article.card, .dd-card');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, {threshold:0.1, rootMargin:'0px 0px -30px 0px'});
+  revealEls.forEach(el => io.observe(el));
+
+  // EXPAND / COLLAPSE
+  document.querySelectorAll('.expand-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const wrap = btn.closest('.card-body').querySelector('.expand-wrap');
+      const open = wrap.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      btn.firstChild.textContent = open ? 'Mostra meno' : 'Approfondisci';
+    });
+  });
+
+  // THEME TOGGLE
+  const root = document.documentElement;
+  const themeBtn = document.getElementById('themeToggle');
+  const iconMoon = document.getElementById('iconMoon');
+  const iconSun = document.getElementById('iconSun');
+  function applyTheme(t){
+    root.classList.toggle('dark', t === 'dark');
+    iconMoon.style.display = t === 'dark' ? 'none' : 'block';
+    iconSun.style.display = t === 'dark' ? 'block' : 'none';
+  }
+  let saved = null;
+  try { saved = localStorage.getItem('briefing-theme'); } catch(e){}
+  applyTheme(saved === 'dark' ? 'dark' : 'light');
+  themeBtn.addEventListener('click', () => {
+    const next = root.classList.contains('dark') ? 'light' : 'dark';
+    applyTheme(next);
+    try { localStorage.setItem('briefing-theme', next); } catch(e){}
+  });
+
+  // READING TIME
+  const wordCount = document.getElementById('reading-content').innerText.trim().split(/\s+/).length;
+  document.getElementById('readTime').textContent = Math.max(1, Math.round(wordCount / 200)) + ' min';
+
+  // TOAST
+  const toastEl = document.getElementById('toast');
+  let toastTimer;
+  function showToast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2600);
+  }
+
+  // CONDIVIDI NOTIZIA
+  function cardText(card){
+    const title = card.querySelector('h3')?.textContent.trim() || '';
+    const excerpt = card.querySelector('.excerpt')?.textContent.trim() || '';
+    const link = card.querySelector('.src-pill')?.href || location.href;
+    return { title, excerpt, link };
+  }
+  async function shareCard(card){
+    const { title, excerpt, link } = cardText(card);
+    if(navigator.share){
+      try { await navigator.share({ title, text: excerpt, url: link }); return; }
+      catch(e){ if(e.name === 'AbortError') return; }
+    }
+    const text = `${title}\n\n${excerpt}\n\n${link}`;
+    try {
+      await navigator.clipboard.writeText(text);
+      showToast('Notizia copiata negli appunti ✓');
+    } catch(e){
+      showToast('Impossibile condividere su questo browser');
+    }
+  }
+
+  // SINTESI VOCALE
+  const synth = window.speechSynthesis;
+  let speakAllActive = false;
+  let speakAllQueue = [];
+  let speakAllIndex = 0;
+
+  function pickItalianVoice(){
+    const voices = synth ? synth.getVoices() : [];
+    return voices.find(v => v.lang && v.lang.toLowerCase().startsWith('it')) || null;
+  }
+  function buildUtterance(text){
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'it-IT';
+    const v = pickItalianVoice();
+    if(v) u.voice = v;
+    return u;
+  }
+  function clearSpeakingUI(){
+    document.querySelectorAll('article.card.speaking').forEach(c => c.classList.remove('speaking'));
+    document.querySelectorAll('.listen-btn.active').forEach(b => b.classList.remove('active'));
+  }
+  function setListenAllUI(playing){
+    const btn = document.getElementById('listenAll');
+    btn.classList.toggle('playing', playing);
+    document.getElementById('listenIconPlay').style.display = playing ? 'none' : 'block';
+    document.getElementById('listenIconStop').style.display = playing ? 'block' : 'none';
+    btn.title = playing ? 'Interrompi ascolto' : 'Ascolta il briefing';
+  }
+  function stopSpeech(){
+    speakAllActive = false;
+    if(synth) synth.cancel();
+    clearSpeakingUI();
+    setListenAllUI(false);
+  }
+  function speakCard(card, btn){
+    if(!synth){ showToast('Sintesi vocale non supportata su questo browser'); return; }
+    const wasActive = btn.classList.contains('active');
+    stopSpeech();
+    if(wasActive) return;
+    const { title, excerpt } = cardText(card);
+    const u = buildUtterance(`${title}. ${excerpt}`);
+    card.classList.add('speaking');
+    btn.classList.add('active');
+    u.onend = u.onerror = () => { card.classList.remove('speaking'); btn.classList.remove('active'); };
+    synth.speak(u);
+  }
+  function speakAll(){
+    if(!synth){ showToast('Sintesi vocale non supportata su questo browser'); return; }
+    if(speakAllActive){ stopSpeech(); return; }
+    stopSpeech();
+    speakAllQueue = Array.from(document.querySelectorAll('article.card'));
+    speakAllIndex = 0;
+    speakAllActive = true;
+    setListenAllUI(true);
+    playNextInQueue();
+  }
+  function playNextInQueue(){
+    if(!speakAllActive || speakAllIndex >= speakAllQueue.length){ stopSpeech(); return; }
+    clearSpeakingUI();
+    const card = speakAllQueue[speakAllIndex++];
+    card.classList.add('speaking');
+    card.scrollIntoView({ behavior:'smooth', block:'center' });
+    const { title, excerpt } = cardText(card);
+    const u = buildUtterance(`${title}. ${excerpt}`);
+    u.onend = playNextInQueue;
+    u.onerror = playNextInQueue;
+    synth.speak(u);
+  }
+  document.getElementById('listenAll').addEventListener('click', speakAll);
+
+  // ICONE PER LISTEN / CONDIVIDI
+  const ICON_LISTEN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5 5 8H2v8h3l4 3V5Z"/><path d="M14.5 8.5a4.2 4.2 0 0 1 0 7"/></svg>';
+  const ICON_SHARE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="m8.3 10.7 7.4-4.4M8.3 13.3l7.4 4.4"/></svg>';
+
+  document.querySelectorAll('article.card').forEach(card => {
+    const foot = card.querySelector('.card-foot');
+    if(!foot) return;
+    const expandBtn = foot.querySelector('.expand-btn');
+    const actions = document.createElement('div');
+    actions.className = 'card-actions';
+
+    const listenBtn = document.createElement('button');
+    listenBtn.type = 'button';
+    listenBtn.className = 'icon-action listen-btn';
+    listenBtn.title = 'Ascolta questa notizia';
+    listenBtn.setAttribute('aria-label', 'Ascolta questa notizia');
+    listenBtn.innerHTML = ICON_LISTEN;
+    listenBtn.addEventListener('click', () => speakCard(card, listenBtn));
+
+    const shareBtn = document.createElement('button');
+    shareBtn.type = 'button';
+    shareBtn.className = 'icon-action share-btn';
+    shareBtn.title = 'Condividi questa notizia';
+    shareBtn.setAttribute('aria-label', 'Condividi questa notizia');
+    shareBtn.innerHTML = ICON_SHARE;
+    shareBtn.addEventListener('click', () => shareCard(card));
+
+    actions.appendChild(listenBtn);
+    actions.appendChild(shareBtn);
+    if(expandBtn) actions.appendChild(expandBtn);
+    foot.appendChild(actions);
+  });
+</script>
+
+</body>
+</html>
