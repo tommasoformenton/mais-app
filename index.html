@@ -22,6 +22,7 @@
     --purple:#9b5de5; --purple-dk:#7a3e9d;
     --teal:#14b8a6; --teal-dk:#0f7a76;
     --orange:#e8871e; --orange-dk:#b5650f;
+    --pink:#d6336c; --pink-dk:#a61e4d;
     --shadow-sm:0 1px 2px rgba(20,22,30,0.04), 0 1px 1px rgba(20,22,30,0.03);
     --shadow-md:0 10px 30px -10px rgba(20,22,30,0.16);
     --shadow-lg:0 20px 50px -12px rgba(20,22,30,0.22);
@@ -185,6 +186,7 @@
   #cultura .sec-badge{background:linear-gradient(135deg,var(--purple),var(--purple-dk));}
   #scienza .sec-badge{background:linear-gradient(135deg,var(--teal),var(--teal-dk));}
   #ciclismo .sec-badge{background:linear-gradient(135deg,var(--orange),var(--orange-dk));}
+  #video .sec-badge{background:linear-gradient(135deg,var(--pink),var(--pink-dk));}
 
   /* ===== CARDS ===== */
   .cards{display:flex; flex-direction:column; gap:16px;}
@@ -199,7 +201,14 @@
   }
   article.card.visible{opacity:1; transform:translateY(0) scale(1);}
   article.card:hover{box-shadow:var(--shadow-md); border-color:transparent;}
-  .card-img-wrap{overflow:hidden; height:230px;}
+  .card-img-wrap{position:relative; overflow:hidden; height:230px;}
+  .play-badge{
+    position:absolute; inset:0; margin:auto; width:56px; height:56px;
+    background:rgba(18,33,58,0.68); border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    pointer-events:none;
+  }
+  .play-badge svg{width:22px; height:22px; margin-left:3px;}
   .card-img{width:100%;height:100%;object-fit:cover; transition:transform .7s ease;}
   article.card:hover .card-img{transform:scale(1.05);}
   .card-body{padding:26px 26px 22px;}
@@ -222,6 +231,8 @@
   html.dark #scienza .tag{color:#6fe0d4;}
   #ciclismo .tag{background:rgba(232,135,30,0.12); color:var(--orange-dk);}
   html.dark #ciclismo .tag{color:#f5b361;}
+  #video .tag{background:rgba(214,51,108,0.12); color:var(--pink-dk);}
+  html.dark #video .tag{color:#ff9ec7;}
 
   article.card h3{font-size:19px; font-weight:750; letter-spacing:-.2px; margin:0 0 10px; line-height:1.3;}
   article.card p.excerpt{font-size:15px; color:var(--body-txt); line-height:1.62; margin:0 0 18px;}
@@ -510,7 +521,7 @@
     <div class="meta-chips">
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> Giovedì 2 luglio 2026</span>
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> <span id="readTime">— min</span> di lettura</span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg> 6 ambiti · 20 notizie</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg> 7 ambiti · 24 notizie</span>
     </div>
   </div>
 </header>
@@ -523,6 +534,7 @@
     <a href="#cultura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5V6a2 2 0 0 1 2-2h13v15.5M4 19.5A1.5 1.5 0 0 0 5.5 21H19M4 19.5A1.5 1.5 0 0 1 5.5 18H19"/></svg>Cultura</a>
     <a href="#scienza"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v6.2L4.8 18a1.8 1.8 0 0 0 1.5 2.8h11.4a1.8 1.8 0 0 0 1.5-2.8L14 9.2V3"/></svg>Scienza</a>
     <a href="#ciclismo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 9 9h5l3.5 8.5M9 9 7 6h3M9 9l3 5" stroke-linecap="round" stroke-linejoin="round"/></svg>Ciclismo</a>
+    <a href="#video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="14" height="14" rx="3"/><path d="m21 8-4 3 4 3z"/></svg>Video</a>
     <a href="#approfondire"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg>Da approfondire</a>
   </nav>
 </div>
@@ -926,6 +938,77 @@
     </div>
   </section>
 
+  <!-- VIDEO -->
+  <section class="topic" id="video">
+    <div class="sec-head">
+      <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="14" height="14" rx="3"/><path d="m21 8-4 3 4 3z"/></svg></div>
+      <h2>Video</h2>
+      <span class="sec-count">4 video</span>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-img-wrap">
+          <img class="card-img" src="https://img.youtube.com/vi/dY_kfWrI-74/hqdefault.jpg" alt="Kevin Warsh al Forum BCE di Sintra" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#video .cards article:nth-child(1) .card-body').classList.add('no-img');">
+          <div class="play-badge"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="card-body">
+          <span class="tag">Video</span>
+          <h3>Warsh, Lagarde, Bailey e Macklem insieme sul palco di Sintra</h3>
+          <p class="excerpt">Il video integrale del panel dei governatori delle banche centrali al Forum BCE, con il debutto internazionale di Kevin Warsh accanto a Christine Lagarde, Andrew Bailey e Tiff Macklem.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.youtube.com/watch?v=dY_kfWrI-74" target="_blank" rel="noopener">YouTube <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-img-wrap">
+          <img class="card-img" src="https://img.youtube.com/vi/JOMk0EFzyOo/hqdefault.jpg" alt="Meloni e Macron al vertice italo-francese" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#video .cards article:nth-child(2) .card-body').classList.add('no-img');">
+          <div class="play-badge"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="card-body">
+          <span class="tag">Video</span>
+          <h3>Dopo lo strappo con Trump, Meloni incontra Macron sul riarmo NATO</h3>
+          <p class="excerpt">Servizio su Meloni e Macron ad Antibes, al 36° vertice italo-francese, per discutere di un possibile "reset" sulla difesa europea nell'ambito NATO dopo le frizioni con Washington.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.youtube.com/watch?v=JOMk0EFzyOo" target="_blank" rel="noopener">Firstpost Live <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-img-wrap">
+          <img class="card-img" src="https://img.youtube.com/vi/T8kUycBIxmU/hqdefault.jpg" alt="Trump commenta la posizione di Meloni sull'Iran" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#video .cards article:nth-child(3) .card-body').classList.add('no-img');">
+          <div class="play-badge"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="card-body">
+          <span class="tag">Video</span>
+          <h3>Trump: "Deluso" dalla linea di Meloni su Iran e NATO</h3>
+          <p class="excerpt">Le dichiarazioni del presidente Usa sul dissenso italiano riguardo all'uso delle basi Nato in Italia durante la guerra in Iran, e le ricadute sui rapporti tra Roma e Washington.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.youtube.com/watch?v=T8kUycBIxmU" target="_blank" rel="noopener">YouTube <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-img-wrap">
+          <img class="card-img" src="https://img.youtube.com/vi/frLKa3C9CU8/hqdefault.jpg" alt="Barcellona si prepara al Grand Départ del Tour de France" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#video .cards article:nth-child(4) .card-body').classList.add('no-img');">
+          <div class="play-badge"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="card-body">
+          <span class="tag">Video</span>
+          <h3>Barcellona si veste di giallo per il Grand Départ del Tour</h3>
+          <p class="excerpt">Le immagini dei preparativi in città alla vigilia della partenza della 113ª edizione del Tour de France, con la cronosquadre inaugurale tra Parc del Fòrum e Montjuïc.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.youtube.com/watch?v=frLKa3C9CU8" target="_blank" rel="noopener">YouTube <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <!-- APPROFONDIRE -->
   <section id="approfondire" class="deepdive">
     <div class="dd-head">
@@ -942,7 +1025,7 @@
 </main>
 
 <footer>
-  Briefing generato automaticamente il 2 luglio 2026 · Fonti: ANSA, Il Sole 24 Ore, Fanpage, Sky TG24, Sky Sport, Adnkronos, Kyiv Independent, Al Jazeera, Wikipedia, House of Commons Library, Geopolitical Monitor, CNBC, Money.it, BCE, Premio Strega, Ministero della Cultura, L'Opinionista, Illibraio, Nature, ScienceDaily, TuttoBiciWeb, SpazioCiclismo, Cyclingnews · Immagini: Wikimedia Commons
+  Briefing generato automaticamente il 2 luglio 2026 · Fonti: ANSA, Il Sole 24 Ore, Fanpage, Sky TG24, Sky Sport, Adnkronos, Kyiv Independent, Al Jazeera, Wikipedia, House of Commons Library, Geopolitical Monitor, CNBC, Money.it, BCE, Premio Strega, Ministero della Cultura, L'Opinionista, Illibraio, Nature, ScienceDaily, TuttoBiciWeb, SpazioCiclismo, Cyclingnews, YouTube, Firstpost Live · Immagini: Wikimedia Commons, YouTube
 </footer>
 
 <button id="toTop" aria-label="Torna su" title="Torna su"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
