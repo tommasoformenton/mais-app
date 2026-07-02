@@ -185,7 +185,7 @@
   #economia .sec-badge{background:linear-gradient(135deg,var(--green),var(--green-dk));}
   #cultura .sec-badge{background:linear-gradient(135deg,var(--purple),var(--purple-dk));}
   #scienza .sec-badge{background:linear-gradient(135deg,var(--teal),var(--teal-dk));}
-  #ciclismo .sec-badge{background:linear-gradient(135deg,var(--orange),var(--orange-dk));}
+  #sport .sec-badge{background:linear-gradient(135deg,var(--orange),var(--orange-dk));}
   #video .sec-badge{background:linear-gradient(135deg,var(--pink),var(--pink-dk));}
 
   /* ===== CARDS ===== */
@@ -229,8 +229,8 @@
   html.dark #economia .tag{color:#6fe0a8;}
   html.dark #cultura .tag{color:#c9a3f5;}
   html.dark #scienza .tag{color:#6fe0d4;}
-  #ciclismo .tag{background:rgba(232,135,30,0.12); color:var(--orange-dk);}
-  html.dark #ciclismo .tag{color:#f5b361;}
+  #sport .tag{background:rgba(232,135,30,0.12); color:var(--orange-dk);}
+  html.dark #sport .tag{color:#f5b361;}
   #video .tag{background:rgba(214,51,108,0.12); color:var(--pink-dk);}
   html.dark #video .tag{color:#ff9ec7;}
 
@@ -521,7 +521,7 @@
     <div class="meta-chips">
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> Giovedì 2 luglio 2026</span>
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> <span id="readTime">— min</span> di lettura</span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg> 7 ambiti · 24 notizie</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg> 7 ambiti · 35 notizie</span>
     </div>
   </div>
 </header>
@@ -533,7 +533,7 @@
     <a href="#economia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M10 20V4M16 20v-7M22 20V8" stroke-linecap="round"/></svg>Economia</a>
     <a href="#cultura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5V6a2 2 0 0 1 2-2h13v15.5M4 19.5A1.5 1.5 0 0 0 5.5 21H19M4 19.5A1.5 1.5 0 0 1 5.5 18H19"/></svg>Cultura</a>
     <a href="#scienza"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v6.2L4.8 18a1.8 1.8 0 0 0 1.5 2.8h11.4a1.8 1.8 0 0 0 1.5-2.8L14 9.2V3"/></svg>Scienza</a>
-    <a href="#ciclismo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 9 9h5l3.5 8.5M9 9 7 6h3M9 9l3 5" stroke-linecap="round" stroke-linejoin="round"/></svg>Ciclismo</a>
+    <a href="#sport"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 5H5a3 3 0 0 0 3 4M16 5h3a3 3 0 0 1-3 4"/><path d="M12 13v3M9 20h6M10 20v-2.5a2 2 0 0 1 4 0V20" stroke-linecap="round" stroke-linejoin="round"/></svg>Sport</a>
     <a href="#video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="14" height="14" rx="3"/><path d="m21 8-4 3 4 3z"/></svg>Video</a>
     <a href="#approfondire"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg>Da approfondire</a>
   </nav>
@@ -546,7 +546,7 @@
     <div class="sec-head">
       <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21h16M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg></div>
       <h2>Politica italiana</h2>
-      <span class="sec-count">4 notizie</span>
+      <span class="sec-count">6 notizie</span>
     </div>
 
     <div class="cards">
@@ -557,7 +557,7 @@
         <div class="card-body">
           <span class="tag">Politica</span>
           <h3>Vertice NATO di Ankara: per l'Italia la partita delle spese militari</h3>
-          <p class="excerpt">Meloni ha riunito Tajani, Crosetto e Giorgetti per definire la linea italiana in vista del vertice NATO del 7-8 luglio ad Ankara, dove Washington valuterà i progressi verso il target del 5% del PIL fissato all'Aja nel 2025. L'Italia si presenta con una spesa attorno al 2,8%. Resta aperto anche il dossier del fondo europeo SAFE, su cui l'Italia ha prenotato 14,9 miliardi senza ancora firmare l'attivazione.</p>
+          <p class="excerpt">Meloni ha riunito Tajani, Crosetto e Giorgetti per definire la linea italiana in vista del vertice NATO del 7-8 luglio ad Ankara, dove i 32 Paesi membri faranno il punto sui progressi verso il target del 5% del PIL in spese per la difesa fissato all'Aja nel 2025 (3,5% per la spesa militare pura, 1,5% per infrastrutture e sicurezza collegate). L'Italia si presenta con una spesa attorno al 2,8%, tra le più basse dell'Alleanza, e dovrà indicare una tabella di marcia credibile verso il target 2035. Resta aperto anche il dossier del fondo europeo SAFE, su cui Roma ha prenotato 14,9 miliardi di prestiti agevolati senza però aver ancora firmato l'attivazione, con Bruxelles che ha posto un termine di circa un mese per sciogliere la riserva. Il segretario generale Mark Rutte ha già anticipato che il vertice dovrà essere "di consegna e attuazione", trasformando gli impegni politici in produzione industriale concreta, mentre resta il nodo del sostegno a Kiev e dei rapporti con un'amministrazione Trump che considera Ankara una vera e propria "pagella" per gli alleati europei.</p>
           <div class="card-foot">
             <div class="src-row">
               <a class="src-pill" href="https://www.ansa.it/sito/notizie/politica/2026/07/01/riunione-con-meloni-verso-il-vertice-nato-focus-sulle-spese-militari_79e2e49c-6c14-4bef-b177-c57e5fffcc67.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
@@ -566,7 +566,25 @@
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            L'impegno sulle spese militari avrà ricadute dirette sulla prossima legge di bilancio, e il vertice arriva in un momento di frizione diplomatica con Washington dopo lo scontro Trump-Meloni di fine giugno, rendendo Ankara un test anche politico oltre che militare. Bruxelles ha concesso circa un mese di tempo per decidere sull'attivazione del fondo SAFE.
+            L'impegno sulle spese militari avrà ricadute dirette sulla prossima legge di bilancio, e il vertice arriva in un momento di frizione diplomatica con Washington dopo lo scontro Trump-Meloni di fine giugno, rendendo Ankara un test anche politico oltre che militare. Nel 2025 gli alleati europei e il Canada hanno già aumentato la spesa collettiva di circa 139 miliardi di dollari, un ritmo che l'Italia fatica a replicare senza tensioni sui conti pubblici.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Politica</span>
+          <h3>Legge elettorale, il rebus delle preferenze slitta ancora: Aula rinviata al 14 luglio</h3>
+          <p class="excerpt">L'esame in Aula alla Camera della riforma della legge elettorale, che introdurrebbe un premio di maggioranza fino a 220 seggi alla Camera e 113 al Senato per la coalizione che superi il 42% dei voti, una soglia di sbarramento al 3% e liste bloccate, slitta di una settimana, al 14 luglio. Il nodo resta quello delle preferenze: Fratelli d'Italia le vorrebbe reintrodurre, ma Forza Italia e soprattutto la Lega restano scettici, temendo un aumento dei costi di campagna elettorale e la frammentazione del voto interno alla coalizione. Per evitare il rischio di un voto segreto che affossi la riforma, FdI ha rinunciato a presentare un proprio emendamento in commissione, dichiarandosi alla ricerca di "una soluzione condivisa" con gli alleati. Sul tema si registra anche un presidio di associazioni e cittadini alla Camera per chiedere l'inserimento del voto dei fuorisede, altro capitolo rimasto fuori dal testo attuale.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://www.ansa.it/sito/notizie/politica/2026/07/01/rompicapo-preferenze-slitta-lapprodo-in-aula-della-legge-elettorale_1058c686-0759-40bb-b763-adbcc7ae753d.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.ilsole24ore.com/art/legge-elettorale-presidio-alla-camera-inserire-riforma-voto-fuorisede-AIEeSlxD" target="_blank" rel="noopener">Il Sole 24 Ore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Il Foglio ha ricostruito come Meloni sia "tentata di sacrificare" le preferenze pur di portare a casa la riforma entro l'estate, mentre Salvini avrebbe aperto in privato all'ipotesi di elezioni anticipate qualora lo stallo nella maggioranza si prolungasse. La partita si intreccia con gli equilibri interni al centrodestra in vista delle prossime scadenze elettorali regionali.
           </div></div></div>
         </div>
       </article>
@@ -575,7 +593,7 @@
         <div class="card-body no-img">
           <span class="tag">Politica</span>
           <h3>Ricevimento per l'Independence Day a Roma, sullo sfondo il gelo con Trump</h3>
-          <p class="excerpt">Si tiene oggi a Roma il ricevimento dell'ambasciata USA per l'Independence Day, con Salvini, Tajani, Renzi e Lupi presenti ma senza Meloni, impegnata a Padova per il congresso UIL. L'evento arriva dopo lo scontro di fine giugno tra Trump e Meloni su dazi, vino e gas, con l'export vinicolo italiano già in calo dell'11% nel primo trimestre.</p>
+          <p class="excerpt">Si tiene oggi a Roma il ricevimento dell'ambasciata USA per l'Independence Day, con Salvini, Tajani, Renzi e Lupi presenti ma senza Meloni, impegnata a Padova per il congresso UIL. L'evento arriva dopo lo scontro di fine giugno tra Trump e Meloni su dazi, vino e gas, con l'export vinicolo italiano già in calo dell'11% nel primo trimestre 2026 e fino al -20,5% sul solo mercato statunitense. La premier aveva chiarito in Consiglio dei ministri che, a suo giudizio, l'episodio non avrà impatti strutturali sui rapporti bilaterali, ma la contemporanea assenza della presidente del Consiglio da un appuntamento tradizionalmente presidiato al massimo livello politico viene letta da più osservatori come un segnale non casuale.</p>
           <div class="card-foot">
             <div class="src-row">
               <a class="src-pill" href="https://www.ansa.it/sito/notizie/politica/2026/06/22/meloni-in-cdm-sullo-scontro-con-trump-non-impatti-sui-rapporti_73e89765-3cf3-454d-ad46-dcf8b60f5847.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
@@ -593,7 +611,7 @@
         <div class="card-body no-img">
           <span class="tag">Politica</span>
           <h3>Piano Casa: ok definitivo del Senato, 10 miliardi per l'edilizia</h3>
-          <p class="excerpt">Il Senato ha confermato con 106 sì la fiducia al decreto Piano Casa, che diventa legge. Stanziati 10 miliardi di euro per coinvolgere i privati nella costruzione di alloggi per giovani coppie, studenti e lavoratori fuori sede, oltre a un piano di ristrutturazione su 60mila alloggi pubblici.</p>
+          <p class="excerpt">Il Senato ha confermato con 106 sì, 62 no e 2 astensioni la fiducia al decreto Piano Casa, che diventa così legge dello Stato entro la scadenza di conversione del 6 luglio. Il provvedimento, annunciato per la prima volta da Meloni al Meeting di Rimini della scorsa estate come una delle priorità dell'esecutivo, stanzia 10 miliardi di euro per coinvolgere i privati nella costruzione di alloggi destinati a giovani coppie, studenti e lavoratori fuori sede, oltre a un programma straordinario di recupero e manutenzione su 60mila alloggi di edilizia residenziale pubblica già esistenti. Il governo lo rivendica come una risposta "di fatti" alla crisi abitativa nelle grandi città, mentre le opposizioni, compatte nel voto contrario, chiedono verifiche sui tempi reali di apertura dei cantieri e sull'effettiva capacità attuativa di Regioni e Comuni.</p>
           <div class="card-foot">
             <div class="src-row"><a class="src-pill" href="https://www.ansa.it/sito/notizie/politica/2026/07/01/ok-definitivo-del-senato-al-piano-casa-confermata-la-fiducia-con-106-si_35db5184-45c8-4c55-ba74-53c05c7e8af3.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
@@ -607,8 +625,19 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Politica</span>
+          <h3>Question time alla Camera: Tajani, Crosetto, Zangrillo e Bernini sotto il fuoco delle opposizioni</h3>
+          <p class="excerpt">Si è svolto ieri alla Camera il consueto question time del mercoledì, con i ministri Tajani, Crosetto, Zangrillo e Bernini chiamati a rispondere alle interrogazioni dei gruppi parlamentari su temi che spaziano dalla politica estera alla difesa, dalla pubblica amministrazione all'università e alla ricerca. Il question time arriva in una settimana particolarmente densa per l'agenda politica, con il Piano Casa appena convertito in legge, la legge elettorale bloccata sul nodo delle preferenze e il vertice NATO di Ankara alle porte, temi che hanno inevitabilmente orientato buona parte delle domande dell'opposizione verso la linea di politica estera e di sicurezza del governo.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.ansa.it/sito/notizie/politica/2026/07/01/alla-camera-il-question-time-con-tajani-crosetto-zangrillo-e-bernini_577e18db-e432-4732-b975-f0f85381d241.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Politica</span>
           <h3>XIX Congresso UIL a Padova: Meloni ospite, focus su lavoro e IA</h3>
-          <p class="excerpt">Da oggi al 4 luglio si tiene a Padova il congresso nazionale UIL, il primo dedicato al lavoro nell'era dell'intelligenza artificiale, con Meloni ospite oggi pomeriggio dopo la relazione di Bombardieri. Domani interventi di Landini e Fumarola; sabato la testimonianza di Gino Cecchettin nell'ambito di una campagna contro il femminicidio.</p>
+          <p class="excerpt">Da oggi al 4 luglio si tiene a Padova il congresso nazionale UIL, il primo dedicato esplicitamente al lavoro nell'era dell'intelligenza artificiale, con Meloni ospite oggi pomeriggio dopo la relazione introduttiva del segretario Pierpaolo Bombardieri. Domani sono attesi gli interventi di Maurizio Landini (CGIL) e Barbara Fumarola (segreteria UIL); sabato è in programma la testimonianza di Gino Cecchettin nell'ambito di una campagna nazionale contro il femminicidio promossa dal sindacato. Il congresso arriva in un momento delicato per il mondo del lavoro italiano, con la crescita del PIL attesa ferma allo 0,7% e l'inflazione in risalita, temi su cui i sindacati chiedono al governo impegni più concreti sul rinnovo dei contratti e sulla tutela del potere d'acquisto.</p>
           <div class="card-foot">
             <div class="src-row"><a class="src-pill" href="https://www.ansa.it/veneto/notizie/2026/06/26/uil-congresso-nazionale-a-padova-dal-2-al-4-luglio-interviene-meloni_0ef7d819-d82a-44ca-ab24-d5c5a4bcced7.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
           </div>
@@ -622,7 +651,7 @@
     <div class="sec-head">
       <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.8 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.8-3.8-9s1.3-6.4 3.8-9Z"/></svg></div>
       <h2>Geopolitica / Esteri</h2>
-      <span class="sec-count">4 notizie</span>
+      <span class="sec-count">6 notizie</span>
     </div>
 
     <div class="cards">
@@ -633,7 +662,7 @@
         <div class="card-body">
           <span class="tag">Geopolitica</span>
           <h3>Ucraina: notte di attacchi missilistici russi su Kiev, almeno 10 morti</h3>
-          <p class="excerpt">Tra il primo e il due luglio la Russia ha colpito Kiev e altre città ucraine (Zaporizhzhia, Kharkiv, Pavlograd) con missili e droni, uccidendo almeno 10 persone e ferendone 56 nella capitale. Contemporaneamente Kiev ha introdotto per la prima volta una procedura strutturata per l'esportazione di armi prodotte in Ucraina.</p>
+          <p class="excerpt">Tra il primo e il due luglio la Russia ha colpito Kiev e altre città ucraine (Zaporizhzhia, Kharkiv, Pavlograd) con missili balistici Iskander-M, missili da crociera Kh-101 e droni, uccidendo almeno 10 persone e ferendone 56 solo nella capitale, dove i dati satellitari NASA FIRMS hanno rilevato un vasto incendio in una zona industriale del nord città. È il primo attacco su questa scala dopo diversi giorni di relativa calma. Sul fronte di Kharkiv, nell'area di Kazachaya Lopan, le forze russe proseguono intanto un'offensiva che le brigate di marine ucraine descrivono come particolarmente logorante, con un uso intensivo di droni da entrambe le parti. In parallelo Kiev ha introdotto per la prima volta una procedura strutturata per l'esportazione di armi prodotte in Ucraina, un passaggio che potrebbe aprire una nuova fonte di finanziamento per l'industria bellica nazionale. La Polonia ha fatto decollare propri caccia F-16 dichiarandosi pronta alla difesa aerea in risposta agli attacchi.</p>
           <div class="card-foot">
             <div class="src-row">
               <a class="src-pill en" href="https://kyivindependent.com/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Kyiv Independent <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
@@ -642,7 +671,7 @@
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            Il ministero della Difesa russo ha presentato l'attacco come risposta ad azioni definite "terroristiche" da parte ucraina, mentre sul fronte di Kharkiv proseguono le operazioni offensive russe nell'area di Kazachaya Lopan. La combinazione tra l'intensità degli attacchi e l'apertura di un canale export per l'industria bellica ucraina segnala sia la persistenza dell'escalation sia una possibile evoluzione nel modo in cui Kiev intende finanziare il proprio sforzo militare.
+            Il ministero della Difesa russo ha presentato l'attacco come risposta ad azioni definite "terroristiche" da parte ucraina. Il segretario generale della NATO ha ribadito in questi giorni che la Russia resta "la principale minaccia a lungo termine" per l'Alleanza, un giudizio che pesa sull'agenda del vertice di Ankara del 7-8 luglio, dove il sostegno militare a Kiev è tra i tre dossier prioritari insieme alla spesa per la difesa e all'accelerazione della produzione industriale bellica.
           </div></div></div>
         </div>
       </article>
@@ -651,16 +680,57 @@
         <div class="card-body no-img">
           <span class="tag">Geopolitica</span>
           <h3>Iran-USA: tregua fragile, i negoziati più difficili devono ancora arrivare</h3>
-          <p class="excerpt">Dopo il memorandum d'intesa firmato il 17 giugno, la tregua tra Stati Uniti e Iran resta su basi instabili. Il premier del Qatar ha incontrato inviati americani per consolidare l'intesa, mentre Teheran mantiene ferme le proprie condizioni. Le trattative più complesse — programma nucleare e garanzie di sicurezza — devono ancora arrivare.</p>
+          <p class="excerpt">Dopo il memorandum d'intesa firmato il 17 giugno, la tregua tra Stati Uniti e Iran resta su basi instabili. Il negoziatore iraniano Mohammad Bagher Ghalibaf sostiene che sia stato raggiunto un accordo per sbloccare 12 miliardi di dollari di fondi iraniani congelati, circostanza che Washington non ha ancora confermato ufficialmente. Il ministro degli Esteri iraniano Abbas Araghchi ha scritto che le sanzioni sulle esportazioni di petrolio e petrolchimica sono state sospese, il blocco navale revocato e alcuni asset congelati rilasciati, mentre sarebbe stato avviato un piano di ricostruzione per l'Iran. Resta però aperto lo scontro sulle ispezioni nucleari: il vicepresidente USA JD Vance ha dichiarato che Teheran riammetterà gli ispettori dell'AIEA, affermazione smentita dall'Iran, anche se il direttore dell'agenzia ONU ha confermato che l'intesa provvisoria garantisce comunque accesso ai siti nucleari iraniani. Il destino delle scorte di uranio arricchito e le garanzie di sicurezza restano i nodi più delicati, rinviati ai round negoziali successivi durante il periodo di cessate il fuoco.</p>
           <div class="card-foot">
             <div class="src-row">
-              <a class="src-pill en" href="https://en.wikipedia.org/wiki/2026_Iran_war_ceasefire" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Wikipedia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill en" href="https://commonslibrary.parliament.uk/research-briefings/cbp-10637/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> House of Commons Library <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill en" href="https://www.aljazeera.com/news/2026/6/23/what-the-us-and-iran-agreed-and-disagreed-on-first-day-of-talks" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Al Jazeera <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.cnbc.com/2026/06/26/us-iran-peace-deal-nuclear-access.html" target="_blank" rel="noopener">CNBC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            La rilevanza per il quadro globale è alta: un'eventuale rottura della tregua avrebbe ripercussioni immediate sui prezzi del petrolio e quindi sull'inflazione internazionale, un fattore che la stessa BCE ha già indicato come elemento di attenzione per le proprie decisioni sui tassi nei prossimi mesi.
+            La rilevanza per il quadro globale è alta: un'eventuale rottura della tregua avrebbe ripercussioni immediate sui prezzi del petrolio e quindi sull'inflazione internazionale, un fattore che la stessa BCE ha già indicato come elemento di attenzione per le proprie decisioni sui tassi nei prossimi mesi, e che i mercati statunitensi seguono con attenzione in vista dei dati sull'occupazione della settimana.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Geopolitica</span>
+          <h3>Irlanda assume la presidenza di turno del Consiglio UE: sicurezza e migrazione al centro</h3>
+          <p class="excerpt">Dal 1° luglio l'Irlanda ha assunto la presidenza semestrale del Consiglio dell'Unione Europea, succedendo alla precedente presidenza di turno, con lo slogan gaelico "Ní neart go cur le chéile" ("l'unione fa la forza"). Le priorità dichiarate da Dublino sono tre: competitività economica attraverso la roadmap "One Europe, One Market", promozione dei valori europei e dello stato di diritto, e sicurezza interna, con particolare attenzione alla lotta alla criminalità organizzata transfrontaliera e alla piena attuazione del Patto su migrazione e asilo, compresa la digitalizzazione dei sistemi di rimpatrio. Il semestre irlandese costerà alle casse pubbliche di Dublino circa 185 milioni di euro e dovrà gestire dossier delicati come i negoziati sul prossimo bilancio pluriennale UE e il seguito del vertice NATO di Ankara.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill en" href="https://www.euronews.com/my-europe/2026/07/01/five-pressing-tasks-for-ireland-as-it-takes-over-eu-council-presidency" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Euronews <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Dal 1° luglio è entrato in vigore anche un nuovo dazio doganale temporaneo da 3 euro sui pacchi di piccolo valore (fino a 150 euro) importati da fuori UE, soprattutto tramite e-commerce, pensato per proteggere i consumatori europei e garantire concorrenza leale rispetto alle piattaforme extra-UE.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Geopolitica</span>
+          <h3>Corte Suprema USA boccia lo stop di Trump alla cittadinanza per nascita</h3>
+          <p class="excerpt">La Corte Suprema degli Stati Uniti ha respinto il tentativo dell'amministrazione Trump di abolire per via di ordine esecutivo la cittadinanza automatica per nascita sul suolo americano (birthright citizenship), riaffermando che il Quattordicesimo Emendamento conferisce automaticamente la cittadinanza a chiunque nasca negli Stati Uniti, indipendentemente dallo status migratorio dei genitori. La sentenza, definita dalla stampa italiana come "la sconfitta di Trump", rappresenta un colpo significativo a uno dei pilastri della sua agenda sull'immigrazione, che il presidente aveva rilanciato fin dai primi giorni del suo secondo mandato. La Casa Bianca ha reagito annunciando che valuterà nuove strade legislative, mentre la vicenda si inserisce in una nuova sessione della Corte che affronterà anche altri casi ad alto profilo legati a diritti civili e campagne elettorali.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.giornalone.it/prima-pagina-corriere-della-sera/" target="_blank" rel="noopener">Corriere della Sera <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Geopolitica</span>
+          <h3>Ondata di calore record in Europa: oltre 190 milioni di persone coinvolte, l'OMS convoca un vertice d'emergenza</h3>
+          <p class="excerpt">L'Europa sta vivendo la seconda ondata di calore della stagione, con temperature che hanno battuto record storici in Germania (41,7°C a Coschen, Brandeburgo), Polonia (40,5°C) e Ungheria. Sabato scorso almeno 193 milioni di persone nel continente, di cui 75 milioni solo in Germania, hanno registrato temperature superiori ai 35 gradi, con oltre 200 morti segnalati in Spagna e altre vittime nel resto d'Europa. L'Organizzazione Mondiale della Sanità ha convocato per il 6 luglio una riunione d'emergenza con i referenti nazionali europei per coordinare la risposta sanitaria. Gli esperti climatici avvertono che, senza il contributo del riscaldamento globale di origine antropica, l'ondata di calore si sarebbe comunque verificata ma con temperature di almeno 3,5 gradi più basse, e prevedono un trend simile anche per agosto.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.ilfattoquotidiano.it/2026/06/29/ondata-calore-europa-record-temperature-notizie/8433380/" target="_blank" rel="noopener">Il Fatto Quotidiano <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            La crisi climatica si intreccia sempre più con l'agenda geopolitica europea: la nuova presidenza irlandese del Consiglio UE ha inserito la transizione energetica tra le priorità del semestre, mentre la frequenza crescente di eventi estremi alimenta il dibattito su adattamento infrastrutturale e costi sanitari pubblici in tutto il continente.
           </div></div></div>
         </div>
       </article>
@@ -669,25 +739,14 @@
         <div class="card-body no-img">
           <span class="tag">Geopolitica</span>
           <h3>Myanmar torna arena di competizione tra Cina e India</h3>
-          <p class="excerpt">Visite di stato quasi contemporanee di delegazioni cinesi e indiane a Myanmar segnalano il ritorno del Paese al centro della competizione regionale tra le due potenze asiatiche, in un contesto di persistente instabilità interna dopo il colpo di stato militare.</p>
+          <p class="excerpt">Visite di stato quasi contemporanee di delegazioni cinesi e indiane a Myanmar segnalano il ritorno del Paese al centro della competizione regionale tra le due potenze asiatiche, in un contesto di persistente instabilità interna dopo il colpo di stato militare. Myanmar rappresenta uno snodo strategico per l'accesso all'Oceano Indiano e per le rotte commerciali ed energetiche che collegano la Cina meridionale al Golfo del Bengala, motivo per cui sia Pechino sia Nuova Delhi hanno interesse a consolidare relazioni economiche e infrastrutturali con la giunta militare birmana.</p>
           <div class="card-foot">
             <div class="src-row"><a class="src-pill en" href="https://www.geopoliticalmonitor.com/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Geopolitical Monitor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            Myanmar rappresenta uno snodo strategico per l'accesso all'Oceano Indiano e per le rotte commerciali ed energetiche che collegano la Cina meridionale al Golfo del Bengala, motivo per cui sia Pechino sia Nuova Delhi hanno interesse a consolidare relazioni economiche e infrastrutturali con la giunta militare birmana. Da seguire eventuali nuovi accordi infrastrutturali, portuali o militari.
+            Da seguire eventuali nuovi accordi infrastrutturali, portuali o militari che emergano dalle due visite, così come le reazioni della giunta birmana, storicamente abile nel bilanciare le pressioni delle due potenze senza sbilanciarsi apertamente verso l'una o l'altra.
           </div></div></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body no-img">
-          <span class="tag">Geopolitica</span>
-          <h3>Vertice NATO di Ankara: per Washington è la "pagella" sulle spese difesa</h3>
-          <p class="excerpt">L'amministrazione Trump considera il vertice NATO del 7-8 luglio ad Ankara un banco di prova sui progressi degli alleati verso il target del 5% del PIL in spese per la difesa fissato all'Aja nel 2025, in un contesto già segnato da tensioni commerciali tra gli alleati, Italia in testa dopo lo scontro Trump-Meloni.</p>
-          <div class="card-foot">
-            <div class="src-row"><a class="src-pill" href="https://www.ansa.it/sito/notizie/politica/2026/07/01/riunione-con-meloni-verso-il-vertice-nato-focus-sulle-spese-militari_79e2e49c-6c14-4bef-b177-c57e5fffcc67.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
-          </div>
         </div>
       </article>
     </div>
@@ -698,7 +757,7 @@
     <div class="sec-head">
       <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M10 20V4M16 20v-7M22 20V8" stroke-linecap="round"/></svg></div>
       <h2>Economia</h2>
-      <span class="sec-count">4 notizie</span>
+      <span class="sec-count">6 notizie</span>
     </div>
 
     <div class="cards">
@@ -709,7 +768,7 @@
         <div class="card-body">
           <span class="tag">Economia</span>
           <h3>BCE: rialzo dei tassi a giugno, futuro incerto tra dazi e petrolio</h3>
-          <p class="excerpt">La BCE ha alzato dal 17 giugno i tassi di riferimento di 25 punti base, al 2,25%, 2,40% e 2,65%. A Sintra Lagarde non ha escluso un ulteriore rialzo a luglio, ma gli analisti lo ritengono improbabile per il calo del petrolio. L'inflazione eurozona è attesa al 3% nel 2026, in discesa al 2,3% nel 2027.</p>
+          <p class="excerpt">La BCE ha alzato dal 17 giugno i tassi di riferimento di 25 punti base, portandoli al 2,25%, 2,40% e 2,65% rispettivamente per depositi, rifinanziamento principale e rifinanziamento marginale. Al Forum di Sintra la presidente Christine Lagarde non ha escluso un ulteriore rialzo a luglio, ma la maggioranza degli analisti lo ritiene improbabile visto il recente calo del prezzo del petrolio, che ha allentato parte delle pressioni inflattive. L'inflazione dell'eurozona è attesa al 3% nel 2026, in discesa al 2,3% nel 2027, mentre l'euro si è apprezzato sensibilmente sul dollaro nelle ultime settimane, riflesso di un ripensamento degli investitori internazionali sul ruolo degli Stati Uniti come ancora del sistema finanziario globale. Sul palco di Sintra, accanto a Lagarde, è comparso per la prima volta in un contesto internazionale anche il nuovo presidente della Fed Kevin Warsh, insieme ai governatori Andrew Bailey (Bank of England) e Tiff Macklem (Bank of Canada), in un panel che i mercati seguono con attenzione per capire l'orientamento futuro della politica monetaria globale.</p>
           <div class="card-foot">
             <div class="src-row">
               <a class="src-pill" href="https://www.ecb.europa.eu/press/key/date/2026/html/ecb.sp260629~cb5a2e2168.it.html" target="_blank" rel="noopener">BCE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
@@ -727,7 +786,7 @@
         <div class="card-body no-img">
           <span class="tag">Economia</span>
           <h3>Istat: Pil italiano atteso a +0,7% nel 2026 e nel 2027, ma sale l'inflazione</h3>
-          <p class="excerpt">Le nuove stime Istat indicano una crescita del PIL di +0,7% sia nel 2026 sia nel 2027, trainata dalla domanda interna. Il deflatore dei consumi è previsto al 2,9% nel 2026. La stessa Istat segnala che la traiettoria resta condizionata dalla durata dei conflitti internazionali in corso.</p>
+          <p class="excerpt">Le nuove stime Istat indicano una crescita del PIL di +0,7% sia nel 2026 sia nel 2027, trainata soprattutto dalla domanda interna più che dall'export, penalizzato dalle tensioni commerciali internazionali. Il deflatore dei consumi è previsto al 2,9% nel 2026, mentre l'inflazione mensile è scesa al 3,0% a giugno dal 3,2% di maggio. Nel primo trimestre 2026 il PIL è cresciuto dello 0,2% congiunturale e dello 0,7% tendenziale, un ritmo che colloca l'Italia tra i Paesi a crescita più contenuta in Europa nella seconda metà dell'anno. Il deficit sul PIL nel primo trimestre 2026 è migliorato al 7,8% ma resta ancora lontano dalla soglia del 3% fissata dalle regole di bilancio europee. La stessa Istat segnala che la traiettoria di crescita resta condizionata dalla durata dei conflitti internazionali in corso, dal prezzo dell'energia e dall'evoluzione dei negoziati commerciali con gli Stati Uniti.</p>
           <div class="card-foot">
             <div class="src-row">
               <a class="src-pill" href="https://www.ilsole24ore.com/art/istat-pil-atteso-07percento-2026-e-2027-ma-dipende-durata-conflitto-AI24szTD" target="_blank" rel="noopener">Il Sole 24 Ore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
@@ -744,8 +803,23 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Economia</span>
+          <h3>Wall Street chiude il miglior primo semestre dal 2021, trainata da chip e IA</h3>
+          <p class="excerpt">I principali indici di Wall Street hanno archiviato la sessione di martedì in rialzo, portando a casa il miglior primo semestre dell'anno da tempo: il Dow Jones ha guadagnato l'8,9% da inizio anno (la miglior performance dal 2021), l'S&amp;P 500 il 9,6%, il Nasdaq il 12,8% e il Russell 2000 delle small cap è balzato di quasi il 22%, la miglior partenza dal 1991. A trainare il rally sono stati soprattutto i titoli legati ai semiconduttori e all'intelligenza artificiale: nel solo secondo trimestre 2026 il settore chip ha aggiunto circa 2.000 miliardi di dollari alla capitalizzazione combinata di Micron, Intel e Advanced Micro Devices. Sul fronte valutario il dollaro ha continuato a rafforzarsi contro le altre principali divise, con l'euro in oscillazione attorno a 1,14, mentre gli operatori restano in attesa dei dati sull'occupazione USA di giugno e delle prime dichiarazioni del neo-presidente della Fed Kevin Warsh sull'orientamento della politica monetaria.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.ilsole24ore.com/art/borsa-indici-mercoledi-1-luglio-2026-AIppESxD" target="_blank" rel="noopener">Il Sole 24 Ore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Il report ADP di giugno ha mostrato un'occupazione privata più debole delle attese, con 98mila posti di lavoro creati contro le stime degli analisti, un dato che si affianca al report JOLTS più solido di martedì e che precede la pubblicazione dei dati ufficiali sui salari non agricoli, l'evento macroeconomico più atteso della settimana dai mercati.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Economia</span>
           <h3>Dazi Trump-Italia: vino e gas nel mirino dello scontro diplomatico</h3>
-          <p class="excerpt">Lo scontro personale tra Trump e Meloni rischia di tradursi in conseguenze economiche concrete: l'Italia importa circa il 45% del gas naturale liquefatto dagli USA, mentre l'export di vino è già calato dell'11% nel primo trimestre 2026, fino al -20,5% negli Stati Uniti.</p>
+          <p class="excerpt">Lo scontro personale tra Trump e Meloni rischia di tradursi in conseguenze economiche concrete: l'Italia importa circa il 45% del proprio gas naturale liquefatto dagli USA, un legame energetico che rende Roma particolarmente esposta a eventuali ritorsioni commerciali. L'export di vino italiano è già calato dell'11% nel primo trimestre 2026, con una flessione che sale fino al -20,5% sul solo mercato statunitense, storicamente tra i principali sbocchi per l'enologia nazionale. Il contesto risale a dichiarazioni di Trump a Davos, dove aveva lasciato intendere che la sua simpatia personale per Meloni avrebbe potuto tradursi in un trattamento tariffario di favore per l'Italia, ipotesi poi vanificata dal deterioramento dei rapporti personali tra i due leader nelle scorse settimane. Il vertice NATO di Ankara del 7-8 luglio rappresenta ora la prossima occasione concreta per un possibile disgelo diplomatico con ricadute dirette anche sul piano commerciale.</p>
           <div class="card-foot">
             <div class="src-row">
               <a class="src-pill" href="https://www.fanpage.it/politica/la-lite-tra-meloni-e-trump-mette-a-rischio-litalia-dazi-gas-e-vino-cosa-ce-in-ballo/" target="_blank" rel="noopener">Fanpage <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
@@ -763,9 +837,20 @@
         <div class="card-body no-img">
           <span class="tag">Economia</span>
           <h3>Mercati globali: won coreano ai minimi, la Bank of England valuta un "kill switch" per il trading IA</h3>
-          <p class="excerpt">Il won sudcoreano è scivolato ai minimi dalla crisi finanziaria globale con l'inflazione di Seul al 3,2%. La Bank of England valuta un dispositivo di emergenza per bloccare i trading bot IA in caso di rischio sistemico, dopo simulazioni su vendite simultanee di mercato.</p>
+          <p class="excerpt">Il won sudcoreano è scivolato ai minimi dalla crisi finanziaria globale del 2008-2009, con l'inflazione di Seul salita al 3,2% e la banca centrale locale sotto pressione per gestire contemporaneamente il cambio debole e i prezzi in risalita. La Bank of England, dal canto suo, valuta l'introduzione di un dispositivo di emergenza — un vero e proprio "kill switch" — per bloccare l'operatività dei trading bot basati su intelligenza artificiale in caso di rischio sistemico per i mercati, dopo che alcune simulazioni interne hanno mostrato scenari di vendite simultanee e automatiche capaci di amplificare bruscamente la volatilità. Il tema si inserisce in un dibattito più ampio tra i regolatori finanziari internazionali sul ruolo crescente dell'IA nel trading algoritmico ad alta frequenza.</p>
           <div class="card-foot">
             <div class="src-row"><a class="src-pill" href="https://www.cnbc.com/2026/07/01/stock-market-today-live-updates.html" target="_blank" rel="noopener">CNBC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Economia</span>
+          <h3>Yen ai minimi dal 1986: la Bank of Japan sotto pressione</h3>
+          <p class="excerpt">Lo yen giapponese ha toccato il livello più debole contro il dollaro dal 1986, dopo essere sceso di oltre il 3% dall'inizio del 2026 e di oltre l'11% nell'arco degli ultimi tre anni. Il deprezzamento riflette il persistere di un differenziale di tassi ampio tra Stati Uniti e Giappone e alimenta pressioni inflattive interne sui beni importati, mettendo la Bank of Japan in una posizione scomoda tra la necessità di sostenere la valuta e quella di non soffocare una ripresa economica ancora fragile. Gli analisti valutano probabile un intervento verbale o diretto sul cambio da parte delle autorità di Tokyo nelle prossime settimane, mentre il differenziale con la politica monetaria della Fed resta la variabile chiave da monitorare.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill en" href="https://www.schwab.com/learn/story/stock-market-update-open" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Charles Schwab <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
           </div>
         </div>
       </article>
@@ -777,7 +862,7 @@
     <div class="sec-head">
       <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5V6a2 2 0 0 1 2-2h13v15.5M4 19.5A1.5 1.5 0 0 0 5.5 21H19M4 19.5A1.5 1.5 0 0 1 5.5 18H19"/></svg></div>
       <h2>Cultura</h2>
-      <span class="sec-count">3 notizie</span>
+      <span class="sec-count">4 notizie</span>
     </div>
 
     <div class="cards">
@@ -788,7 +873,7 @@
         <div class="card-body">
           <span class="tag">Cultura</span>
           <h3>Premio Strega 2026: dodici finalisti verso la finale dell'8 luglio in Campidoglio</h3>
-          <p class="excerpt">Sono stati annunciati i dodici libri finalisti dell'80esima edizione del Premio Strega. La serata finale si terrà l'8 luglio in piazza del Campidoglio a Roma. In parallelo, al MACRO una mostra curata da Maria Luisa Frisa e Mario Lupano ricostruisce, con oltre mille volumi, la storia del premio dal 1947 a oggi.</p>
+          <p class="excerpt">Sono stati annunciati i dodici libri finalisti dell'80esima edizione del Premio Strega, il riconoscimento letterario più seguito e discusso d'Italia. La serata finale, con proclamazione del vincitore, si terrà l'8 luglio in piazza del Campidoglio a Roma, in una cornice che da decenni fa da specchio al dibattito editoriale e mediatico nazionale. In parallelo, al MACRO di Roma è stata inaugurata una mostra curata da Maria Luisa Frisa e Mario Lupano che, attraverso oltre mille volumi, ricostruisce l'intera storia del premio dal 1947 a oggi, intitolata "Uno, cinque, dodici. Ottant'anni del Premio Strega". L'esposizione è organizzata come una vera e propria "biblioteca ideale" in sequenza cronologica, capace di raccontare protagonisti, polemiche e narrazioni mediatiche che hanno accompagnato le settantanove edizioni precedenti, fino ad arrivare alla dozzina di quest'anno.</p>
           <div class="card-foot">
             <div class="src-row">
               <a class="src-pill" href="https://premiostrega.it/PS/i-dodici-libri-candidati-alla-lxxx-edizione-del-premio-strega/" target="_blank" rel="noopener">Premio Strega <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
@@ -806,7 +891,7 @@
         <div class="card-body no-img">
           <span class="tag">Cultura</span>
           <h3>Biennale Arte 2026: presentato il Padiglione Italia</h3>
-          <p class="excerpt">Il ministro della Cultura Alessandro Giuli ha presentato il progetto del Padiglione Italia per la Biennale Arte di Venezia, definendolo espressione di "eccellenza artistica di grande forza e qualità".</p>
+          <p class="excerpt">Il ministro della Cultura Alessandro Giuli ha presentato ufficialmente il progetto del Padiglione Italia per la prossima Biennale Arte di Venezia, definendolo espressione di "eccellenza artistica di grande forza e qualità". La Biennale resta uno degli appuntamenti più seguiti al mondo per l'arte contemporanea, capace di orientare per mesi il dibattito critico internazionale e di attrarre a Venezia curatori, collezionisti e istituzioni museali da ogni continente. La scelta del progetto per il padiglione nazionale è da sempre oggetto di attenzione e talvolta di polemica nell'ambiente artistico italiano, dato il suo ruolo di vetrina identitaria del Paese in uno dei contesti espositivi più prestigiosi al mondo. Nei prossimi mesi sarà da seguire con attenzione la ricezione critica del padiglione da parte della stampa internazionale specializzata, che tradizionalmente orienta in modo significativo la percezione pubblica della manifestazione.</p>
           <div class="card-foot">
             <div class="src-row"><a class="src-pill" href="https://cultura.gov.it/comunicato/28795" target="_blank" rel="noopener">Ministero della Cultura <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
@@ -820,8 +905,19 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Cultura</span>
+          <h3>RIPIDO Illustration Festival: Brunico diventa galleria diffusa dal 4 luglio</h3>
+          <p class="excerpt">Dal 4 luglio al 16 agosto Brunico, in Alto Adige, si trasforma in una galleria diffusa dedicata interamente all'illustrazione contemporanea grazie al RIPIDO Illustration Festival, che porta in città mostre personali, progetti editoriali e opere collettive distribuite tra vie, negozi e spazi pubblici. Tra i protagonisti dell'edizione 2026 figura Beppe Giacobbe, storica firma dell'illustrazione italiana e a lungo collaboratore del Corriere della Sera, che presenta una selezione di lavori rappresentativa della sua carriera pluridecennale. Il festival si inserisce in un trend più ampio di valorizzazione dell'illustrazione come linguaggio autonomo, non più solo al servizio dell'editoria, capace di attirare pubblici trasversali e di rivitalizzare centri urbani di medie dimensioni durante la stagione estiva.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.lobodilattice.com/mostre-eventi/ripido-illustration-festival-1" target="_blank" rel="noopener">LoboDiLattice <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Cultura</span>
           <h3>Editoria estiva: le novità in libreria di inizio luglio</h3>
-          <p class="excerpt">Tra le uscite di inizio luglio "Troppi pensieri" di Raffaele Morelli e "L'influsso dei fagiani" della scrittrice tedesca Antje Rávik Strubel, in uscita il 10 luglio, mentre le librerie propongono ampie selezioni di letture per l'estate.</p>
+          <p class="excerpt">Tra le uscite di inizio luglio spiccano "Troppi pensieri" di Raffaele Morelli e "L'influsso dei fagiani" della scrittrice tedesca Antje Rávik Strubel, in libreria dal 10 luglio, mentre le principali librerie italiane propongono ampie selezioni di letture pensate per l'estate, tra narrativa di intrattenimento, saggistica e nuove traduzioni dall'estero. Il periodo che precede la pausa agostana resta tradizionalmente uno dei più vivaci per il mercato editoriale italiano, complice anche la vetrina mediatica offerta dal Premio Strega, la cui finale è in programma l'8 luglio, capace di orientare gli acquisti dei lettori verso i titoli in concorso e i loro autori.</p>
           <div class="card-foot">
             <div class="src-row">
               <a class="src-pill" href="https://www.lopinionista.it/libri-luglio-2026-227146.html" target="_blank" rel="noopener">L'Opinionista <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
@@ -838,7 +934,7 @@
     <div class="sec-head">
       <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v6.2L4.8 18a1.8 1.8 0 0 0 1.5 2.8h11.4a1.8 1.8 0 0 0 1.5-2.8L14 9.2V3"/></svg></div>
       <h2>Scienza e natura</h2>
-      <span class="sec-count">3 notizie</span>
+      <span class="sec-count">4 notizie</span>
     </div>
 
     <div class="cards">
@@ -849,7 +945,7 @@
         <div class="card-body">
           <span class="tag">Scienza</span>
           <h3>JUNO: la prima misura di precisione sui neutrini</h3>
-          <p class="excerpt">L'osservatorio di neutrini JUNO ha prodotto la sua prima misurazione scientifica di rilievo, ottenendo una delle stime più precise mai raggiunte sul comportamento di queste particelle, fondamentali per capire l'asimmetria tra materia e antimateria nell'universo.</p>
+          <p class="excerpt">L'osservatorio di neutrini JUNO, in Cina, ha prodotto la sua prima misurazione scientifica di rilievo, ottenendo una delle stime più precise mai raggiunte sul comportamento di queste particelle elementari, fondamentali per capire l'asimmetria tra materia e antimateria nell'universo e per completare il quadro del modello standard della fisica. JUNO è tra gli esperimenti di fisica delle particelle più ambiziosi attualmente in corso a livello internazionale, con un rivelatore sotterraneo di dimensioni e sensibilità senza precedenti pensato specificamente per misurare l'ordinamento di massa dei neutrini, uno dei problemi aperti più rilevanti della fisica contemporanea. Questo primo risultato conferma le aspettative sulla capacità dello strumento di affinare in modo significativo le misure delle proprietà dei neutrini rispetto agli esperimenti precedenti, aprendo la strada a nuove verifiche sperimentali nei prossimi anni e rafforzando la posizione della Cina come polo di riferimento per la fisica delle alte energie.</p>
           <div class="card-foot">
             <div class="src-row"><a class="src-pill en" href="https://www.nature.com/news" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Nature <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
@@ -864,7 +960,7 @@
         <div class="card-body no-img">
           <span class="tag">Scienza</span>
           <h3>Scoperto il meccanismo genetico che rende "immortali" le cellule del melanoma</h3>
-          <p class="excerpt">Un gruppo di ricerca ha identificato l'ingrediente genetico mancante che permette alle cellule di melanoma di eludere l'invecchiamento cellulare, aprendo la strada a nuovi possibili bersagli terapeutici per bloccare questo tumore della pelle.</p>
+          <p class="excerpt">Un gruppo di ricerca ha identificato l'ingrediente genetico mancante che permette alle cellule di melanoma di eludere la senescenza cellulare, il naturale processo di invecchiamento che normalmente blocca la proliferazione incontrollata delle cellule danneggiate. La scoperta chiarisce un tassello importante di come questo tumore della pelle, tra i più aggressivi quando diagnosticato in stadio avanzato, riesca a raggirare le difese naturali dell'organismo, aprendo la strada a nuovi possibili bersagli terapeutici pensati per riattivare artificialmente il meccanismo di invecchiamento nelle cellule tumorali. Comprendere a fondo questo meccanismo genetico di "immortalizzazione" rappresenta un tassello rilevante anche per la ricerca oncologica in senso più ampio, dato che processi simili sono coinvolti in numerosi altri tipi di cancro, con la prospettiva concreta di trattamenti più mirati e meno tossici rispetto alle terapie oggi disponibili.</p>
           <div class="card-foot">
             <div class="src-row"><a class="src-pill en" href="https://www.sciencedaily.com/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> ScienceDaily <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
@@ -879,32 +975,43 @@
         <div class="card-body no-img">
           <span class="tag">Scienza</span>
           <h3>Un misterioso bagliore di raggi gamma al centro della Via Lattea: materia oscura o pulsar nascoste?</h3>
-          <p class="excerpt">Nuove analisi suggeriscono che l'eccesso di raggi gamma osservato al centro della nostra galassia potrebbe derivare da materia oscura piuttosto che da stelle di neutroni nascoste, riaprendo un dibattito scientifico che dura da oltre un decennio.</p>
+          <p class="excerpt">Nuove analisi suggeriscono che l'eccesso di raggi gamma osservato al centro della nostra galassia, noto da oltre un decennio come "Galactic Center Excess", potrebbe derivare effettivamente da materia oscura piuttosto che da un affollamento di pulsar millisecondo nascoste e non ancora risolte individualmente dagli strumenti attuali. Il dibattito è tra i più accesi dell'astrofisica delle particelle: se confermata, l'ipotesi della materia oscura fornirebbe la prima prova indiretta concreta dell'esistenza di questa componente invisibile dell'universo, che si stima costituisca circa il 27% della massa-energia totale del cosmo ma che finora è sfuggita a ogni tentativo di rivelazione diretta nei laboratori sotterranei di tutto il mondo. Nuove osservazioni con telescopi a raggi gamma di prossima generazione dovrebbero permettere entro pochi anni di distinguere con maggiore sicurezza tra le due ipotesi.</p>
           <div class="card-foot">
             <div class="src-row"><a class="src-pill en" href="https://www.nature.com/nature/articles?year=2026" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Nature <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Scienza</span>
+          <h3>Diesel più pulito: basta un po' d'acqua nel carburante per tagliare l'inquinamento del 60%</h3>
+          <p class="excerpt">Un gruppo di ricerca ha dimostrato che una modifica sorprendentemente semplice al carburante diesel — l'aggiunta di piccole quantità d'acqua in emulsione — può ridurre drasticamente le emissioni inquinanti dei motori diesel, con cali di oltre il 60% per alcuni inquinanti chiave legati alla combustione incompleta. Il meccanismo sfrutta la cosiddetta "micro-esplosione" delle goccioline d'acqua disperse nel carburante durante la combustione, che favorisce una polverizzazione più fine e una combustione più efficiente e completa, riducendo la formazione di particolato e ossidi di azoto. Si tratta di una soluzione a basso costo e potenzialmente applicabile su larga scala ai motori diesel già esistenti, un aspetto rilevante per il settore dei trasporti pesanti e della logistica, dove la transizione verso motorizzazioni completamente elettriche resta più lenta e complessa rispetto al trasporto passeggeri.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill en" href="https://www.sciencedaily.com/news/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> ScienceDaily <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
           </div>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- CICLISMO -->
-  <section class="topic" id="ciclismo">
+  <!-- SPORT -->
+  <section class="topic" id="sport">
     <div class="sec-head">
-      <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 9 9h5l3.5 8.5M9 9 7 6h3M9 9l3 5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <h2>Ciclismo</h2>
-      <span class="sec-count">2 notizie</span>
+      <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 5H5a3 3 0 0 0 3 4M16 5h3a3 3 0 0 1-3 4"/><path d="M12 13v3M9 20h6M10 20v-2.5a2 2 0 0 1 4 0V20" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h2>Sport</h2>
+      <span class="sec-count">5 notizie</span>
     </div>
 
     <div class="cards">
       <article class="card">
         <div class="card-img-wrap">
-          <img class="card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Route_of_the_2026_Tour_de_France.png?width=1400" alt="Percorso del Tour de France 2026" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#ciclismo .cards article:nth-child(1) .card-body').classList.add('no-img');">
+          <img class="card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Route_of_the_2026_Tour_de_France.png?width=1400" alt="Percorso del Tour de France 2026" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#sport .cards article:nth-child(1) .card-body').classList.add('no-img');">
         </div>
         <div class="card-body">
           <span class="tag">Ciclismo</span>
           <h3>Tour de France 2026: tutto pronto per il Grande Départ da Barcellona</h3>
-          <p class="excerpt">Il 4 luglio prende il via da Barcellona la 113ª edizione del Tour de France, con una cronometro a squadre come tappa inaugurale per la prima volta dal 1971. Percorso di 3.333 km con 21 tappe: sfida aperta tra Pogačar, Vingegaard, Pidcock e la rivelazione Paul Seixas. Arrivo il 26 luglio sugli Champs-Élysées.</p>
+          <p class="excerpt">Il 4 luglio prende il via da Barcellona la 113ª edizione del Tour de France, con una cronometro a squadre come tappa inaugurale per la prima volta dal 1971. Il percorso misura complessivamente 3.333 km con 21 tappe e 54.450 metri di dislivello, comprensivi di 5 arrivi in salita e due prove contro il tempo, per quella che si annuncia come una delle edizioni più equilibrate degli ultimi anni. La sfida per la maglia gialla è apertissima tra il campione uscente Tadej Pogačar, un redivivo Jonas Vingegaard reduce da una solida vittoria di classifica generale al Giro d'Italia, il britannico Tom Pidcock e la giovane rivelazione francese Paul Seixas, che il pubblico di casa spera possa outsiderare la classifica generale. L'arrivo finale è previsto il 26 luglio sugli Champs-Élysées di Parigi, a chiudere tre settimane di gara seguite in diretta anche da NBC Sports e Peacock negli Stati Uniti, segno della crescita di interesse internazionale per la corsa.</p>
           <div class="card-foot">
             <div class="src-row">
               <a class="src-pill en" href="https://www.cyclingnews.com/races/tour-de-france-2026/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Cyclingnews <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
@@ -920,9 +1027,42 @@
 
       <article class="card">
         <div class="card-body no-img">
+          <span class="tag">Tennis</span>
+          <h3>Wimbledon 2026: Sinner supera Borges e vola al terzo turno, è record di vittorie Slam per un italiano</h3>
+          <p class="excerpt">Jannik Sinner ha battuto il portoghese Nuno Borges in tre set, 7-6(4) 7-6(2) 6-4, al secondo turno di Wimbledon, in due ore e 34 minuti di gioco chiusi al secondo match point utile. Con questa vittoria, la 95ª in carriera nei tornei del Grande Slam, Sinner diventa l'italiano con più successi nella storia dei Major maschili in singolare, superando definitivamente Nicola Pietrangeli. Al terzo turno il campione di Sesto Pusteria affronterà lo statunitense Jenson Brooksby, numero 81 del ranking mondiale, in un match sulla carta abbordabile ma da non sottovalutare vista l'imprevedibilità del giocatore americano. Nel tabellone maschile avanzano anche Novak Djokovic, che ha superato Stefanos Tsitsipas, mentre tra gli italiani restano in corsa anche Flavio Cobolli, Lorenzo Sonego e Matteo Berrettini, in un'edizione che si conferma particolarmente ricca di rappresentanza azzurra sia in singolare sia in doppio.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://www.eurosport.it/tennis/wimbledon/2026/wimbledon-2026-day-3-mercoledi-1-luglio-notizie-e-aggiornamenti-in-liveblog-jannik-sinner-torna-in-campo-secondo-turno-per-djokovic-e-sabalenka_sto23315018/story.shtml" target="_blank" rel="noopener">Eurosport <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.adnkronos.com/sport/diretta-sinner-borges-oggi-wimbledon-2026-risultato-live_VCCKsWsEFPQNBKScaDTsT" target="_blank" rel="noopener">Adnkronos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Il tabellone di giornata 4 luglio vede impegnati anche gli altri azzurri, con un programma completo che conferma quanto Wimbledon 2026 sia una delle edizioni più seguite di sempre per il tennis italiano, in un contesto in cui il movimento tricolore vive una fase di generale espansione dopo i successi delle ultime stagioni.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Calcio</span>
+          <h3>Calciomercato: Juventus all'assalto di Kolo Muani, il Milan ufficializza Gonçalo Ramos</h3>
+          <p class="excerpt">Si è aperta ufficialmente il 1° luglio la finestra di calciomercato estivo e la Serie A è già entrata nel vivo delle trattative. La Juventus ha presentato una seconda offerta da 33 milioni di euro al Paris Saint-Germain per l'attaccante francese Randal Kolo Muani, a fronte di una richiesta parigina di 40 milioni: le distanze si sono ridotte e le parti sembrano ora più vicine a un'intesa. Il club bianconero lavora in parallelo anche sul fronte portieri, con contatti per Mile Svilar dopo il tentativo per Guglielmo Vicario. Il Milan ha invece ufficializzato l'arrivo a titolo definitivo di Gonçalo Ramos dal PSG con un contratto fino al 2031, mentre ha dovuto rinunciare al giovane talento Mattia Liberali, che ha scelto di proseguire la propria carriera al Como. L'Inter, dal canto suo, osserva con calma l'evoluzione del mercato dopo un avvio d'estate già molto intenso, mentre la Roma ha raggiunto un accordo con il Cagliari per il difensore Alessandro Romano in prestito con obbligo di riscatto.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.tuttosport.com/calcio/calciomercato" target="_blank" rel="noopener">Tuttosport <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Il mercato di Serie A si preannuncia particolarmente movimentato in questa sessione estiva, con diversi club impegnati contemporaneamente su più fronti: rinforzare la rosa per la prossima stagione e, in alcuni casi, sfoltire l'organico da esuberi tecnici, in un equilibrio delicato tra ambizioni sportive e sostenibilità dei conti imposta dai parametri finanziari UEFA.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
           <span class="tag">Ciclismo</span>
           <h3>Campionati nazionali: Ganna e Longo Borghini campioni d'Italia, titoli anche per Kelderman e Benito</h3>
-          <p class="excerpt">Nella settimana che precede il Tour, Filippo Ganna ha vinto la crono tricolore mentre Elisa Longo Borghini ha conquistato il suo settimo titolo italiano in linea a Pordenone. All'estero titoli per Wilco Kelderman in Olanda, Rune Herregodts in Belgio e Mireia Benito in Spagna.</p>
+          <p class="excerpt">Nella settimana che precede il Tour de France, Filippo Ganna ha vinto la cronometro tricolore mentre Elisa Longo Borghini ha conquistato il suo settimo titolo italiano in linea a Pordenone, confermandosi la corridora di riferimento del ciclismo femminile azzurro. All'estero titoli anche per Wilco Kelderman in Olanda, tornato alla vittoria nel campionato nazionale undici anni dopo il suo unico precedente successo del 2015, per la sorpresa Rune Herregodts in Belgio, che ha conquistato il titolo a Brasschaat, e per Mireia Benito in Spagna, che ha vinto per il quarto anno consecutivo la cronometro femminile. Le maglie nazionali conquistate in questi giorni accompagneranno i rispettivi corridori per l'intera stagione, Tour de France compreso, offrendo visibilità aggiuntiva nelle gare a più alta esposizione mediatica dell'estate ciclistica.</p>
           <div class="card-foot">
             <div class="src-row">
               <a class="src-pill" href="https://www.tuttobiciweb.it/" target="_blank" rel="noopener">TuttoBiciWeb <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
@@ -933,6 +1073,17 @@
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
             Kelderman è tornato alla vittoria nel campionato olandese undici anni dopo il suo unico precedente titolo del 2015; in Belgio Herregodts ha sorpreso tutti conquistando il titolo a Brasschaat; in Spagna Benito ha vinto per il quarto anno consecutivo la cronometro femminile. Le maglie conquistate accompagneranno i corridori per l'intera stagione, Tour de France compreso.
           </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Tennis</span>
+          <h3>Wimbledon, giornata azzurra: Cobolli riparte dal 6-7 7-6 6-4, programma fitto per il day 4</h3>
+          <p class="excerpt">Il primo turno tra Flavio Cobolli e l'argentino Mariano Navone è stato sospeso mercoledì sera per sopraggiunta oscurità, con l'italiano avanti per 1-6 7-6 6-4 e chiamato a completare il match nella giornata di giovedì 2 luglio prima di scendere eventualmente in campo per il secondo turno. La giornata odierna si annuncia comunque densa di impegni per l'Italia, che a Wimbledon 2026 può contare su una rappresentanza particolarmente ampia tra singolare maschile e femminile, con Berrettini, Sonego e Paolini tra i protagonisti attesi del programma completo diffuso da Eurosport. Il torneo londinese, in corso dal 29 giugno al 12 luglio sull'erba dell'All England Club, resta lo Slam più prestigioso della stagione e uno dei più seguiti dal pubblico italiano, complice il momento d'oro del movimento tennistico azzurro degli ultimi anni.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.eurosport.it/tennis/wimbledon/2026/il-match-di-primo-turno-tra-flavio-cobolli-e-mariano-navone-e-stato-sospeso-per-oscurita-si-riprendera-domani-con-litaliano-avanti-1-6-7-6-6-4_sto23314854/story.shtml" target="_blank" rel="noopener">Eurosport <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          </div>
         </div>
       </article>
     </div>
@@ -1016,16 +1167,16 @@
       <h2>Cosa approfondire oggi</h2>
     </div>
     <div class="dd-grid">
-      <div class="dd-card"><div class="dd-num">01</div><h4>Vertice NATO di Ankara (7-8 luglio)</h4><p>È il primo grande test multilaterale dopo lo strappo personale tra Trump e Meloni: in ballo la corsa verso il 5% del PIL in spese militari e il dossier del fondo SAFE, da cui dipendono 14,9 miliardi di euro per l'Italia con ricadute dirette sulla prossima legge di bilancio.</p></div>
-      <div class="dd-card"><div class="dd-num">02</div><h4>Tregua Iran-USA sempre più fragile</h4><p>Gli analisti sono concordi: le trattative più difficili — programma nucleare e garanzie di sicurezza — devono ancora arrivare. Una rottura avrebbe conseguenze immediate su prezzo del petrolio e inflazione globale, un fattore che la BCE ha già segnalato come elemento di rischio.</p></div>
-      <div class="dd-card"><div class="dd-num">03</div><h4>Tour de France, Grande Départ da Barcellona il 4 luglio</h4><p>Mancano due giorni all'inizio di quella che si annuncia come una delle edizioni più equilibrate degli ultimi anni, con Pogačar sfidato da un Vingegaard in gran forma dopo il Giro d'Italia.</p></div>
+      <div class="dd-card"><div class="dd-num">01</div><h4>Vertice NATO di Ankara (7-8 luglio)</h4><p>È il primo grande test multilaterale dopo lo strappo personale tra Trump e Meloni: in ballo la corsa verso il 5% del PIL in spese militari, il dossier del fondo SAFE da cui dipendono 14,9 miliardi per l'Italia, e il nodo del sostegno a Kiev in un momento di nuova escalation russa su Kiev.</p></div>
+      <div class="dd-card"><div class="dd-num">02</div><h4>Legge elettorale, il rebus preferenze slitta al 14 luglio</h4><p>Il nodo tra Fratelli d'Italia (che le vorrebbe) e Lega e Forza Italia (scettiche) blocca ancora la riforma. Meloni valuterebbe di sacrificarle pur di chiudere entro l'estate, mentre Salvini apre in privato all'ipotesi di elezioni anticipate in caso di stallo prolungato.</p></div>
+      <div class="dd-card"><div class="dd-num">03</div><h4>Ondata di calore record e vertice OMS del 6 luglio</h4><p>Oltre 190 milioni di europei coinvolti, record storici in Germania, Polonia e Ungheria e oltre 200 morti solo in Spagna: l'Organizzazione Mondiale della Sanità convoca un'emergenza continentale mentre gli esperti indicano un trend simile anche per agosto.</p></div>
     </div>
   </section>
 
 </main>
 
 <footer>
-  Briefing generato automaticamente il 2 luglio 2026 · Fonti: ANSA, Il Sole 24 Ore, Fanpage, Sky TG24, Sky Sport, Adnkronos, Kyiv Independent, Al Jazeera, Wikipedia, House of Commons Library, Geopolitical Monitor, CNBC, Money.it, BCE, Premio Strega, Ministero della Cultura, L'Opinionista, Illibraio, Nature, ScienceDaily, TuttoBiciWeb, SpazioCiclismo, Cyclingnews, YouTube, Firstpost Live · Immagini: Wikimedia Commons, YouTube
+  Briefing generato automaticamente il 2 luglio 2026 · Fonti: ANSA, Corriere della Sera, Il Sole 24 Ore, Il Fatto Quotidiano, Fanpage, Sky TG24, Sky Sport, Adnkronos, Euronews, Kyiv Independent, Al Jazeera, Geopolitical Monitor, CNBC, Charles Schwab, Money.it, BCE, Premio Strega, Ministero della Cultura, L'Opinionista, Illibraio, LoboDiLattice, Nature, ScienceDaily, Eurosport, Tuttosport, TuttoBiciWeb, SpazioCiclismo, Cyclingnews, YouTube, Firstpost Live · Immagini: Wikimedia Commons, YouTube
 </footer>
 
 <button id="toTop" aria-label="Torna su" title="Torna su"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
