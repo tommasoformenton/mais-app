@@ -23,6 +23,7 @@
     --teal:#14b8a6; --teal-dk:#0f7a76;
     --orange:#e8871e; --orange-dk:#b5650f;
     --pink:#d6336c; --pink-dk:#a61e4d;
+    --indigo:#5c6bc0; --indigo-dk:#3949ab;
     --shadow-sm:0 1px 2px rgba(20,22,30,0.04), 0 1px 1px rgba(20,22,30,0.03);
     --shadow-md:0 10px 30px -10px rgba(20,22,30,0.16);
     --shadow-lg:0 20px 50px -12px rgba(20,22,30,0.22);
@@ -181,6 +182,7 @@
   }
 
   #politica .sec-badge{background:linear-gradient(135deg,var(--red),var(--red-dk));}
+  #cronaca .sec-badge{background:linear-gradient(135deg,var(--indigo),var(--indigo-dk));}
   #geopolitica .sec-badge{background:linear-gradient(135deg,var(--blue),var(--blue-dk));}
   #economia .sec-badge{background:linear-gradient(135deg,var(--green),var(--green-dk));}
   #cultura .sec-badge{background:linear-gradient(135deg,var(--purple),var(--purple-dk));}
@@ -220,11 +222,13 @@
     padding:5px 10px; border-radius:8px; margin-bottom:14px;
   }
   #politica .tag{background:rgba(229,72,77,0.12); color:var(--red-dk);}
+  #cronaca .tag{background:rgba(92,107,192,0.12); color:var(--indigo-dk);}
   #geopolitica .tag{background:rgba(59,130,196,0.12); color:var(--blue-dk);}
   #economia .tag{background:rgba(28,157,99,0.12); color:var(--green-dk);}
   #cultura .tag{background:rgba(155,93,229,0.12); color:var(--purple-dk);}
   #scienza .tag{background:rgba(20,184,166,0.12); color:var(--teal-dk);}
   html.dark #politica .tag{color:#ff8b8e;}
+  html.dark #cronaca .tag{color:#aab4ea;}
   html.dark #geopolitica .tag{color:#8ec3ec;}
   html.dark #economia .tag{color:#6fe0a8;}
   html.dark #cultura .tag{color:#c9a3f5;}
@@ -520,9 +524,9 @@
     <p class="hero-sub">La rassegna quotidiana che raccoglie le notizie che contano, con contesto e fonti verificate.</p>
     <div class="meta-chips">
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> Venerdì 3 luglio 2026</span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> Aggiornato alle 09:14</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> Aggiornato alle 15:29</span>
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> <span id="readTime">— min</span> di lettura</span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg> 7 ambiti · 39 notizie</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg> 8 ambiti · 47 notizie</span>
     </div>
   </div>
 </header>
@@ -530,6 +534,7 @@
 <div class="navbar-wrap">
   <nav id="mainnav">
     <a href="#politica"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21h16M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg>Politica</a>
+    <a href="#cronaca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg>Cronaca</a>
     <a href="#geopolitica"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.8 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.8-3.8-9s1.3-6.4 3.8-9Z"/></svg>Geopolitica</a>
     <a href="#economia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M10 20V4M16 20v-7M22 20V8" stroke-linecap="round"/></svg>Economia</a>
     <a href="#cultura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5V6a2 2 0 0 1 2-2h13v15.5M4 19.5A1.5 1.5 0 0 0 5.5 21H19M4 19.5A1.5 1.5 0 0 1 5.5 18H19"/></svg>Cultura</a>
@@ -547,7 +552,7 @@
     <div class="sec-head">
       <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21h16M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg></div>
       <h2>Politica italiana</h2>
-      <span class="sec-count">6 notizie</span>
+      <span class="sec-count">7 notizie</span>
     </div>
 
     <div class="cards">
@@ -637,10 +642,129 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Politica</span>
+          <h3>Fine dello sconto sulle accise: da oggi pieno più caro di 3 euro, imprese in pressing sul governo</h3>
+          <p class="excerpt">Si è esaurito il 3 luglio lo sconto sulle accise di benzina e gasolio introdotto dal governo nei mesi scorsi per calmierare i prezzi dei carburanti: da domani, sabato 4 luglio, il gasolio salirà in media a 1,94 euro al litro sulla rete ordinaria (2,02 euro in autostrada) e la benzina a 1,86 euro (1,95 euro in autostrada), con un aggravio stimato di circa 3,05 euro per un pieno medio. La misura arriva in una giornata di fitta agenda economica per l'esecutivo: a Roma si è tenuta l'assemblea generale di Assovetro con l'intervento del ministro delle Imprese Adolfo Urso su competitività, energia e manifattura, mentre a Torino la Fim-Cisl ha convocato una conferenza stampa sui dati di produzione e occupazione di Stellantis nel secondo trimestre, che segna una ripresa del 13,7% con oltre 252mila unità prodotte tra auto e veicoli commerciali. A Civitavecchia si tiene inoltre l'assemblea nazionale di Federagenti, con le associazioni datoriali che chiedono al governo interventi strutturali sul costo dell'energia e sulla logistica portuale.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://www.ansa.it/canale_motori/notizie/mondo_motori/2026/07/02/stop-allo-sconto-sulle-accise-aumento-di-3-euro-a-pieno_701f3840-29fd-4f8d-b89c-168bbe1bbc3a.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://teleborsa.ansa.it/notiziario/finanza/eventi-e-scadenze-del-3-luglio-2026/" target="_blank" rel="noopener">Teleborsa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Politica</span>
           <h3>Bonetti contro Salvini: "Isolare gli amici di Putin nella maggioranza"</h3>
           <p class="excerpt">Torna a farsi sentire lo scontro politico interno sulla postura filo-russa di alcuni esponenti della maggioranza, con la senatrice di Italia Viva Elena Bonetti che chiede di "isolare gli amici di Putin" all'interno delle forze di governo, in un botta e risposta acceso con la Lega di Matteo Salvini. La polemica si inserisce nel dibattito più ampio sulla linea italiana in vista del vertice NATO di Ankara del 7-8 luglio, dove il sostegno a Kiev resta uno dei dossier più delicati per la tenuta della maggioranza, storicamente attraversata da sensibilità diverse tra Fratelli d'Italia, più atlantista, e componenti della Lega più caute su un sostegno militare senza limiti temporali all'Ucraina.</p>
           <div class="card-foot">
             <div class="src-row"><a class="src-pill" href="https://www.ansa.it/sito/notizie/politica/politica.shtml" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CRONACA -->
+  <section class="topic" id="cronaca">
+    <div class="sec-head">
+      <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg></div>
+      <h2>Cronaca</h2>
+      <span class="sec-count">6 notizie</span>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Cronaca</span>
+          <h3>Omicidio del pizzaiolo a Reggio Emilia: il gip non riconosce la premeditazione, Pellati resta in carcere</h3>
+          <p class="excerpt">Il gip di Reggio Emilia Francesco Panchieri ha convalidato il fermo e disposto la custodia cautelare in carcere per Andrea Pellati, 43 anni, accusato di aver ucciso a coltellate Raffaele Stipa, storico titolare da vent'anni di una pizzeria in città, colpito alla gola davanti alla sorella Antonella, poi ricoverata sotto choc. Il giudice ha riconosciuto l'aggravante dei futili motivi ma non quella della premeditazione contestata inizialmente dalla procura, che pure aveva parlato di un uomo "entrato unicamente ed esclusivamente per uccidere la vittima" sulla base delle ricostruzioni delle telecamere interne del locale. Pellati, con precedenti per reati legati alla droga e cliente abituale della pizzeria, sarebbe stato intercettato dai carabinieri verso le 2 di notte nell'abitazione dei genitori; davanti al giudice si è chiuso in un silenzio quasi totale, limitandosi a dichiarare di non volersi far "processare da questo Stato". Il movente resta legato a un diverbio per alcune pizze non pagate da un conoscente dell'aggressore poche ore prima dell'omicidio.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://www.ansa.it/sito/notizie/cronaca/2026/07/02/omicidio-del-pizzaiolo-il-gip-non-riconosce-la-premeditazione_cd962a8c-1a00-48f1-a0f6-c318d1338160.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.ilrestodelcarlino.it/reggio-emilia/cronaca/omicidio-pizzeria-arrestato-assassino-diretta-g4627gx6" target="_blank" rel="noopener">il Resto del Carlino <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Il delitto, avvenuto il 29 giugno, ha sconvolto la comunità reggiana: nei giorni successivi si è tenuto un lungo corteo cittadino contro la violenza, con centinaia di residenti che chiedevano "basta violenza" e più sicurezza nei pubblici esercizi. L'assassino abitava a pochi metri dalla pizzeria della vittima.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Cronaca</span>
+          <h3>Caso Elisa Claps, la Procura di Potenza riapre l'inchiesta per concorso in omicidio</h3>
+          <p class="excerpt">A oltre trent'anni dalla scomparsa di Elisa Claps, la sedicenne uccisa a Potenza nel settembre 1993 e il cui corpo fu ritrovato solo nel 2010 nel sottotetto della chiesa della Santissima Trinità, la Procura della Repubblica ha riaperto il fascicolo con l'ipotesi di concorso in omicidio, al momento contro ignoti. L'unico condannato in via definitiva per il delitto, Danilo Restivo, sta scontando 30 anni di carcere, ma da tempo la famiglia della vittima sospetta la presenza di complici o coperture mai chiarite del tutto nelle indagini originarie. Nei mesi scorsi il RIS dei carabinieri ha condotto nuovi accertamenti tecnico-scientifici, anche con tecnologie di ultima generazione, all'interno del sottotetto della chiesa dove il corpo restò nascosto per quasi diciassette anni. La notizia della riapertura è stata annunciata dal fratello di Elisa, Gildo Claps, nell'ultima puntata di "Chi l'ha visto?" condotta da Federica Sciarelli, e successivamente confermata da fonti giudiziarie potentine.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://www.ansa.it/sito/notizie/cronaca/2026/07/02/linchiesta-su-elisa-claps-riaperta-per-concorso-in-omicidio_499d3ea9-e76d-4576-a5ed-89baf83c540f.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://tg24.sky.it/cronaca/2026/07/02/caso-elisa-claps-riapertura-indagini-potenza" target="_blank" rel="noopener">Sky TG24 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Il caso Claps resta tra i più seguiti della cronaca giudiziaria italiana degli ultimi trent'anni, anche per le polemiche sul ruolo di alcuni religiosi della chiesa potentina nella lunga scomparsa del corpo. La riapertura dell'inchiesta riaccende ora l'attenzione su possibili responsabilità mai accertate accanto a quella di Restivo.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Cronaca</span>
+          <h3>Morte dell'agente Imprezzabile: il 26enne Genti Berisha torna in carcere dopo appena un'ora ai domiciliari</h3>
+          <p class="excerpt">Genti Berisha, il 26enne albanese ritenuto responsabile dell'incidente stradale del 22 giugno scorso a Peschiera Borromeo, nel Milanese, in cui morì l'agente della polizia locale Francesco Imprezzabile durante un inseguimento, è tornato in carcere a poche ore dalla scarcerazione. Era stato rimesso in libertà la mattina del 2 luglio con il braccialetto elettronico per ordine della gip di Milano Giulia Masci, ma carabinieri e squadra mobile di Monza lo hanno nuovamente arrestato nel giro di un'ora per l'aggravamento della misura cautelare disposto da un giudice di Brescia, dove Berisha è imputato in un separato processo per traffico di droga. Le autorità hanno motivato il nuovo arresto con "un profilo criminale troppo alto" per continuare a scontare la misura ai domiciliari. Il fascicolo aperto a Milano sulla morte di Imprezzabile procede intanto con l'ipotesi di omicidio stradale.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://www.ansa.it/lombardia/notizie/2026/07/02/torna-in-carcere-il-26enne-arrestato-per-la-morte-dellagente-imprezzabile_705ce23e-e100-4c36-a25b-1f197e2ac8a4.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.ilgiorno.it/milano/cronaca/genti-berisha-torna-carcere-y3ua0vvw" target="_blank" rel="noopener">il Giorno <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Cronaca</span>
+          <h3>Caporalato nei vigneti del Trentino: arrestato un 50enne, braccianti sfruttati 11 ore al giorno</h3>
+          <p class="excerpt">I carabinieri della compagnia di Borgo Valsugana hanno arrestato un cittadino italiano di 50 anni, di origine pakistana, accusato di intermediazione illecita di manodopera, sfruttamento del lavoro, tentata estorsione, lesioni aggravate e minacce nei confronti di connazionali impiegati nei vigneti e frutteti della Valsugana. Secondo l'accusa, l'uomo reclutava braccianti costringendoli a turni fino a undici ore al giorno senza riposo settimanale garantito, per una paga di circa 8 euro l'ora, trattenendo parte del compenso. L'inchiesta è partita dalla denuncia coraggiosa di due giovani lavoratori pakistani, uno dei quali era stato ricoverato in ospedale dopo un pestaggio subito da un gruppo di sei connazionali ingaggiati dall'arrestato; un testimone dell'aggressione sarebbe stato minacciato con un coltello puntato al petto per dissuaderlo dal denunciare. L'operazione, condotta insieme alla polizia giudiziaria della Procura di Trento, ha già portato a un monitoraggio di oltre cento aziende agricole del territorio nell'ambito della più ampia lotta al caporalato in regione.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://www.ansa.it/trentino/notizie/2026/07/02/violenza-e-minacce-di-ritorsione-caporalato-nei-vigneti-del-trentino_163a274e-5bea-4914-b823-1177f80c6ee1.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Il caso riporta l'attenzione sullo sfruttamento del lavoro agricolo stagionale anche in territori del Nord Italia solitamente meno associati al fenomeno del caporalato rispetto al Mezzogiorno, confermando come la piaga colpisca ormai l'intera filiera agricola nazionale, vigneti d'alta gamma trentini compresi.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Cronaca</span>
+          <h3>Castrovillari, smantellata rete di spaccio: cinque misure cautelari e dieci indagati</h3>
+          <p class="excerpt">La squadra mobile della Questura di Cosenza e il commissariato di Castrovillari, coordinati dalla Procura calabrese guidata dal procuratore capo Alessandro D'Alessio, hanno eseguito cinque misure cautelari — due in carcere, una ai domiciliari e due obblighi di presentazione alla polizia giudiziaria — nell'ambito di un'inchiesta sullo spaccio di cocaina, hashish e marijuana nel comune del Pollino e nei paesi limitrofi. Gli investigatori hanno ricostruito circa sessanta episodi di cessione di stupefacenti tra gennaio 2024 e luglio 2025, un'attività stabile e continuativa confermata da intercettazioni telefoniche e ambientali, oltre che da numerosi arresti in flagranza di acquirenti sorpresi con dosi appena acquistate. Altri dieci soggetti risultano indagati a piede libero nell'ambito della stessa indagine, che ha permesso di ricostruire l'intera filiera di approvvigionamento e rivendita al dettaglio della droga sul territorio.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://www.quotidianodelsud.it/calabria/cosenza/cronache/criminalita/2026/07/02/droga-a-castrovillari-smantellata-la-rete-dello-spaccio-5-misure-cautelari" target="_blank" rel="noopener">Il Quotidiano del Sud <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Cronaca</span>
+          <h3>Maltempo, notte di nubifragi tra Veneto ed Emilia-Romagna: oltre 390 interventi dei vigili del fuoco</h3>
+          <p class="excerpt">Una violenta ondata temporalesca ha colpito nella notte tra l'1 e il 2 luglio il Veneto, dove è scattata l'allerta rossa per rischio idrogeologico e temporali, impegnando i vigili del fuoco in oltre 390 interventi dalle 18 in poi, soprattutto per taglio e rimozione di alberi e rami pericolanti e messa in sicurezza di pali abbattuti dal forte vento. Allerta arancione anche in Emilia-Romagna, con danni segnalati sulla costa e sulle colline romagnole, mentre in Friuli Venezia Giulia i fulmini hanno provocato tre incendi e sradicato alberi in diverse zone della pianura e della costa. Il maltempo ha avuto ripercussioni anche sugli eventi pubblici in programma: a Siena è stata annullata la Provaccia, la prova generale del Palio del 2 luglio, poi comunque disputato in serata in onore della Madonna di Provenzano. Il bollettino della Protezione Civile manteneva gialla l'allerta su gran parte del resto del Paese, da Abruzzo e Basilicata fino a Sicilia, Sardegna e Toscana.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://www.leggo.it/italia/cronache/02_luglio_2026_maltempo_danni_roma_milano_diretta_oggi-9627482.html" target="_blank" rel="noopener">Leggo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.meteo.it/notizie/meteo-allerta-arancione-e-gialla-2-luglio-2026-dove-fab2898e" target="_blank" rel="noopener">Meteo.it <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
           </div>
         </div>
       </article>
@@ -680,17 +804,17 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Geopolitica</span>
-          <h3>Iran: negoziati con gli USA sospesi per i funerali di Khamenei, Teheran minaccia lo Stretto di Hormuz</h3>
-          <p class="excerpt">I colloqui indiretti tra Stati Uniti e Iran, che secondo Trump e i mediatori di Qatar e Pakistan avevano fatto "progressi positivi" nei giorni scorsi a Doha, sono stati sospesi per lasciare spazio ai funerali di Stato della Guida suprema Ali Khamenei, in programma dal 4 al 9 luglio tra Teheran, Qom, Mashhad, Najaf e Karbala, con un afflusso stimato tra i 15 e i 20 milioni di persone: il più grande funerale di Stato nella storia della Repubblica islamica. Le due parti hanno concordato di riprendere i negoziati "il prima possibile" dopo le cerimonie. Nel frattempo il comando militare congiunto iraniano Khatam al-Anbiya ha intimato a tutte le petroliere in transito nello Stretto di Hormuz di attenersi alle rotte approvate da Teheran, pena una "risposta forte e immediata", accusando anche i caccia statunitensi che sorvolano lo stretto di alimentare l'insicurezza nella regione.</p>
+          <h3>Iniziano oggi a Teheran i funerali di Khamenei: attesi 15-20 milioni di persone, negoziati con gli USA sospesi</h3>
+          <p class="excerpt">Prendono ufficialmente il via oggi, venerdì 3 luglio, a Teheran le esequie di Stato della Guida suprema Ali Khamenei, ucciso il 28 febbraio scorso in un attacco aereo congiunto di Stati Uniti e Israele insieme ad altri cinque-dieci alti dirigenti iraniani riuniti in un compound della capitale. La salma sarà esposta nella Grande Mosalla, uno dei più grandi complessi per la preghiera del Paese, prima di un corteo funebre di sette giorni che toccherà Qom, Najaf e Karbala in Iraq, per concludersi mercoledì con la sepoltura nel santuario dell'Imam Reza a Mashhad; le autorità iraniane stimano un afflusso record tra i 15 e i 20 milioni di pellegrini, il più grande funerale di Stato nella storia della Repubblica islamica, con rappresentanti attesi da oltre cento Paesi. I colloqui indiretti tra Washington e Teheran, che secondo i mediatori di Qatar e Pakistan avevano registrato "progressi positivi" nei giorni scorsi a Doha, restano sospesi per lasciare spazio alle cerimonie, con le parti che si sono impegnate a riprenderli "il prima possibile". Nel frattempo il comando militare congiunto iraniano Khatam al-Anbiya ha intimato a tutte le petroliere in transito nello Stretto di Hormuz di attenersi alle rotte approvate da Teheran, pena una "risposta forte e immediata" delle forze armate.</p>
           <div class="card-foot">
             <div class="src-row">
+              <a class="src-pill en" href="https://www.aljazeera.com/news/2026/7/3/irans-khamenei-funeral-which-world-leaders-are-attending" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Al Jazeera <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
               <a class="src-pill en" href="https://www.cbsnews.com/live-updates/us-iran-war-trump-negotiations-pause-ayatollah-funeral/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> CBS News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill en" href="https://www.washingtonpost.com/business/2026/07/02/iran-strait-hormuz-oil-route-us-shipping/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Washington Post <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            L'intesa provvisoria tra le parti prevedeva il libero transito delle navi per 60 giorni senza pedaggi, ma Teheran insiste ora per controllare le rotte delle imbarcazioni e per introdurre in futuro tariffe di passaggio, capovolgendo una prassi in vigore da decenni. Sul nodo più delicato, quello del disarmo nucleare, i progressi restano minimi nonostante l'ottimismo di Trump sulle altre questioni negoziali.
+            L'intesa provvisoria tra le parti prevedeva il libero transito delle navi per 60 giorni senza pedaggi, ma Teheran insiste ora per controllare le rotte delle imbarcazioni e per introdurre in futuro tariffe di passaggio, capovolgendo una prassi in vigore da decenni: i flussi petroliferi attraverso Hormuz sono risaliti a circa 4,8 milioni di barili al giorno dall'accordo USA-Iran, ma restano ben al di sotto dei 15 milioni pre-crisi. Sul nodo più delicato, quello del disarmo nucleare, i progressi restano minimi nonostante l'ottimismo di Trump sulle altre questioni negoziali.
           </div></div></div>
         </div>
       </article>
@@ -698,26 +822,18 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Geopolitica</span>
-          <h3>Attentato in un caffè di Damasco: almeno nove morti, sotto accusa gli oppositori del nuovo governo siriano</h3>
-          <p class="excerpt">Un ordigno artigianale è esploso giovedì all'interno di un caffè molto frequentato sulla centralissima via al-Nasr a Damasco, a poco più di cento metri dal Palazzo di Giustizia, uccidendo almeno nove persone e ferendone 22. Secondo le prime ricostruzioni delle autorità siriane, un uomo avrebbe piazzato l'ordigno - circa un chilogrammo di esplosivo rudimentale imbottito di schegge metalliche - sotto un tavolo per poi allontanarsi, forse con l'intento di colpire successivamente anche il vicino tribunale. Il locale era abitualmente frequentato da avvocati e impiegati del Palazzo di Giustizia. Nessun gruppo ha ancora rivendicato l'attacco, ma gli analisti lo considerano una grave falla di sicurezza nel cuore della capitale, in un contesto segnato dal numero crescente di oppositori del nuovo governo siriano insediatosi dopo la caduta di Assad.</p>
+          <h3>Attentato di Damasco, il bilancio sale a nove morti: procura siriana indaga su opposizione al nuovo governo</h3>
+          <p class="excerpt">È salito a nove morti e 22 feriti il bilancio dell'esplosione di giovedì in un affollato caffè sulla centralissima via al-Nasr a Damasco, nel quartiere di al-Marjah, a poco più di cento metri dal Palazzo di Giustizia. Secondo le prime ricostruzioni delle autorità siriane un uomo avrebbe piazzato un ordigno artigianale — circa un chilogrammo di esplosivo imbottito di schegge metalliche — sotto un tavolo per poi allontanarsi, forse con l'intento di colpire in un secondo momento anche il vicino tribunale, frequentato da avvocati e impiegati giudiziari abituali clienti del locale. Nessun gruppo ha ancora rivendicato l'attacco, ma gli analisti lo considerano una grave falla di sicurezza nel cuore della capitale, in un contesto segnato dal numero crescente di oppositori del nuovo governo siriano insediatosi dopo la caduta di Assad: l'attentato più grave dai tempi dell'attacco a una chiesa di Damasco del giugno 2025, che causò 25 morti.</p>
           <div class="card-foot">
-            <div class="src-row"><a class="src-pill en" href="https://www.aljazeera.com/news/2026/7/2/whats-behind-the-deadly-bombing-of-a-crowded-damascus-cafe" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Al Jazeera <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <div class="src-row">
+              <a class="src-pill en" href="https://www.aljazeera.com/news/2026/7/2/whats-behind-the-deadly-bombing-of-a-crowded-damascus-cafe" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Al Jazeera <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill en" href="https://www.washingtonpost.com/world/2026/07/02/syria-damascus-explosion-cafe/68296ec0-7617-11f1-b665-5f8be87f3787_story.html" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Washington Post <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
             L'episodio si inserisce in un quadro di instabilità persistente in Siria, dove il nuovo esecutivo fatica ancora a consolidare il controllo del territorio e a garantire sicurezza nella capitale, nonostante il progressivo riconoscimento internazionale ottenuto nei mesi scorsi.
           </div></div></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body no-img">
-          <span class="tag">Geopolitica</span>
-          <h3>Corte Suprema USA boccia lo stop di Trump alla cittadinanza per nascita</h3>
-          <p class="excerpt">La Corte Suprema degli Stati Uniti ha respinto il tentativo dell'amministrazione Trump di abolire per via di ordine esecutivo la cittadinanza automatica per nascita sul suolo americano (birthright citizenship), riaffermando che il Quattordicesimo Emendamento conferisce automaticamente la cittadinanza a chiunque nasca negli Stati Uniti, indipendentemente dallo status migratorio dei genitori. La sentenza rappresenta un colpo significativo a uno dei pilastri dell'agenda di Trump sull'immigrazione, rilanciata fin dai primi giorni del suo secondo mandato. La Casa Bianca ha reagito annunciando che valuterà nuove strade legislative, mentre la vicenda si inserisce in una nuova sessione della Corte che affronterà anche altri casi ad alto profilo legati a diritti civili e campagne elettorali.</p>
-          <div class="card-foot">
-            <div class="src-row"><a class="src-pill" href="https://www.giornalone.it/prima-pagina-corriere-della-sera/" target="_blank" rel="noopener">Corriere della Sera <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
-          </div>
         </div>
       </article>
 
@@ -732,6 +848,24 @@
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
             La crisi climatica si intreccia sempre più con l'agenda geopolitica europea: la nuova presidenza irlandese del Consiglio UE ha inserito la transizione energetica tra le priorità del semestre, mentre la frequenza crescente di eventi estremi alimenta il dibattito su adattamento infrastrutturale e costi sanitari pubblici in tutto il continente.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Geopolitica</span>
+          <h3>Verso Ankara: i 32 alleati NATO alla prova del 5% del PIL in difesa, focus anche su industria e Ucraina</h3>
+          <p class="excerpt">Manca meno di una settimana al vertice NATO di Ankara del 7-8 luglio, il primo ospitato dalla Turchia nella storia dell'Alleanza, che metterà alla prova l'impegno assunto un anno fa all'Aja dai 32 Paesi membri: portare la spesa per la difesa al 5% del PIL entro il 2035, ripartito tra il 3,5% di spesa militare pura e l'1,5% per infrastrutture strategiche, cybersicurezza e base industriale della difesa. Alcuni alleati raggiungeranno già nel 2026 l'obiettivo con largo anticipo sulla tabella di marcia, mentre nel 2025 gli europei e il Canada hanno aumentato gli investimenti collettivi di 139 miliardi di dollari in termini nominali. Il 7 luglio si terrà inoltre a margine il NATO Summit Defence Industry Forum, che riunirà funzionari dell'Alleanza, rappresentanti dei Paesi partner e vertici industriali per discutere l'accelerazione della produzione bellica comune. Il sostegno di lungo periodo a Kiev resta il secondo grande dossier del summit, con l'Alleanza chiamata a garantire che l'assistenza militare resti sostenibile nel tempo mentre la guerra in Ucraina entra nel suo quinto anno.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill en" href="https://www.nato.int/en/news-and-events/events/2026/07/overview---2026-nato-summit-in-ankara-" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> NATO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill en" href="https://www.dailysabah.com/business/defense/nato-defense-spending-how-allies-stand-ahead-of-key-ankara-summit" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Daily Sabah <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Per l'Italia, che secondo le ultime stime viaggia attorno al 2,8% del PIL in spesa per la difesa, il vertice sarà anche il banco di prova della credibilità della road map presentata da Palazzo Chigi, oltre all'occasione per un possibile disgelo diplomatico tra Meloni e Trump dopo lo scontro di fine giugno su dazi, vino e gas.
           </div></div></div>
         </div>
       </article>
@@ -800,14 +934,17 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Economia</span>
-          <h3>Wall Street chiude il miglior primo semestre dal 2021, trainata da chip e IA</h3>
-          <p class="excerpt">I principali indici di Wall Street hanno archiviato la prima metà dell'anno in netto rialzo: il Dow Jones ha guadagnato l'8,9% da inizio anno (la miglior performance dal 2021), l'S&amp;P 500 il 9,6%, il Nasdaq il 12,8% e il Russell 2000 delle small cap è balzato di quasi il 22%, la miglior partenza dal 1991. A trainare il rally sono stati soprattutto i titoli legati ai semiconduttori e all'intelligenza artificiale: nel solo secondo trimestre 2026 il settore chip ha aggiunto circa 2.000 miliardi di dollari alla capitalizzazione combinata di Micron, Intel e Advanced Micro Devices. Sul fronte valutario il dollaro ha continuato a rafforzarsi contro le altre principali divise, con l'euro in oscillazione attorno a 1,14, mentre gli operatori guardano ora al report ufficiale sui salari non agricoli e alle prossime mosse del presidente della Fed Kevin Warsh sull'orientamento della politica monetaria.</p>
+          <h3>Wall Street chiude il miglior primo semestre dal 2021: Dow Jones a un nuovo record di 52.900 punti</h3>
+          <p class="excerpt">I principali indici di Wall Street hanno archiviato la prima metà dell'anno in netto rialzo e chiuso la seduta di giovedì 2 luglio, vigilia della festività dell'Independence Day, con il Dow Jones balzato di 594,83 punti (+1,14%) fino al nuovo record storico di 52.900,07, la miglior performance di un primo semestre dal 2021. L'S&amp;P 500 ha chiuso sostanzialmente invariato a 7.483,24 punti, mentre il Nasdaq Composite ha ceduto lo 0,8% a 25.832,67 punti, appesantito dalla debolezza di Tesla e da un nuovo scivolone del comparto semiconduttori dopo settimane di rally quasi ininterrotto. Da inizio anno il Dow Jones guadagna l'8,9%, l'S&amp;P 500 il 9,6% e il Nasdaq il 12,8%, mentre il Russell 2000 delle small cap è balzato di quasi il 22%, la miglior partenza dal 1991; a trainare il rally sono stati soprattutto i titoli legati ai semiconduttori e all'intelligenza artificiale, con il settore chip che nel solo secondo trimestre ha aggiunto circa 2.000 miliardi di dollari alla capitalizzazione combinata di Micron, Intel e Advanced Micro Devices.</p>
           <div class="card-foot">
-            <div class="src-row"><a class="src-pill en" href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-july-2-2026" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> TheStreet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <div class="src-row">
+              <a class="src-pill en" href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-july-2-2026" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> TheStreet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill en" href="https://www.cnbc.com/2026/07/01/stock-market-today-live-updates.html" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> CNBC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            Il Dow Jones ha chiuso la seduta di giovedì 2 luglio su un nuovo massimo storico proprio alla vigilia della festività dell'Independence Day, mentre S&amp;P 500 e Nasdaq hanno ripiegato leggermente sulla debolezza di Tesla e sul comparto semiconduttori dopo settimane di rally quasi ininterrotto.
+            Sul fronte valutario il dollaro ha continuato a rafforzarsi contro le altre principali divise, con l'euro in oscillazione attorno a 1,14, mentre gli operatori guardano ora alle prossime mosse del presidente della Fed Kevin Warsh sull'orientamento della politica monetaria dopo il report più debole delle attese sui salari non agricoli di giugno. Wall Street resterà chiusa lunedì 6 luglio per l'osservanza posticipata dell'Independence Day.
           </div></div></div>
         </div>
       </article>
@@ -833,11 +970,15 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Economia</span>
-          <h3>Petrolio in rialzo con la tensione su Hormuz, KOSPI ai massimi in Asia</h3>
-          <p class="excerpt">I prezzi del petrolio sono saliti nella seduta asiatica del 3 luglio, con il Brent in progresso dello 0,6% a 72,26 dollari al barile e il WTI in aumento dello 0,5% a 69,05 dollari, sulla scia delle nuove tensioni nello Stretto di Hormuz dopo l'avvertimento iraniano alle petroliere in transito. In Corea del Sud l'indice KOSPI ha guadagnato lo 0,44%, toccando un nuovo massimo intraday a 7.682,06 punti, trainato dal comparto tecnologico e dei semiconduttori. Il quadro macroeconomico resta condizionato dall'incertezza sull'esito dei negoziati Iran-USA, sospesi per i funerali di Khamenei, e dalle possibili ripercussioni sui costi energetici globali in caso di un'escalation nello stretto, uno snodo per cui transita una quota rilevante del petrolio mondiale.</p>
+          <h3>Piazza Affari riparte dai massimi, Prysmian in evidenza; petrolio in rialzo con la tensione su Hormuz</h3>
+          <p class="excerpt">Le borse europee sono ripartite dai massimi nella seduta del 3 luglio, con Piazza Affari che ha visto svettare il titolo Prysmian: il FTSE MIB si è portato a 52.736,48 punti (+0,58%), mentre lo spread BTP-Bund a dieci anni si è ridotto a 77,53 punti base (-0,60%) e l'oro spot ha guadagnato l'1,12% salendo a 117,13 euro. Il cambio euro/dollaro è salito a 1,1452 (+0,16%) e il future sull'S&amp;P 500 si è portato a 7.483,24 punti. Sul fronte energetico i prezzi del petrolio sono saliti nella seduta asiatica, con il Brent in progresso a 71,98 dollari al barile e il WTI in aumento a 69,05 dollari, sulla scia delle nuove tensioni nello Stretto di Hormuz dopo l'avvertimento iraniano alle petroliere in transito. Il quadro macroeconomico resta condizionato dall'incertezza sull'esito dei negoziati Iran-USA, sospesi per i funerali di Khamenei, e dalle possibili ripercussioni sui costi energetici globali in caso di un'escalation nello stretto, uno snodo per cui transita una quota rilevante del petrolio mondiale.</p>
           <div class="card-foot">
-            <div class="src-row"><a class="src-pill" href="https://www.soldionline.it/notizie/economia-politica/agenda-economica-del-3-luglio-2026" target="_blank" rel="noopener">SoldiOnline <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <div class="src-row"><a class="src-pill" href="https://www.ilsole24ore.com/art/morning-note-l-agenda-venerdi-3-luglio-AIEq0mzD" target="_blank" rel="noopener">Il Sole 24 Ore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            In agenda per la giornata figurano anche l'assemblea 2026 di Confindustria Genova e la conferenza stampa Fim-Cisl a Torino sui dati di produzione e occupazione degli stabilimenti Stellantis nel secondo trimestre, appuntamenti che confermano l'attenzione del mercato sulla tenuta del comparto manifatturiero italiano nella seconda metà dell'anno.
+          </div></div></div>
         </div>
       </article>
 
@@ -1132,7 +1273,7 @@
     <div class="sec-head">
       <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="14" height="14" rx="3"/><path d="m21 8-4 3 4 3z"/></svg></div>
       <h2>Video</h2>
-      <span class="sec-count">5 video</span>
+      <span class="sec-count">6 video</span>
     </div>
 
     <div class="cards">
@@ -1189,7 +1330,7 @@
         <div class="card-body">
           <span class="tag">Video</span>
           <h3>Iran blindata per i funerali di Khamenei: sicurezza rafforzata tra i timori di nuove tragedie</h3>
-          <p class="excerpt">Un servizio sui preparativi di sicurezza in Iran in vista dei funerali di Stato della Guida suprema Ali Khamenei, che si terranno dal 4 al 9 luglio tra Iran e Iraq con un afflusso record di pellegrini atteso. Il video ripercorre anche i precedenti disastri di folla che pesano sulle scelte delle autorità.</p>
+          <p class="excerpt">Un servizio sui preparativi di sicurezza in Iran nel giorno di apertura dei funerali di Stato della Guida suprema Ali Khamenei, che proseguiranno fino al 9 luglio tra Iran e Iraq con un afflusso record di pellegrini atteso, tra i 15 e i 20 milioni secondo le autorità. Il video ripercorre anche i precedenti disastri di folla che pesano sulle scelte delle autorità.</p>
           <div class="card-foot">
             <div class="src-row"><a class="src-pill" href="https://www.youtube.com/watch?v=QSNqlEkfc_A" target="_blank" rel="noopener">YouTube <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
           </div>
@@ -1198,7 +1339,22 @@
 
       <article class="card">
         <div class="card-img-wrap">
-          <img class="card-img" src="https://img.youtube.com/vi/frLKa3C9CU8/hqdefault.jpg" alt="Barcellona si prepara al Grand Départ del Tour de France" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#video .cards article:nth-child(5) .card-body').classList.add('no-img');">
+          <img class="card-img" src="https://img.youtube.com/vi/n-YG3Y4dVTs/hqdefault.jpg" alt="Servizio sull'omicidio del pizzaiolo a Reggio Emilia" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#video .cards article:nth-child(5) .card-body').classList.add('no-img');">
+          <div class="play-badge"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="card-body">
+          <span class="tag">Video</span>
+          <h3>Omicidio del pizzaiolo a Reggio Emilia: per la procura c'è premeditazione</h3>
+          <p class="excerpt">Il servizio sull'omicidio di Raffaele Stipa, titolare della pizzeria ucciso a coltellate dal cliente abituale Andrea Pellati, con la ricostruzione della procura di Reggio Emilia sulla dinamica dell'aggressione e le prime dichiarazioni della sorella della vittima, ferita nello stesso agguato.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.youtube.com/watch?v=n-YG3Y4dVTs" target="_blank" rel="noopener">YouTube <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-img-wrap">
+          <img class="card-img" src="https://img.youtube.com/vi/frLKa3C9CU8/hqdefault.jpg" alt="Barcellona si prepara al Grand Départ del Tour de France" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#video .cards article:nth-child(6) .card-body').classList.add('no-img');">
           <div class="play-badge"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="card-body">
@@ -1221,15 +1377,15 @@
     </div>
     <div class="dd-grid">
       <div class="dd-card"><div class="dd-num">01</div><h4>Kiev in lutto, Ankara alle porte (7-8 luglio)</h4><p>Il bilancio del più grave attacco russo su Kiev da settimane sale a 30 morti, mentre Roma prepara la missione al vertice NATO: in ballo la corsa verso il 5% del PIL in spese militari, il fondo SAFE da cui dipendono 14,9 miliardi per l'Italia, e un possibile nuovo faccia a faccia Meloni-Trump.</p></div>
-      <div class="dd-card"><div class="dd-num">02</div><h4>Legge elettorale, il caso Vannacci blocca la riforma fino al 14 luglio</h4><p>Il nodo tra Fratelli d'Italia (che vorrebbe le preferenze) e Lega e Forza Italia (scettiche) si complica con l'affondo del generale Vannacci contro Meloni. Il Foglio racconta una premier "tentata di sacrificare" le preferenze pur di chiudere entro l'estate.</p></div>
-      <div class="dd-card"><div class="dd-num">03</div><h4>Iran: negoziati sospesi per i funerali di Khamenei, tensione su Hormuz</h4><p>I colloqui USA-Iran si fermano fino al 9 luglio per le esequie della Guida suprema, mentre Teheran minaccia "una risposta forte" alle petroliere che non rispettino le rotte imposte nello Stretto di Hormuz, snodo cruciale per l'energia mondiale.</p></div>
+      <div class="dd-card"><div class="dd-num">02</div><h4>Iniziano oggi i funerali di Khamenei, tensione su Hormuz</h4><p>Prendono il via a Teheran le esequie di Stato della Guida suprema, attesi 15-20 milioni di pellegrini in sette giorni di cerimonie fino a Mashhad. I negoziati USA-Iran restano sospesi mentre Teheran minaccia "una risposta forte" alle petroliere che non rispettino le rotte imposte nello Stretto di Hormuz.</p></div>
+      <div class="dd-card"><div class="dd-num">03</div><h4>Legge elettorale, il caso Vannacci blocca la riforma fino al 14 luglio</h4><p>Il nodo tra Fratelli d'Italia (che vorrebbe le preferenze) e Lega e Forza Italia (scettiche) si complica con l'affondo del generale Vannacci contro Meloni. Il Foglio racconta una premier "tentata di sacrificare" le preferenze pur di chiudere entro l'estate.</p></div>
     </div>
   </section>
 
 </main>
 
 <footer>
-  Briefing generato automaticamente il 3 luglio 2026 · Fonti: ANSA, il Giornale, l'Unità, Il Foglio, Corriere della Sera, Il Sole 24 Ore, Il Fatto Quotidiano, Fanpage, Sky TG24, Sky Sport, Adnkronos, Euronews, Kyiv Independent, CBS News, Washington Post, Al Jazeera, CNBC, CNN, TheStreet, Charles Schwab, SoldiOnline, Premio Strega, Illibraio, Ministero della Cultura, L'Opinionista, LoboDiLattice, Arte.it, Nature, ScienceDaily, OA Sport, Sky Sport, Fanpage, Sky Sports, Cyclingnews, SpazioCiclismo, TuttoBiciWeb, BBC News, YouTube · Immagini: Wikimedia Commons, YouTube
+  Briefing generato automaticamente il 3 luglio 2026, ore 15:29 · Fonti: ANSA, il Giornale, l'Unità, Il Foglio, Corriere della Sera, Il Sole 24 Ore, Il Fatto Quotidiano, Fanpage, Sky TG24, Sky Sport, Adnkronos, Euronews, Teleborsa, il Resto del Carlino, il Giorno, Il Quotidiano del Sud, Leggo, Meteo.it, Kyiv Independent, CBS News, Washington Post, Al Jazeera, NATO, Daily Sabah, CNBC, CNN, TheStreet, Charles Schwab, Premio Strega, Illibraio, Ministero della Cultura, L'Opinionista, LoboDiLattice, Arte.it, Nature, ScienceDaily, OA Sport, Sky Sports, Cyclingnews, SpazioCiclismo, TuttoBiciWeb, BBC News, YouTube · Immagini: Wikimedia Commons, YouTube
 </footer>
 
 <button id="toTop" aria-label="Torna su" title="Torna su"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
