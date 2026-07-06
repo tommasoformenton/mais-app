@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mais rassegna — 3 Luglio 2026</title>
+<title>Mais rassegna — 6 Luglio 2026</title>
 <link rel="icon" type="image/svg+xml" href="mais-icon.svg">
 <style>
   :root{
@@ -24,6 +24,7 @@
     --orange:#e8871e; --orange-dk:#b5650f;
     --pink:#d6336c; --pink-dk:#a61e4d;
     --indigo:#5c6bc0; --indigo-dk:#3949ab;
+    --steel:#4a6572; --steel-dk:#2c3e50;
     --shadow-sm:0 1px 2px rgba(20,22,30,0.04), 0 1px 1px rgba(20,22,30,0.03);
     --shadow-md:0 10px 30px -10px rgba(20,22,30,0.16);
     --shadow-lg:0 20px 50px -12px rgba(20,22,30,0.22);
@@ -189,6 +190,7 @@
   #cultura .sec-badge{background:linear-gradient(135deg,var(--purple),var(--purple-dk));}
   #scienza .sec-badge{background:linear-gradient(135deg,var(--teal),var(--teal-dk));}
   #sport .sec-badge{background:linear-gradient(135deg,var(--orange),var(--orange-dk));}
+  #motori .sec-badge{background:linear-gradient(135deg,var(--steel),var(--steel-dk));}
   #video .sec-badge{background:linear-gradient(135deg,var(--pink),var(--pink-dk));}
 
   /* ===== CARDS ===== */
@@ -236,11 +238,20 @@
   html.dark #scienza .tag{color:#6fe0d4;}
   #sport .tag{background:rgba(232,135,30,0.12); color:var(--orange-dk);}
   html.dark #sport .tag{color:#f5b361;}
+  #motori .tag{background:rgba(74,101,114,0.12); color:var(--steel-dk);}
+  html.dark #motori .tag{color:#9fc1cf;}
   #video .tag{background:rgba(214,51,108,0.12); color:var(--pink-dk);}
   html.dark #video .tag{color:#ff9ec7;}
 
   article.card h3{font-size:19px; font-weight:750; letter-spacing:-.2px; margin:0 0 10px; line-height:1.3;}
   article.card p.excerpt{font-size:15px; color:var(--body-txt); line-height:1.62; margin:0 0 18px;}
+  article.card p.excerpt.clamped{
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+  article.card p.excerpt.clamped.expanded{
+    display:block; -webkit-line-clamp:unset; overflow:visible;
+  }
 
   .card-foot{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;}
   .src-row{display:flex; flex-wrap:wrap; gap:8px;}
@@ -355,6 +366,14 @@
   .icon-action svg{width:15px;height:15px;}
   .icon-action:hover{border-color:var(--gold); color:var(--gold); transform:translateY(-1px);}
   .icon-action.active{background:var(--gold); color:#fff; border-color:var(--gold);}
+  .listen-btn-prominent{
+    width:auto; padding:0 14px 0 10px; gap:7px;
+    background:var(--gold); border-color:var(--gold); color:#fff;
+    font-size:13px; font-weight:700;
+  }
+  .listen-btn-prominent:hover{background:var(--gold); color:#fff; opacity:.9;}
+  .listen-btn-prominent.active{background:var(--navy); border-color:var(--navy);}
+  .listen-label{white-space:nowrap;}
   article.card.speaking{outline:2px solid var(--gold); outline-offset:-1px;}
 
   /* TOAST */
@@ -529,10 +548,10 @@
     <h1 class="title">Mais rassegna</h1>
     <p class="hero-sub">La rassegna quotidiana che raccoglie le notizie che contano, con contesto e fonti verificate.</p>
     <div class="meta-chips">
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> Venerdì 3 luglio 2026</span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> Aggiornato alle 15:29</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> Lunedì 6 luglio 2026</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> Aggiornato alle 15:40</span>
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> <span id="readTime">— min</span> di lettura</span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg> 8 ambiti · 47 notizie</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg> 9 ambiti · 47 notizie</span>
     </div>
   </div>
 </header>
@@ -546,6 +565,7 @@
     <a href="#cultura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5V6a2 2 0 0 1 2-2h13v15.5M4 19.5A1.5 1.5 0 0 0 5.5 21H19M4 19.5A1.5 1.5 0 0 1 5.5 18H19"/></svg>Cultura</a>
     <a href="#scienza"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v6.2L4.8 18a1.8 1.8 0 0 0 1.5 2.8h11.4a1.8 1.8 0 0 0 1.5-2.8L14 9.2V3"/></svg>Scienza</a>
     <a href="#sport"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 5H5a3 3 0 0 0 3 4M16 5h3a3 3 0 0 1-3 4"/><path d="M12 13v3M9 20h6M10 20v-2.5a2 2 0 0 1 4 0V20" stroke-linecap="round" stroke-linejoin="round"/></svg>Sport</a>
+    <a href="#motori"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.2"/><path d="M12 3.5v2.4M12 18.1v2.4M20.5 12h-2.4M5.9 12H3.5M17.7 6.3l-1.7 1.7M8 16l-1.7 1.7M17.7 17.7 16 16M8 8 6.3 6.3" stroke-linecap="round"/></svg>Motori</a>
     <a href="#video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="14" height="14" rx="3"/><path d="m21 8-4 3 4 3z"/></svg>Video</a>
     <a href="#approfondire"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg>Da approfondire</a>
   </nav>
@@ -558,7 +578,7 @@
     <div class="sec-head">
       <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21h16M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg></div>
       <h2>Politica italiana</h2>
-      <span class="sec-count">7 notizie</span>
+      <span class="sec-count">6 notizie</span>
     </div>
 
     <div class="cards">
@@ -568,17 +588,17 @@
         </div>
         <div class="card-body">
           <span class="tag">Politica</span>
-          <h3>Vertice NATO di Ankara alle porte: Meloni prepara la missione, faccia a faccia con Trump in vista</h3>
-          <p class="excerpt">A cinque giorni dal vertice NATO di Ankara (7-8 luglio), Palazzo Chigi lavora agli ultimi dettagli della missione italiana: Meloni ha convocato Tajani, Crosetto e Giorgetti per definire la linea su spese militari, sostegno a Kiev e rafforzamento del pilastro europeo dell'Alleanza. L'Italia si presenta con una spesa per la difesa attorno al 2,8% del PIL, in crescita di 0,71 punti ma ancora lontana dal target del 5% (3,5% militare puro più 1,5% infrastrutture) fissato all'Aja nel 2025, e dovrà indicare una tabella di marcia credibile. Resta aperto il dossier del fondo europeo SAFE, su cui Roma ha prenotato 14,9 miliardi di prestiti agevolati senza ancora averne firmato l'attivazione. Il vertice sarà anche l'occasione per un nuovo faccia a faccia tra Meloni e Trump dopo lo scontro di fine giugno, con la premier che punterà a limitare gli impegni di spesa per Kiev fino al 2027 per non precludere futuri negoziati con Mosca.</p>
+          <h3>Trump attacca ancora Meloni alla vigilia di Ankara: "Serve un ordine restrittivo". Governo: non reagiamo</h3>
+          <p class="excerpt">Nella serata di domenica 5 luglio Donald Trump ha pubblicato sul suo social Truth un fotomontaggio che lo ritrae accanto a Giorgia Meloni con la didascalia "serve un ordine restrittivo", il nuovo affondo personale contro la premier a poche ore dall'apertura del vertice NATO di Ankara del 7-8 luglio. Lo strappo affonda le radici nelle dichiarazioni di Trump del 19 giugno, quando aveva sostenuto che Meloni lo avesse "supplicato" di farsi fotografare insieme al G7, versione seccamente smentita dalla premier ("né io né l'Italia supplichiamo nessuno"). Palazzo Chigi, secondo quanto ricostruito dal Corriere della Sera, ha scelto la linea del silenzio: Tajani e la premier avrebbero concordato nella notte di non rispondere alla provocazione per non compromettere l'agenda della missione turca. Il presidente del Senato Ignazio La Russa ha invece espresso solidarietà a Meloni, mentre Carlo Calenda ha definito Trump "un ignobile bullo da quattro soldi".</p>
           <div class="card-foot">
             <div class="src-row">
-              <a class="src-pill" href="https://www.ansa.it/sito/notizie/politica/2026/07/01/riunione-con-meloni-verso-il-vertice-nato-focus-sulle-spese-militari_79e2e49c-6c14-4bef-b177-c57e5fffcc67.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill" href="https://www.ilgiornale.it/news/governo/vertice-nato-meloni-prepara-missione-turchia-2687353.html" target="_blank" rel="noopener">il Giornale <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://it.euronews.com/my-europe/2026/07/06/trump-attacca-meloni-prima-del-vertice-nato-ad-ankara-serve-un-ordine-restrittivo" target="_blank" rel="noopener">Euronews <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.ilfattoquotidiano.it/2026/07/06/trump-nuovo-attacco-alla-premier-giorgia-meloni-serve-un-ordine-restrittivo-palazzo-chigi-non-risponde/8440367/" target="_blank" rel="noopener">Il Fatto Quotidiano <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            Il vertice arriva in un momento di frizione diplomatica con Washington dopo lo scontro Trump-Meloni di fine giugno su dazi, vino e gas, rendendo Ankara un test anche politico oltre che militare. Nel 2025 gli alleati europei e il Canada hanno già aumentato la spesa collettiva di circa 139 miliardi di dollari, un ritmo che l'Italia fatica a replicare senza tensioni sui conti pubblici; circa 70mila addetti alla sicurezza saranno mobilitati ad Ankara per l'occasione.
+            Il ministro della Difesa Guido Crosetto ha provato a smorzare i toni ricordando che "le persone passano, i rapporti tra Stati restano", mentre Tajani ha ribadito che le relazioni transatlantiche vanno "ben oltre le singole dichiarazioni". Ad Ankara i due leader si rivedranno comunque di persona per la prima volta dopo lo scambio di accuse social, in un vertice già carico di tensioni sulla ripartizione dei costi della difesa comune.
           </div></div></div>
         </div>
       </article>
@@ -586,17 +606,14 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Politica</span>
-          <h3>Legge elettorale, esplode il caso Vannacci: maggioranza divisa, Aula slitta al 14 luglio</h3>
-          <p class="excerpt">Il nodo delle preferenze nella riforma della legge elettorale (il testo "Bignami bis", che prevede un proporzionale con premio di maggioranza alla coalizione che superi il 42% dei voti) si complica ulteriormente con l'affondo del generale Roberto Vannacci, che accusa apertamente Meloni di voler bloccare il ritorno delle preferenze per timore di perdere consenso interno alla Lega. Fratelli d'Italia vorrebbe reintrodurle secondo modelli alternativi — dal "modello toscano" con capolista bloccato a quello "belga" con crocetta sul nome preferito — ma Lega e Forza Italia restano contrarie, temendo un aumento dei costi di campagna elettorale. L'esame in Aula alla Camera, già previsto questa settimana, slitta ora al 14 luglio; ufficialmente per i disagi ferroviari dei giorni scorsi, ufficiosamente per lo stallo tra gli alleati. Italia Viva e Azione si schierano a favore delle preferenze, mentre +Europa chiede il ritorno al Mattarellum.</p>
+          <h3>Sondaggi: Fratelli d'Italia arretra al 26,9%, Meloni studia quattro strategie contro il campo largo</h3>
+          <p class="excerpt">Gli ultimi sondaggi politici fotografano un calo dello 0,9% per Fratelli d'Italia, sceso al 26,9%, primo segnale di erosione del consenso dopo mesi di sostanziale stabilità del partito della premier. Palazzo Chigi starebbe valutando quattro linee di risposta per arginare la crescita di un possibile "campo largo" di opposizione, tra cui un rilancio della comunicazione sui risultati economici del governo e un pressing più aggressivo sui temi identitari cari all'elettorato di centrodestra. Il calo arriva in un momento politicamente delicato, con la maggioranza già alle prese con lo stallo sulla legge elettorale e con lo scontro diplomatico con Washington che rischia di pesare sull'immagine di forza internazionale costruita da Meloni negli ultimi anni. Gli analisti sottolineano comunque che il centrodestra nel suo complesso mantiene un vantaggio ancora solido sulle opposizioni, divise su leadership e programma.</p>
           <div class="card-foot">
-            <div class="src-row">
-              <a class="src-pill" href="https://www.ansa.it/sito/notizie/politica/2026/07/01/rompicapo-preferenze-slitta-lapprodo-in-aula-della-legge-elettorale_1058c686-0759-40bb-b763-adbcc7ae753d.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill" href="https://www.unita.it/2026/07/02/vannacci-stana-meloni-lite-a-destra-sulla-preferenze-nella-legge-elettorale/" target="_blank" rel="noopener">l'Unità <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-            </div>
+            <div class="src-row"><a class="src-pill" href="https://quifinanza.it/politica/sondaggi-politici-4-luglio-2026/1006543/" target="_blank" rel="noopener">QuiFinanza <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            Il Foglio ha ricostruito nei giorni scorsi come Meloni sia "tentata di sacrificare" le preferenze pur di portare a casa la riforma entro l'estate, mentre lo strappo di Vannacci - eurodeputato leghista ma vicino ad ambienti di destra-destra - rischia di aprire un fronte interno anche dentro il centrodestra, in vista delle prossime scadenze elettorali regionali.
+            Il calo di Fratelli d'Italia si accompagna a un lieve consolidamento di Lega e Forza Italia, segno che parte del malcontento resterebbe comunque interno alla maggioranza. Resta da vedere se lo scontro con Trump, che divide l'opinione pubblica tra chi vorrebbe una reazione più dura e chi teme un logoramento dei rapporti bilaterali, inciderà ulteriormente sui consensi nelle prossime rilevazioni.
           </div></div></div>
         </div>
       </article>
@@ -604,56 +621,12 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Politica</span>
-          <h3>XIX Congresso UIL a Padova: oggi la testimonianza di Gino Cecchettin, sabato tocca a Meloni</h3>
-          <p class="excerpt">Prosegue fino al 4 luglio a Padova il congresso nazionale UIL, il primo dedicato esplicitamente al lavoro nell'era dell'intelligenza artificiale, dopo l'apertura del segretario Pierpaolo Bombardieri e l'intervento di Maurizio Landini (CGIL). Oggi è in programma la testimonianza di Gino Cecchettin nell'ambito della campagna nazionale del sindacato contro il femminicidio, un momento tra i più attesi dei lavori congressuali; Meloni interverrà invece nella giornata conclusiva di sabato 4 luglio. Il congresso arriva in un momento delicato per il mondo del lavoro italiano, con la crescita del PIL attesa ferma allo 0,7% per il 2026 e per il 2027 secondo le ultime stime Istat e l'inflazione in lieve risalita, temi su cui i sindacati chiedono al governo impegni più concreti sul rinnovo dei contratti pubblici e sulla tutela del potere d'acquisto dei lavoratori.</p>
-          <div class="card-foot">
-            <div class="src-row"><a class="src-pill" href="https://www.ansa.it/veneto/notizie/2026/06/26/uil-congresso-nazionale-a-padova-dal-2-al-4-luglio-interviene-meloni_0ef7d819-d82a-44ca-ab24-d5c5a4bcced7.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
-            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
-          </div>
-          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            Il padre di Giulia Cecchettin è ormai una voce ricorrente nelle iniziative pubbliche e sindacali sul tema della violenza di genere, e la sua presenza al congresso UIL conferma la centralità che il tema ha assunto anche nell'agenda delle parti sociali, oltre che in quella politica e istituzionale.
-          </div></div></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body no-img">
-          <span class="tag">Politica</span>
-          <h3>Piano Casa, ok definitivo del Senato: legge dello Stato con 10 miliardi per l'edilizia</h3>
-          <p class="excerpt">Il Senato ha confermato con 106 sì, 62 no e 2 astensioni la fiducia al decreto Piano Casa, che diventa così legge dello Stato entro la scadenza di conversione del 6 luglio. Il provvedimento, annunciato per la prima volta da Meloni al Meeting di Rimini della scorsa estate, stanzia 10 miliardi di euro per coinvolgere i privati nella costruzione di alloggi destinati a giovani coppie, studenti e lavoratori fuori sede, oltre a un programma straordinario di recupero su 60mila alloggi di edilizia residenziale pubblica già esistenti. Il governo lo rivendica come risposta "di fatti" alla crisi abitativa nelle grandi città, mentre le opposizioni, compatte nel voto contrario, chiedono verifiche sui tempi reali di apertura dei cantieri e sulla capacità attuativa di Regioni e Comuni.</p>
-          <div class="card-foot">
-            <div class="src-row"><a class="src-pill" href="https://www.ansa.it/sito/notizie/politica/2026/07/01/ok-definitivo-del-senato-al-piano-casa-confermata-la-fiducia-con-106-si_35db5184-45c8-4c55-ba74-53c05c7e8af3.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body no-img">
-          <span class="tag">Politica</span>
-          <h3>Ricevimento per l'Independence Day a Roma, sullo sfondo il gelo con Trump</h3>
-          <p class="excerpt">Si è tenuto in questi giorni a Roma il ricevimento dell'ambasciata USA per l'Independence Day, con Salvini, Tajani, Renzi e Lupi presenti ma senza Meloni, impegnata tra gli impegni istituzionali e la preparazione del vertice NATO. L'evento arriva dopo lo scontro di fine giugno tra Trump e Meloni su dazi, vino e gas, con l'export vinicolo italiano già in calo dell'11% nel primo trimestre 2026 e fino al -20,5% sul solo mercato statunitense. La premier aveva chiarito in Consiglio dei ministri che, a suo giudizio, l'episodio non avrà impatti strutturali sui rapporti bilaterali, ma l'assenza della presidente del Consiglio da un appuntamento tradizionalmente presidiato al massimo livello politico viene letta da più osservatori come un segnale non casuale.</p>
+          <h3>Fine dello sconto sulle accise: benzina a 1,82 euro, gasolio a 1,90, imprese in pressing sul governo</h3>
+          <p class="excerpt">Il mancato rinnovo del taglio di 6 centesimi sulle accise di benzina e gasolio ha fatto scattare da inizio luglio i rincari dei carburanti: la benzina è salita in media a 1,820 euro al litro e il gasolio a 1,899 euro, con un aggravio stimato di alcuni euro per un pieno medio che pesa sui bilanci di famiglie e imprese di trasporto nel pieno della stagione estiva. La misura arriva in una fase di fitta agenda economica per l'esecutivo: a Firenze si tiene oggi l'assemblea di Confindustria Toscana Centro dal titolo "Sicurezza è sviluppo: il nuovo corso industriale del territorio", con la partecipazione del presidente di Confindustria Emanuele Orsini, mentre proseguono i dati sulla produzione industriale tedesca ed europea che offrono un primo termometro sulla tenuta della manifattura continentale nella seconda metà dell'anno. Le associazioni di categoria chiedono al governo un intervento strutturale sul costo dell'energia, non più rinviabile secondo Confcommercio e Confartigianato.</p>
           <div class="card-foot">
             <div class="src-row">
-              <a class="src-pill" href="https://www.ansa.it/sito/notizie/politica/2026/06/22/meloni-in-cdm-sullo-scontro-con-trump-non-impatti-sui-rapporti_73e89765-3cf3-454d-ad46-dcf8b60f5847.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill" href="https://www.fanpage.it/politica/la-lite-tra-meloni-e-trump-mette-a-rischio-litalia-dazi-gas-e-vino-cosa-ce-in-ballo/" target="_blank" rel="noopener">Fanpage <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-            </div>
-            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
-          </div>
-          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            In ballo ci sono interessi economici concreti: l'Italia acquista circa il 45% del proprio gas naturale liquefatto dagli Stati Uniti, mentre le esportazioni di vino verso gli USA sono calate del 20,5%. Il prossimo banco di prova per un possibile disgelo sarà l'incontro tra i due leader al vertice NATO di Ankara del 7-8 luglio.
-          </div></div></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body no-img">
-          <span class="tag">Politica</span>
-          <h3>Fine dello sconto sulle accise: da oggi pieno più caro di 3 euro, imprese in pressing sul governo</h3>
-          <p class="excerpt">Si è esaurito il 3 luglio lo sconto sulle accise di benzina e gasolio introdotto dal governo nei mesi scorsi per calmierare i prezzi dei carburanti: da domani, sabato 4 luglio, il gasolio salirà in media a 1,94 euro al litro sulla rete ordinaria (2,02 euro in autostrada) e la benzina a 1,86 euro (1,95 euro in autostrada), con un aggravio stimato di circa 3,05 euro per un pieno medio. La misura arriva in una giornata di fitta agenda economica per l'esecutivo: a Roma si è tenuta l'assemblea generale di Assovetro con l'intervento del ministro delle Imprese Adolfo Urso su competitività, energia e manifattura, mentre a Torino la Fim-Cisl ha convocato una conferenza stampa sui dati di produzione e occupazione di Stellantis nel secondo trimestre, che segna una ripresa del 13,7% con oltre 252mila unità prodotte tra auto e veicoli commerciali. A Civitavecchia si tiene inoltre l'assemblea nazionale di Federagenti, con le associazioni datoriali che chiedono al governo interventi strutturali sul costo dell'energia e sulla logistica portuale.</p>
-          <div class="card-foot">
-            <div class="src-row">
-              <a class="src-pill" href="https://www.ansa.it/canale_motori/notizie/mondo_motori/2026/07/02/stop-allo-sconto-sulle-accise-aumento-di-3-euro-a-pieno_701f3840-29fd-4f8d-b89c-168bbe1bbc3a.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill" href="https://teleborsa.ansa.it/notiziario/finanza/eventi-e-scadenze-del-3-luglio-2026/" target="_blank" rel="noopener">Teleborsa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.today.it/rassegna/start/ultime-notizie-oggi-6-luglio-2026.html" target="_blank" rel="noopener">Today.it <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.ilsole24ore.com/art/morning-note-l-agenda-lunedi-6-luglio-AJSQ6C" target="_blank" rel="noopener">Il Sole 24 Ore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
           </div>
         </div>
@@ -662,11 +635,47 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Politica</span>
-          <h3>Bonetti contro Salvini: "Isolare gli amici di Putin nella maggioranza"</h3>
-          <p class="excerpt">Torna a farsi sentire lo scontro politico interno sulla postura filo-russa di alcuni esponenti della maggioranza, con la senatrice di Italia Viva Elena Bonetti che chiede di "isolare gli amici di Putin" all'interno delle forze di governo, in un botta e risposta acceso con la Lega di Matteo Salvini. La polemica si inserisce nel dibattito più ampio sulla linea italiana in vista del vertice NATO di Ankara del 7-8 luglio, dove il sostegno a Kiev resta uno dei dossier più delicati per la tenuta della maggioranza, storicamente attraversata da sensibilità diverse tra Fratelli d'Italia, più atlantista, e componenti della Lega più caute su un sostegno militare senza limiti temporali all'Ucraina.</p>
+          <h3>Verso Ankara: nasce la "Nato europea", incognita risorse per l'Italia</h3>
+          <p class="excerpt">A ridosso del vertice NATO di Ankara del 7-8 luglio, che si terrà al Complesso Presidenziale Bestepe alla presenza di 32 capi di Stato e di governo tra cui Donald Trump e Volodymyr Zelensky, cresce il pressing sugli alleati europei per dimostrare una traiettoria credibile verso il 5% del PIL in spesa per la difesa entro il 2035. Per l'Italia, che viaggia attorno al 2,8% del PIL, il nodo principale resta l'incognita delle risorse: quali programmi di riarmo e quali investimenti infrastrutturali rischiano di slittare se Roma non riuscirà a reperire le coperture necessarie nella prossima legge di bilancio. Il vertice discuterà anche un pacchetto di sostegno militare a Kiev da 70 miliardi di euro per il biennio 2026-2027, comprensivo di un prestito UE da 30 miliardi, in un contesto di crescente enfasi sulla cosiddetta "Nato europea" capace di agire con maggiore autonomia dagli Stati Uniti.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://tg24.sky.it/mondo/2026/07/04/vertice-nato-ankara-programmi-rischio-italia" target="_blank" rel="noopener">Sky TG24 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.ansa.it/amp/europa/notizie/rubriche/altrenews/2026/07/05/ansa-al-vertice-di-ankara-nasce-la-nato-europea-nuovo-attacco-di-trump-a-meloni_f9afa21a-1ece-4ab8-9bf5-e25cd28e0765.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Il ministro della Difesa Guido Crosetto ha più volte ricordato come l'aumento della spesa militare debba tradursi anche in ricadute industriali per le aziende italiane della difesa, da Leonardo a Fincantieri, che nella seduta di borsa odierna guadagnano terreno proprio in vista delle attese commesse legate al riarmo europeo.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Politica</span>
+          <h3>Legge elettorale, il caso Vannacci continua a bloccare la riforma</h3>
+          <p class="excerpt">Resta in stallo la riforma della legge elettorale dopo l'affondo del generale Roberto Vannacci, che ha accusato apertamente Meloni di voler bloccare il ritorno delle preferenze per timore di perdere consenso interno alla Lega. Fratelli d'Italia vorrebbe reintrodurle secondo modelli alternativi, dal "modello toscano" con capolista bloccato a quello "belga" con crocetta sul nome preferito, ma Lega e Forza Italia restano contrarie, temendo un aumento dei costi di campagna elettorale. Il Foglio aveva ricostruito nei giorni scorsi una premier "tentata di sacrificare" le preferenze pur di chiudere la partita entro l'estate, mentre Italia Viva e Azione si schierano a favore delle preferenze e +Europa chiede il ritorno al Mattarellum. L'esame in Aula alla Camera resta fissato per la metà di luglio, con la maggioranza ancora divisa sul nodo di fondo.</p>
           <div class="card-foot">
             <div class="src-row"><a class="src-pill" href="https://www.ansa.it/sito/notizie/politica/politica.shtml" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
           </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Politica</span>
+          <h3>Istat: Pil italiano atteso a +0,7% nel 2026 e nel 2027, ma sale l'inflazione</h3>
+          <p class="excerpt">Le stime Istat più recenti indicano una crescita del PIL di +0,7% sia nel 2026 sia nel 2027, trainata soprattutto dalla domanda interna più che dall'export, penalizzato dalle tensioni commerciali internazionali e dallo scontro in corso tra Roma e Washington. Il deflatore dei consumi è previsto al 2,9% nel 2026, mentre l'inflazione italiana resta in leggera risalita su base annua, con un tasso di inflazione acquisita per il 2026 pari al +2,6%. Il deficit sul PIL nel primo trimestre 2026 è migliorato ma resta ancora lontano dalla soglia del 3% fissata dalle regole di bilancio europee, un vincolo che complica i margini di manovra del governo su fisco e spesa sociale. La stessa Istat segnala che la traiettoria di crescita resta condizionata dalla durata dei conflitti internazionali in corso, dal prezzo dell'energia e dall'evoluzione dei negoziati commerciali con gli Stati Uniti.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://www.ilsole24ore.com/art/istat-pil-atteso-07percento-2026-e-2027-ma-dipende-durata-conflitto-AI24szTD" target="_blank" rel="noopener">Il Sole 24 Ore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.adnkronos.com/economia/istat-stime-2026-2027-pil-inflazione-occupazione-consumi_4GYySEYVwNqUhBVzbA4lrO" target="_blank" rel="noopener">Adnkronos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            La traiettoria di crescita resta esposta ai rischi geopolitici in corso, dal conflitto in Ucraina alle tensioni in Medio Oriente, mentre il governo continua a rivendicare la tenuta dei conti pubblici come argine principale contro un possibile deterioramento del quadro macroeconomico nella seconda metà dell'anno.
+          </div></div></div>
         </div>
       </article>
     </div>
@@ -677,24 +686,21 @@
     <div class="sec-head">
       <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg></div>
       <h2>Cronaca</h2>
-      <span class="sec-count">6 notizie</span>
+      <span class="sec-count">5 notizie</span>
     </div>
 
     <div class="cards">
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Cronaca</span>
-          <h3>Omicidio del pizzaiolo a Reggio Emilia: il gip non riconosce la premeditazione, Pellati resta in carcere</h3>
-          <p class="excerpt">Il gip di Reggio Emilia Francesco Panchieri ha convalidato il fermo e disposto la custodia cautelare in carcere per Andrea Pellati, 43 anni, accusato di aver ucciso a coltellate Raffaele Stipa, storico titolare da vent'anni di una pizzeria in città, colpito alla gola davanti alla sorella Antonella, poi ricoverata sotto choc. Il giudice ha riconosciuto l'aggravante dei futili motivi ma non quella della premeditazione contestata inizialmente dalla procura, che pure aveva parlato di un uomo "entrato unicamente ed esclusivamente per uccidere la vittima" sulla base delle ricostruzioni delle telecamere interne del locale. Pellati, con precedenti per reati legati alla droga e cliente abituale della pizzeria, sarebbe stato intercettato dai carabinieri verso le 2 di notte nell'abitazione dei genitori; davanti al giudice si è chiuso in un silenzio quasi totale, limitandosi a dichiarare di non volersi far "processare da questo Stato". Il movente resta legato a un diverbio per alcune pizze non pagate da un conoscente dell'aggressore poche ore prima dell'omicidio.</p>
+          <h3>Milano, accoltella uno sconosciuto in un bar: "Mi sono divertito, appena esco lo rifaccio"</h3>
+          <p class="excerpt">Un 22enne nato a Conegliano Veneto, Lamin Saidilly, sarà interrogato oggi dal gip Luigi Iannelli nel carcere di San Vittore con l'accusa di tentato omicidio, dopo aver accoltellato senza apparente motivo uno sconosciuto in un bar milanese nelle scorse ore. Secondo quanto ricostruito dagli inquirenti, il giovane si sarebbe avvicinato alla vittima senza alcun diverbio precedente per colpirla con un'arma da taglio, per poi essere bloccato dagli avventori del locale in attesa dell'arrivo delle forze dell'ordine. Mentre veniva ammanettato, Saidilly avrebbe pronunciato la frase shock "mi sono divertito, appena esco lo rifaccio", raccogliendo l'attonita reazione dei presenti e degli agenti intervenuti. La vittima è stata trasportata in ospedale con ferite giudicate non in pericolo di vita, mentre la Procura di Milano valuta ora l'aggravante della crudeltà e la capacità di intendere e di volere dell'aggressore, che sarà sottoposto a perizia psichiatrica.</p>
           <div class="card-foot">
-            <div class="src-row">
-              <a class="src-pill" href="https://www.ansa.it/sito/notizie/cronaca/2026/07/02/omicidio-del-pizzaiolo-il-gip-non-riconosce-la-premeditazione_cd962a8c-1a00-48f1-a0f6-c318d1338160.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill" href="https://www.ilrestodelcarlino.it/reggio-emilia/cronaca/omicidio-pizzeria-arrestato-assassino-diretta-g4627gx6" target="_blank" rel="noopener">il Resto del Carlino <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-            </div>
+            <div class="src-row"><a class="src-pill" href="https://www.today.it/rassegna/start/ultime-notizie-oggi-6-luglio-2026.html" target="_blank" rel="noopener">Today.it <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            Il delitto, avvenuto il 29 giugno, ha sconvolto la comunità reggiana: nei giorni successivi si è tenuto un lungo corteo cittadino contro la violenza, con centinaia di residenti che chiedevano "basta violenza" e più sicurezza nei pubblici esercizi. L'assassino abitava a pochi metri dalla pizzeria della vittima.
+            Il caso ha riacceso il dibattito sulla sicurezza nei locali pubblici milanesi, già al centro di polemiche negli ultimi mesi per una serie di episodi di violenza improvvisa legati anche al consumo di sostanze stupefacenti, sui quali la Procura sta indagando parallelamente al fascicolo principale.
           </div></div></div>
         </div>
       </article>
@@ -702,17 +708,25 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Cronaca</span>
-          <h3>Caso Elisa Claps, la Procura di Potenza riapre l'inchiesta per concorso in omicidio</h3>
-          <p class="excerpt">A oltre trent'anni dalla scomparsa di Elisa Claps, la sedicenne uccisa a Potenza nel settembre 1993 e il cui corpo fu ritrovato solo nel 2010 nel sottotetto della chiesa della Santissima Trinità, la Procura della Repubblica ha riaperto il fascicolo con l'ipotesi di concorso in omicidio, al momento contro ignoti. L'unico condannato in via definitiva per il delitto, Danilo Restivo, sta scontando 30 anni di carcere, ma da tempo la famiglia della vittima sospetta la presenza di complici o coperture mai chiarite del tutto nelle indagini originarie. Nei mesi scorsi il RIS dei carabinieri ha condotto nuovi accertamenti tecnico-scientifici, anche con tecnologie di ultima generazione, all'interno del sottotetto della chiesa dove il corpo restò nascosto per quasi diciassette anni. La notizia della riapertura è stata annunciata dal fratello di Elisa, Gildo Claps, nell'ultima puntata di "Chi l'ha visto?" condotta da Federica Sciarelli, e successivamente confermata da fonti giudiziarie potentine.</p>
+          <h3>Roma, motociclista muore in un incidente sulla via Appia Nuova</h3>
+          <p class="excerpt">Roberto Orsola, alla guida di un motorino, ha perso la vita domenica pomeriggio dopo essersi scontrato con un furgone all'incrocio tra via Appia Nuova e via del Quarto Miglio, nella zona di Statuario-IV Miglio, intorno alle 18. Sul posto sono intervenuti i sanitari del 118, che non hanno potuto far altro che constatare il decesso dell'uomo, e la polizia locale di Roma Capitale, che ha eseguito i rilievi scientifici per ricostruire l'esatta dinamica del sinistro. Il conducente del furgone, un italiano di 57 anni, è stato accompagnato al Policlinico di Tor Vergata per gli accertamenti di rito su alcol e droga, prassi standard in casi di incidente mortale. Il tratto di via Appia Nuova interessato dallo scontro è già stato più volte segnalato da comitati di quartiere come punto critico per la sicurezza stradale, complice l'alta velocità media dei veicoli in transito.</p>
           <div class="card-foot">
-            <div class="src-row">
-              <a class="src-pill" href="https://www.ansa.it/sito/notizie/cronaca/2026/07/02/linchiesta-su-elisa-claps-riaperta-per-concorso-in-omicidio_499d3ea9-e76d-4576-a5ed-89baf83c540f.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill" href="https://tg24.sky.it/cronaca/2026/07/02/caso-elisa-claps-riapertura-indagini-potenza" target="_blank" rel="noopener">Sky TG24 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-            </div>
+            <div class="src-row"><a class="src-pill" href="https://www.romatoday.it/cronaca/incidente-stradale/morto-via-appia-nuova-5-luglio-2026.html" target="_blank" rel="noopener">RomaToday <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Cronaca</span>
+          <h3>Bisceglie, bimbo di 10 mesi muore dopo una caduta dal lettone: indagano i carabinieri</h3>
+          <p class="excerpt">Un bambino di appena dieci mesi è morto a Bisceglie, nel Nord Barese, in seguito alle gravi lesioni riportate in una caduta avvenuta in casa nei giorni scorsi. Secondo il racconto della madre agli inquirenti, il piccolo sarebbe caduto dal lettone matrimoniale nonostante fossero stati posizionati dei cuscini a mo' di barriera protettiva ai lati del materasso, una precauzione rivelatasi purtroppo insufficiente. I carabinieri della compagnia locale hanno aperto un fascicolo conoscitivo, come da prassi in ogni caso di decesso di un minore in circostanze non immediatamente chiare, per ricostruire con esattezza la dinamica dell'accaduto e escludere responsabilità di terzi. La salma è stata messa a disposizione dell'autorità giudiziaria per gli accertamenti medico-legali del caso, mentre la comunità cittadina si è stretta attorno alla famiglia colpita dal lutto.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.ansa.it/sito/notizie/cronaca/cronaca.shtml" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            Il caso Claps resta tra i più seguiti della cronaca giudiziaria italiana degli ultimi trent'anni, anche per le polemiche sul ruolo di alcuni religiosi della chiesa potentina nella lunga scomparsa del corpo. La riapertura dell'inchiesta riaccende ora l'attenzione su possibili responsabilità mai accertate accanto a quella di Restivo.
+            Le morti accidentali in ambito domestico tra i minori restano un tema di attenzione costante per pediatri e forze dell'ordine, che ricordano periodicamente come i lettini con sponde omologate restino la soluzione più sicura per i neonati rispetto a soluzioni improvvisate con cuscini o altri oggetti.
           </div></div></div>
         </div>
       </article>
@@ -720,30 +734,14 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Cronaca</span>
-          <h3>Morte dell'agente Imprezzabile: il 26enne Genti Berisha torna in carcere dopo appena un'ora ai domiciliari</h3>
-          <p class="excerpt">Genti Berisha, il 26enne albanese ritenuto responsabile dell'incidente stradale del 22 giugno scorso a Peschiera Borromeo, nel Milanese, in cui morì l'agente della polizia locale Francesco Imprezzabile durante un inseguimento, è tornato in carcere a poche ore dalla scarcerazione. Era stato rimesso in libertà la mattina del 2 luglio con il braccialetto elettronico per ordine della gip di Milano Giulia Masci, ma carabinieri e squadra mobile di Monza lo hanno nuovamente arrestato nel giro di un'ora per l'aggravamento della misura cautelare disposto da un giudice di Brescia, dove Berisha è imputato in un separato processo per traffico di droga. Le autorità hanno motivato il nuovo arresto con "un profilo criminale troppo alto" per continuare a scontare la misura ai domiciliari. Il fascicolo aperto a Milano sulla morte di Imprezzabile procede intanto con l'ipotesi di omicidio stradale.</p>
+          <h3>Ritrovato in Libia il corpo del surfista pugliese scomparso il 1° maggio a Porto Cesareo</h3>
+          <p class="excerpt">Il corpo di un surfista è stato ritrovato al largo della costa libica di Daryana, a est di Bengasi, con la tavola da kitesurf ancora legata al corpo: secondo gli inquirenti italiani si tratterebbe di Mimmo Piepoli, 39enne originario del Salento scomparso il primo maggio scorso mentre praticava kitesurf nelle acque di Porto Cesareo, in provincia di Lecce. Le ricerche, condotte per settimane da Guardia Costiera e Vigili del Fuoco senza esito, erano state sospese in assenza di nuovi elementi, lasciando la famiglia in un'angosciante attesa durata oltre due mesi. Le autorità libiche hanno segnalato il ritrovamento alle autorità consolari italiane, che ora attendono la conferma definitiva dell'identità tramite esame del DNA prima di procedere al rimpatrio della salma. La corrente del Mediterraneo centrale avrebbe trasportato il corpo per centinaia di chilometri dalla costa pugliese fino alle coste nordafricane, un fenomeno già osservato in altri casi di dispersi in mare in questo tratto di Mediterraneo.</p>
           <div class="card-foot">
-            <div class="src-row">
-              <a class="src-pill" href="https://www.ansa.it/lombardia/notizie/2026/07/02/torna-in-carcere-il-26enne-arrestato-per-la-morte-dellagente-imprezzabile_705ce23e-e100-4c36-a25b-1f197e2ac8a4.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill" href="https://www.ilgiorno.it/milano/cronaca/genti-berisha-torna-carcere-y3ua0vvw" target="_blank" rel="noopener">il Giorno <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body no-img">
-          <span class="tag">Cronaca</span>
-          <h3>Caporalato nei vigneti del Trentino: arrestato un 50enne, braccianti sfruttati 11 ore al giorno</h3>
-          <p class="excerpt">I carabinieri della compagnia di Borgo Valsugana hanno arrestato un cittadino italiano di 50 anni, di origine pakistana, accusato di intermediazione illecita di manodopera, sfruttamento del lavoro, tentata estorsione, lesioni aggravate e minacce nei confronti di connazionali impiegati nei vigneti e frutteti della Valsugana. Secondo l'accusa, l'uomo reclutava braccianti costringendoli a turni fino a undici ore al giorno senza riposo settimanale garantito, per una paga di circa 8 euro l'ora, trattenendo parte del compenso. L'inchiesta è partita dalla denuncia coraggiosa di due giovani lavoratori pakistani, uno dei quali era stato ricoverato in ospedale dopo un pestaggio subito da un gruppo di sei connazionali ingaggiati dall'arrestato; un testimone dell'aggressione sarebbe stato minacciato con un coltello puntato al petto per dissuaderlo dal denunciare. L'operazione, condotta insieme alla polizia giudiziaria della Procura di Trento, ha già portato a un monitoraggio di oltre cento aziende agricole del territorio nell'ambito della più ampia lotta al caporalato in regione.</p>
-          <div class="card-foot">
-            <div class="src-row">
-              <a class="src-pill" href="https://www.ansa.it/trentino/notizie/2026/07/02/violenza-e-minacce-di-ritorsione-caporalato-nei-vigneti-del-trentino_163a274e-5bea-4914-b823-1177f80c6ee1.html" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-            </div>
+            <div class="src-row"><a class="src-pill" href="https://www.ansa.it/sito/notizie/cronaca/cronaca.shtml" target="_blank" rel="noopener">ANSA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            Il caso riporta l'attenzione sullo sfruttamento del lavoro agricolo stagionale anche in territori del Nord Italia solitamente meno associati al fenomeno del caporalato rispetto al Mezzogiorno, confermando come la piaga colpisca ormai l'intera filiera agricola nazionale, vigneti d'alta gamma trentini compresi.
+            La vicenda aveva mobilitato per settimane la comunità di Porto Cesareo e l'intero mondo del kitesurf salentino, con appelli social e fiaccolate per tenere alta l'attenzione sulle ricerche, interrotte più volte dal maltempo e dalle correnti avverse nel tratto di mare tra Puglia e Nord Africa.
           </div></div></div>
         </div>
       </article>
@@ -751,26 +749,10 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Cronaca</span>
-          <h3>Castrovillari, smantellata rete di spaccio: cinque misure cautelari e dieci indagati</h3>
-          <p class="excerpt">La squadra mobile della Questura di Cosenza e il commissariato di Castrovillari, coordinati dalla Procura calabrese guidata dal procuratore capo Alessandro D'Alessio, hanno eseguito cinque misure cautelari — due in carcere, una ai domiciliari e due obblighi di presentazione alla polizia giudiziaria — nell'ambito di un'inchiesta sullo spaccio di cocaina, hashish e marijuana nel comune del Pollino e nei paesi limitrofi. Gli investigatori hanno ricostruito circa sessanta episodi di cessione di stupefacenti tra gennaio 2024 e luglio 2025, un'attività stabile e continuativa confermata da intercettazioni telefoniche e ambientali, oltre che da numerosi arresti in flagranza di acquirenti sorpresi con dosi appena acquistate. Altri dieci soggetti risultano indagati a piede libero nell'ambito della stessa indagine, che ha permesso di ricostruire l'intera filiera di approvvigionamento e rivendita al dettaglio della droga sul territorio.</p>
+          <h3>Tyler Robinson, l'accusato dell'omicidio Kirk, contesta in aula l'impianto accusatorio</h3>
+          <p class="excerpt">Tyler Robinson, il giovane accusato dell'assassinio dell'attivista conservatore Charlie Kirk, ha iniziato a contestare pubblicamente la ricostruzione dell'accusa, mentre il caso della procura si fa sempre più corposo e articolato in vista del processo. I legali della difesa hanno depositato una serie di istanze per contestare alcune prove raccolte nelle prime fasi delle indagini, sostenendo vizi procedurali nella loro acquisizione, mentre l'ufficio del procuratore ha replicato ribadendo la solidità del quadro indiziario a carico dell'imputato. Il caso, che ha avuto ampia risonanza mediatica negli Stati Uniti per il profilo pubblico della vittima, prosegue nelle aule di tribunale con udienze preliminari che si preannunciano lunghe e complesse, anche per il numero di testimoni e perizie tecniche coinvolte nel fascicolo.</p>
           <div class="card-foot">
-            <div class="src-row">
-              <a class="src-pill" href="https://www.quotidianodelsud.it/calabria/cosenza/cronache/criminalita/2026/07/02/droga-a-castrovillari-smantellata-la-rete-dello-spaccio-5-misure-cautelari" target="_blank" rel="noopener">Il Quotidiano del Sud <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body no-img">
-          <span class="tag">Cronaca</span>
-          <h3>Maltempo, notte di nubifragi tra Veneto ed Emilia-Romagna: oltre 390 interventi dei vigili del fuoco</h3>
-          <p class="excerpt">Una violenta ondata temporalesca ha colpito nella notte tra l'1 e il 2 luglio il Veneto, dove è scattata l'allerta rossa per rischio idrogeologico e temporali, impegnando i vigili del fuoco in oltre 390 interventi dalle 18 in poi, soprattutto per taglio e rimozione di alberi e rami pericolanti e messa in sicurezza di pali abbattuti dal forte vento. Allerta arancione anche in Emilia-Romagna, con danni segnalati sulla costa e sulle colline romagnole, mentre in Friuli Venezia Giulia i fulmini hanno provocato tre incendi e sradicato alberi in diverse zone della pianura e della costa. Il maltempo ha avuto ripercussioni anche sugli eventi pubblici in programma: a Siena è stata annullata la Provaccia, la prova generale del Palio del 2 luglio, poi comunque disputato in serata in onore della Madonna di Provenzano. Il bollettino della Protezione Civile manteneva gialla l'allerta su gran parte del resto del Paese, da Abruzzo e Basilicata fino a Sicilia, Sardegna e Toscana.</p>
-          <div class="card-foot">
-            <div class="src-row">
-              <a class="src-pill" href="https://www.leggo.it/italia/cronache/02_luglio_2026_maltempo_danni_roma_milano_diretta_oggi-9627482.html" target="_blank" rel="noopener">Leggo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill" href="https://www.meteo.it/notizie/meteo-allerta-arancione-e-gialla-2-luglio-2026-dove-fab2898e" target="_blank" rel="noopener">Meteo.it <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-            </div>
+            <div class="src-row"><a class="src-pill en" href="https://www.foxnews.com/us/accused-charlie-kirk-assassin-tyler-robinson-fights-back-prosecutors-sprawling-case-comes-focus" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Fox News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
           </div>
         </div>
       </article>
@@ -792,17 +774,17 @@
         </div>
         <div class="card-body">
           <span class="tag">Geopolitica</span>
-          <h3>Kiev in lutto: il bilancio del massiccio attacco russo sale a 30 morti, sotto le macerie ancora tre dispersi</h3>
-          <p class="excerpt">Il sindaco Vitali Klitschko ha proclamato il 3 luglio giornata di lutto cittadino a Kiev, con le bandiere a mezz'asta su tutti gli edifici pubblici, dopo l'attacco russo combinato della notte tra l'1 e il 2 luglio: 74 missili e 496 droni a lungo raggio lanciati soprattutto sulla capitale, di cui 25 missili balistici e 12 droni d'attacco sono riusciti a superare la contraerea ucraina, che ne ha abbattuti 524 su 570. Il bilancio è salito a 30 morti la mattina del 3 luglio, dopo che i soccorritori hanno estratto altri tre corpi dalle macerie di un palazzo di nove piani nel distretto di Darnytskyi, crollato per l'impatto di un missile che ha distrutto 64 appartamenti; tre persone risultano ancora disperse. Gli ospedali della capitale hanno registrato oltre 110 feriti. Il ministero della Difesa russo ha presentato l'attacco come rappresaglia per i raid ucraini a lungo raggio contro le raffinerie russe, che avrebbero causato carenze di carburante in diverse regioni della Federazione.</p>
+          <h3>Nuova notte di terrore a Kiev: 11 morti nella capitale, Zelensky chiede "decisioni forti" ad Ankara</h3>
+          <p class="excerpt">La Russia ha lanciato nella notte tra domenica 5 e lunedì 6 luglio un nuovo massiccio attacco con missili e droni contro Kiev, che il ministero della Difesa di Mosca ha definito un raid contro "impianti militari-industriali e impianti energetici" della capitale ucraina. Il bilancio è salito a 14 morti e 76 feriti nell'intera regione di Kiev, di cui 11 morti e 60 feriti nella sola capitale, con più di dieci esplosioni udite in città e un edificio residenziale parzialmente crollato tra il settimo e il nono piano nel quartiere di Podilskyi, secondo quanto riferito da Tymur Tkachenko, capo dell'amministrazione militare cittadina. Il presidente ucraino Volodymyr Zelensky ha esortato gli alleati a prendere "decisioni forti" al vertice NATO di Ankara del 7-8 luglio, sottolineando che "è di fondamentale importanza che il mondo, in primis Stati Uniti ed Europa, esca dal summit con decisioni forti a sostegno della nostra difesa aerea". Caccia della NATO sono decollati per pattugliare lo spazio aereo alleato dopo le minacce di Putin alla Polonia delle scorse settimane.</p>
           <div class="card-foot">
             <div class="src-row">
-              <a class="src-pill en" href="https://kyivindependent.com/ukraine-war-latest-serious-destruction-massive-russian-missile-drone-attack-on-kyiv-kills-at-least-22-injures-nearly-90/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Kyiv Independent <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill en" href="https://www.euronews.com/my-europe/2026/07/03/death-toll-rises-to-30-following-russias-massive-attack-on-kyiv" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Euronews <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.ilmessaggero.it/mondo/guerra_ucraina_attacchi_oggi_diretta_6_luglio-9634879.html" target="_blank" rel="noopener">il Messaggero <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.open.online/2026/07/06/guerra-russia-ucraina-6-lug-ultime-notizie-diretta/" target="_blank" rel="noopener">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            Klitschko ha disposto anche l'annullamento degli eventi di intrattenimento in città e ha invitato istituzioni statali e organizzazioni private a esporre a loro volta le bandiere a mezz'asta. Il segretario generale della NATO ha ribadito nei giorni scorsi che la Russia resta "la principale minaccia a lungo termine" per l'Alleanza, un giudizio che pesa sull'agenda del vertice di Ankara del 7-8 luglio, dove il sostegno militare a Kiev è tra i dossier prioritari insieme alla spesa per la difesa.
+            L'attacco arriva alla vigilia del vertice NATO che discuterà un pacchetto di sostegno militare a Kiev da 70 miliardi di euro per il biennio 2026-2027, comprensivo di un prestito UE da 30 miliardi. Zelensky è tra i leader attesi ad Ankara insieme ai 32 capi di Stato e di governo dell'Alleanza, in un vertice che si preannuncia decisivo anche per la difesa aerea ucraina dopo mesi di raid sempre più intensi sulle città.
           </div></div></div>
         </div>
       </article>
@@ -810,17 +792,17 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Geopolitica</span>
-          <h3>Iniziano oggi a Teheran i funerali di Khamenei: attesi 15-20 milioni di persone, negoziati con gli USA sospesi</h3>
-          <p class="excerpt">Prendono ufficialmente il via oggi, venerdì 3 luglio, a Teheran le esequie di Stato della Guida suprema Ali Khamenei, ucciso il 28 febbraio scorso in un attacco aereo congiunto di Stati Uniti e Israele insieme ad altri cinque-dieci alti dirigenti iraniani riuniti in un compound della capitale. La salma sarà esposta nella Grande Mosalla, uno dei più grandi complessi per la preghiera del Paese, prima di un corteo funebre di sette giorni che toccherà Qom, Najaf e Karbala in Iraq, per concludersi mercoledì con la sepoltura nel santuario dell'Imam Reza a Mashhad; le autorità iraniane stimano un afflusso record tra i 15 e i 20 milioni di pellegrini, il più grande funerale di Stato nella storia della Repubblica islamica, con rappresentanti attesi da oltre cento Paesi. I colloqui indiretti tra Washington e Teheran, che secondo i mediatori di Qatar e Pakistan avevano registrato "progressi positivi" nei giorni scorsi a Doha, restano sospesi per lasciare spazio alle cerimonie, con le parti che si sono impegnate a riprenderli "il prima possibile". Nel frattempo il comando militare congiunto iraniano Khatam al-Anbiya ha intimato a tutte le petroliere in transito nello Stretto di Hormuz di attenersi alle rotte approvate da Teheran, pena una "risposta forte e immediata" delle forze armate.</p>
+          <h3>Vertice NATO di Ankara: 32 leader al Bestepe, Trump e Zelensky tra i partecipanti</h3>
+          <p class="excerpt">Si apre dopodomani, 7 luglio, ad Ankara il vertice NATO ospitato per la prima volta dalla Turchia nella storia dell'Alleanza, al Complesso Presidenziale Bestepe e presieduto dal segretario generale Mark Rutte. Sono attesi 32 capi di Stato e di governo, incluso il presidente americano Donald Trump, oltre ai rappresentanti del blocco Asia-Pacifico (Australia, Giappone, Nuova Zelanda e Corea del Sud) e il leader ucraino Volodymyr Zelensky. Tra i temi principali: il sostegno militare a Kiev da 70 miliardi di euro per il 2026-2027, l'obiettivo del 5% del PIL in spesa per la difesa entro il 2035 e l'accelerazione della produzione industriale bellica per rafforzare le catene di approvvigionamento. Al momento non risulta in agenda un faccia a faccia bilaterale tra Giorgia Meloni e Trump, ma i due leader si rivedranno comunque di persona per la prima volta dopo lo scambio di accuse social delle ultime settimane, in un clima diplomatico ancora molto teso.</p>
           <div class="card-foot">
             <div class="src-row">
-              <a class="src-pill en" href="https://www.aljazeera.com/news/2026/7/3/irans-khamenei-funeral-which-world-leaders-are-attending" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Al Jazeera <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill en" href="https://www.cbsnews.com/live-updates/us-iran-war-trump-negotiations-pause-ayatollah-funeral/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> CBS News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://tg24.sky.it/mondo/2026/07/06/nato-vertice-ankara-partecipanti-temi" target="_blank" rel="noopener">Sky TG24 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://formiche.net/2026/07/ankara-2026-vertice-nato-era-del-caos/" target="_blank" rel="noopener">Formiche.net <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            L'intesa provvisoria tra le parti prevedeva il libero transito delle navi per 60 giorni senza pedaggi, ma Teheran insiste ora per controllare le rotte delle imbarcazioni e per introdurre in futuro tariffe di passaggio, capovolgendo una prassi in vigore da decenni: i flussi petroliferi attraverso Hormuz sono risaliti a circa 4,8 milioni di barili al giorno dall'accordo USA-Iran, ma restano ben al di sotto dei 15 milioni pre-crisi. Sul nodo più delicato, quello del disarmo nucleare, i progressi restano minimi nonostante l'ottimismo di Trump sulle altre questioni negoziali.
+            Gli analisti definiscono Ankara "il vertice che misura la capacità dell'Occidente di adattarsi all'era del caos", con la NATO chiamata a dimostrare coesione su più fronti contemporaneamente: il riarmo europeo, il sostegno di lungo periodo a Kiev e la gestione dei rapporti interni all'Alleanza dopo le frizioni tra Washington e alcuni alleati europei, Italia in testa.
           </div></div></div>
         </div>
       </article>
@@ -828,17 +810,17 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Geopolitica</span>
-          <h3>Attentato di Damasco, il bilancio sale a nove morti: procura siriana indaga su opposizione al nuovo governo</h3>
-          <p class="excerpt">È salito a nove morti e 22 feriti il bilancio dell'esplosione di giovedì in un affollato caffè sulla centralissima via al-Nasr a Damasco, nel quartiere di al-Marjah, a poco più di cento metri dal Palazzo di Giustizia. Secondo le prime ricostruzioni delle autorità siriane un uomo avrebbe piazzato un ordigno artigianale — circa un chilogrammo di esplosivo imbottito di schegge metalliche — sotto un tavolo per poi allontanarsi, forse con l'intento di colpire in un secondo momento anche il vicino tribunale, frequentato da avvocati e impiegati giudiziari abituali clienti del locale. Nessun gruppo ha ancora rivendicato l'attacco, ma gli analisti lo considerano una grave falla di sicurezza nel cuore della capitale, in un contesto segnato dal numero crescente di oppositori del nuovo governo siriano insediatosi dopo la caduta di Assad: l'attentato più grave dai tempi dell'attacco a una chiesa di Damasco del giugno 2025, che causò 25 morti.</p>
+          <h3>Processione funebre per Khamenei attraversa Teheran: proseguono le esequie di Stato fino al 9 luglio</h3>
+          <p class="excerpt">Prosegue a Teheran la lunga processione funebre per la Guida suprema iraniana Ali Khamenei, ucciso il 28 febbraio scorso in un attacco aereo israeliano nel primo giorno della guerra con Israele: le esequie di Stato, iniziate il 3 luglio, si concluderanno il 9 con la sepoltura nel santuario dell'Imam Reza a Mashhad, dopo tappe a Qom e nelle città sacre irachene di Najaf e Karbala. Decine di migliaia di persone hanno affollato nuovamente le strade della capitale iraniana, con il governo che ha facilitato l'afflusso record di pellegrini fornendo trasporti, cibo e alloggio gratuiti; dozzine di delegazioni straniere hanno preso parte alle cerimonie, ma le nazioni occidentali sono rimaste assenti. Resta ignoto il luogo in cui si trovi il nuovo leader supremo Mojtaba Khamenei, figlio del defunto, che non parteciperà di persona alle celebrazioni per motivi di sicurezza e non si è mai mostrato in pubblico dalla morte del padre.</p>
           <div class="card-foot">
             <div class="src-row">
-              <a class="src-pill en" href="https://www.aljazeera.com/news/2026/7/2/whats-behind-the-deadly-bombing-of-a-crowded-damascus-cafe" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Al Jazeera <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill en" href="https://www.washingtonpost.com/world/2026/07/02/syria-damascus-explosion-cafe/68296ec0-7617-11f1-b665-5f8be87f3787_story.html" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Washington Post <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.ilpost.it/2026/07/06/processione-funebre-khamenei-teheran/" target="_blank" rel="noopener">Il Post <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill en" href="https://www.euronews.com/2026/07/03/iran-to-host-dozens-of-foreign-leaders-for-khameneis-funeral-with-western-nations-absent" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Euronews <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            L'episodio si inserisce in un quadro di instabilità persistente in Siria, dove il nuovo esecutivo fatica ancora a consolidare il controllo del territorio e a garantire sicurezza nella capitale, nonostante il progressivo riconoscimento internazionale ottenuto nei mesi scorsi.
+            Il funerale, tra i più imponenti nella storia della Repubblica islamica, avviene in un contesto di grande incertezza sul futuro assetto di potere in Iran, con il nuovo leader ancora poco visibile pubblicamente e i negoziati indiretti con Washington sospesi in attesa della conclusione delle cerimonie religiose.
           </div></div></div>
         </div>
       </article>
@@ -846,14 +828,14 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Geopolitica</span>
-          <h3>Oceani mai così caldi: nuovo record storico a giugno secondo Copernicus, mentre l'Europa affronta la seconda ondata di calore</h3>
-          <p class="excerpt">Secondo i dati del servizio europeo Copernicus, a giugno 2026 le temperature superficiali degli oceani hanno superato i record già molto elevati registrati nello stesso periodo del 2023 e del 2024, con conseguenze dirette sui modelli meteorologici, sul clima globale e sugli ecosistemi marini. Il dato arriva mentre l'Europa affronta la seconda ondata di calore della stagione, dopo quella di fine giugno che ha portato temperature record in Germania (41,7°C a Coschen), Polonia (40,5°C) e Ungheria, coinvolgendo oltre 190 milioni di persone nel continente e causando oltre 200 morti solo in Spagna. L'Organizzazione Mondiale della Sanità ha convocato per il 6 luglio una riunione d'emergenza con i referenti nazionali europei per coordinare la risposta sanitaria, mentre gli esperti climatici prevedono un trend simile anche per agosto.</p>
+          <h3>Gaza, la tregua regge solo sulla carta: pressione militare israeliana resta alta</h3>
+          <p class="excerpt">Otto mesi dopo l'accordo di cessate il fuoco a Gaza, la tregua esiste più sulla carta che sul terreno: secondo il monitoraggio indipendente ACLED, l'attività militare israeliana è calata di circa il 20% a giugno, trainata da un minor numero di bombardamenti e attacchi di artiglieria, ma resta concentrata soprattutto attorno alla cosiddetta "Yellow Line", in particolare nei quartieri di Shujaiyya, al-Maghazi, Bani Suheila e al-Mawasi. Il dato indica uno spostamento strategico verso il consolidamento della zona di sicurezza israeliana più che una vera e propria de-escalation. Nonostante nuovi negoziati sulla tregua avviati in Egitto a giugno, restano irrisolti i nodi principali: il disarmo di Hamas, il ritiro delle truppe israeliane e gli assetti di governance e sicurezza per la Gaza del dopoguerra, con le due parti su posizioni ancora incompatibili. La situazione umanitaria resta gravissima, con diversi degli episodi più letali del mese registrati proprio in luoghi che ospitavano o assistevano civili.</p>
           <div class="card-foot">
-            <div class="src-row"><a class="src-pill" href="https://www.ilfattoquotidiano.it/2026/07/01/temperature-oceani-record-2026-copernicus-notizie/8436035/" target="_blank" rel="noopener">Il Fatto Quotidiano <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <div class="src-row"><a class="src-pill en" href="https://acleddata.com/update/middle-east-overview-july-2026" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> ACLED <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            La crisi climatica si intreccia sempre più con l'agenda geopolitica europea: la nuova presidenza irlandese del Consiglio UE ha inserito la transizione energetica tra le priorità del semestre, mentre la frequenza crescente di eventi estremi alimenta il dibattito su adattamento infrastrutturale e costi sanitari pubblici in tutto il continente.
+            Le prospettive per un cessate il fuoco duraturo o un accordo politico stabile restano limitate, secondo gli analisti di ACLED, mentre la comunità internazionale continua a fare pressione su entrambe le parti perché riprendano con maggiore determinazione i colloqui interrotti in Egitto.
           </div></div></div>
         </div>
       </article>
@@ -861,28 +843,21 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Geopolitica</span>
-          <h3>Verso Ankara: i 32 alleati NATO alla prova del 5% del PIL in difesa, focus anche su industria e Ucraina</h3>
-          <p class="excerpt">Manca meno di una settimana al vertice NATO di Ankara del 7-8 luglio, il primo ospitato dalla Turchia nella storia dell'Alleanza, che metterà alla prova l'impegno assunto un anno fa all'Aja dai 32 Paesi membri: portare la spesa per la difesa al 5% del PIL entro il 2035, ripartito tra il 3,5% di spesa militare pura e l'1,5% per infrastrutture strategiche, cybersicurezza e base industriale della difesa. Alcuni alleati raggiungeranno già nel 2026 l'obiettivo con largo anticipo sulla tabella di marcia, mentre nel 2025 gli europei e il Canada hanno aumentato gli investimenti collettivi di 139 miliardi di dollari in termini nominali. Il 7 luglio si terrà inoltre a margine il NATO Summit Defence Industry Forum, che riunirà funzionari dell'Alleanza, rappresentanti dei Paesi partner e vertici industriali per discutere l'accelerazione della produzione bellica comune. Il sostegno di lungo periodo a Kiev resta il secondo grande dossier del summit, con l'Alleanza chiamata a garantire che l'assistenza militare resti sostenibile nel tempo mentre la guerra in Ucraina entra nel suo quinto anno.</p>
+          <h3>Super tifone Bavi si abbatte su Guam e le isole del Pacifico</h3>
+          <p class="excerpt">Il super tifone Bavi ha portato venti fortissimi su Guam e sulle isole circostanti nel Pacifico, costringendo le autorità locali a diramare allerte straordinarie e a predisporre piani di evacuazione per le zone costiere più esposte. Le infrastrutture civili e militari dell'isola, sede di una delle principali basi statunitensi nel Pacifico occidentale, sono state messe in stato di allerta massima in vista del possibile impatto diretto della tempesta. Il fenomeno si inserisce in una stagione di uragani e tifoni particolarmente intensa nel bacino del Pacifico, che gli scienziati climatici collegano al surriscaldamento record delle acque oceaniche osservato negli ultimi mesi, un trend che secondo i dati Copernicus ha toccato nuovi massimi storici anche a giugno.</p>
           <div class="card-foot">
-            <div class="src-row">
-              <a class="src-pill en" href="https://www.nato.int/en/news-and-events/events/2026/07/overview---2026-nato-summit-in-ankara-" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> NATO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill en" href="https://www.dailysabah.com/business/defense/nato-defense-spending-how-allies-stand-ahead-of-key-ankara-summit" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Daily Sabah <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-            </div>
-            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+            <div class="src-row"><a class="src-pill en" href="https://www.npr.org/2026/07/05/g-s1-132052/guam-pacific-islands-brace-super-typhoon-bavi" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> NPR <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
           </div>
-          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            Per l'Italia, che secondo le ultime stime viaggia attorno al 2,8% del PIL in spesa per la difesa, il vertice sarà anche il banco di prova della credibilità della road map presentata da Palazzo Chigi, oltre all'occasione per un possibile disgelo diplomatico tra Meloni e Trump dopo lo scontro di fine giugno su dazi, vino e gas.
-          </div></div></div>
         </div>
       </article>
 
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Geopolitica</span>
-          <h3>Irlanda alla guida del Consiglio UE: sicurezza e migrazione al centro del semestre</h3>
-          <p class="excerpt">Dal 1° luglio l'Irlanda ha assunto la presidenza semestrale del Consiglio dell'Unione Europea, con lo slogan gaelico "Ní neart go cur le chéile" ("l'unione fa la forza"). Le priorità dichiarate da Dublino sono tre: competitività economica attraverso la roadmap "One Europe, One Market", promozione dei valori europei e dello stato di diritto, e sicurezza interna, con particolare attenzione alla lotta alla criminalità organizzata transfrontaliera e alla piena attuazione del Patto su migrazione e asilo. Il semestre irlandese costerà alle casse pubbliche di Dublino circa 185 milioni di euro e dovrà gestire dossier delicati come i negoziati sul prossimo bilancio pluriennale UE e il seguito del vertice NATO di Ankara.</p>
+          <h3>Cina testa un missile balistico lanciato da sottomarino nel Pacifico del Sud, proteste dei Paesi vicini</h3>
+          <p class="excerpt">La Cina ha condotto il test-lancio di un missile balistico da un sottomarino nel Pacifico del Sud, un'operazione che ha immediatamente suscitato le proteste diplomatiche di diversi Paesi della regione preoccupati per le implicazioni strategiche del test. L'episodio si inserisce in un contesto di crescente tensione militare nell'area indo-pacifica, dove Pechino continua a espandere le proprie capacità missilistiche e sottomarine in parallelo al rafforzamento della presenza militare statunitense e alleata nella regione. Analisti di sicurezza internazionale sottolineano come questi test, pur formalmente legittimi secondo il diritto internazionale se condotti in acque internazionali, vengano regolarmente letti dai Paesi vicini come segnali di forza in un'area già segnata da dispute territoriali irrisolte, dal Mar Cinese Meridionale a Taiwan.</p>
           <div class="card-foot">
-            <div class="src-row"><a class="src-pill en" href="https://www.euronews.com/my-europe/2026/07/01/five-pressing-tasks-for-ireland-as-it-takes-over-eu-council-presidency" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Euronews <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <div class="src-row"><a class="src-pill en" href="https://www.cbsnews.com/news/china-ballistic-missile-test-launch-submarine-south-pacific/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> CBS News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
           </div>
         </div>
       </article>
@@ -904,17 +879,17 @@
         </div>
         <div class="card-body">
           <span class="tag">Economia</span>
-          <h3>Occupazione USA più debole del previsto a giugno: solo 57mila posti, mercati in rialzo</h3>
-          <p class="excerpt">Il rapporto sul lavoro di giugno pubblicato dal Dipartimento del Lavoro USA ha mostrato una creazione di soli 57mila posti di lavoro, ben al di sotto delle attese degli analisti (110-115mila) e in netto rallentamento rispetto ai 129mila di maggio, a sua volta rivisto al ribasso di 43mila unità. Il tasso di disoccupazione è sceso al 4,2% dal 4,3%, ma il calo riflette soprattutto una contrazione del tasso di partecipazione alla forza lavoro, sceso al 61,5%, il livello più basso da marzo 2021. Il presidente della Fed Kevin Warsh ha definito il quadro occupazionale "stabile", ribadendo la priorità di riportare l'inflazione al target del 2%: alla sua prima riunione di giugno il FOMC ha mantenuto i tassi invariati tra il 3,50% e il 3,75%. Wall Street ha reagito positivamente al dato più debole delle attese, che allenta la pressione su un possibile rialzo dei tassi: Dow Jones e S&amp;P 500 hanno guadagnato rispettivamente lo 0,46% e lo 0,49% nella seduta di giovedì, con il Dow su un nuovo record storico.</p>
+          <h3>Piazza Affari corre con difesa e aerospazio: Fincantieri +10%, Leonardo +4,4%, tech in calo</h3>
+          <p class="excerpt">La Borsa di Milano ha aperto la settimana con acquisti robusti sui titoli industriali e della difesa, in vista del vertice NATO di Ankara che discuterà l'aumento della spesa militare europea: Fincantieri ha guadagnato oltre il 10%, seguita da Leonardo (+4,45%) e Avio (+3,99%), a conferma delle attese di nuove commesse per il comparto aerospazio-difesa italiano. Sul fronte opposto le vendite hanno colpito soprattutto i titoli tecnologici, con Prysmian in calo del 2,19% e STMicroelectronics dell'1,58%, in un contesto di debolezza generalizzata del comparto tech; in flessione anche Tenaris e alcune utility come A2A, Italgas e Snam. Le borse europee restano orientate al ribasso, con l'attenzione degli investitori concentrata sul summit di Ankara, mentre la Germania ha diffuso dati macro positivi: gli ordini all'industria manifatturiera tedesca sono cresciuti del 6,2% su base annua a maggio, un segnale incoraggiante per la locomotiva economica d'Europa.</p>
           <div class="card-foot">
             <div class="src-row">
-              <a class="src-pill en" href="https://www.cnbc.com/2026/07/02/jobs-report-june-2026-.html" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> CNBC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill en" href="https://www.cnn.com/2026/07/02/economy/us-jobs-report-june-final" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> CNN Business <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://quifinanza.it/dirette/borse-ultime-notizie-6-luglio-2026/1006724/" target="_blank" rel="noopener">QuiFinanza <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/agenda-del-6-luglio-2026-1_2026-07-06_TLB-BIT.html" target="_blank" rel="noopener">Borsa Italiana <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            "Questo report è un'inversione netta rispetto ai dati recenti: sono stati creati molti meno posti di lavoro delle attese, ma potrebbe esserci un lato positivo per i mercati, perché potrebbe spingere i membri più falchi della Fed a riconsiderare ulteriori rialzi dei tassi per combattere l'inflazione", ha commentato Chris Zaccarelli di Northlight Asset Management. L'inflazione di maggio, all'4,2% annuo, resta comunque ai massimi da tre anni, sospinta soprattutto dai costi energetici legati al conflitto con l'Iran.
+            Sul fronte societario, Fincantieri ha annunciato la creazione di un polo dedicato al settore subacqueo con altre otto aziende, per un giro d'affari complessivo di 1,1 miliardi di euro e 200 milioni di ebitda, un'operazione che rafforza il posizionamento del gruppo triestino nella cantieristica ad alta tecnologia in vista del previsto boom di investimenti nella difesa europea.
           </div></div></div>
         </div>
       </article>
@@ -923,7 +898,7 @@
         <div class="card-body no-img">
           <span class="tag">Economia</span>
           <h3>Istat: Pil italiano atteso a +0,7% nel 2026 e nel 2027, ma sale l'inflazione</h3>
-          <p class="excerpt">Le nuove stime Istat indicano una crescita del PIL di +0,7% sia nel 2026 sia nel 2027, trainata soprattutto dalla domanda interna più che dall'export, penalizzato dalle tensioni commerciali internazionali. Il deflatore dei consumi è previsto al 2,9% nel 2026, mentre l'inflazione italiana si è attestata all'1,6% su base annua a giugno, in leggero aumento rispetto all'1,5% di maggio, con un tasso di inflazione acquisita per il 2026 pari al +2,6%. Nel primo trimestre 2026 il PIL è cresciuto dello 0,2% congiunturale e dello 0,7% tendenziale, un ritmo che colloca l'Italia tra i Paesi a crescita più contenuta in Europa nella seconda metà dell'anno. Il deficit sul PIL nel primo trimestre 2026 è migliorato al 7,8% ma resta ancora lontano dalla soglia del 3% fissata dalle regole di bilancio europee. La stessa Istat segnala che la traiettoria di crescita resta condizionata dalla durata dei conflitti internazionali in corso, dal prezzo dell'energia e dall'evoluzione dei negoziati commerciali con gli Stati Uniti.</p>
+          <p class="excerpt">Le stime Istat più recenti indicano una crescita del PIL di +0,7% sia nel 2026 sia nel 2027, trainata soprattutto dalla domanda interna più che dall'export, penalizzato dalle tensioni commerciali internazionali. Il deflatore dei consumi è previsto al 2,9% nel 2026, mentre l'inflazione italiana resta in leggera risalita su base annua, con un tasso di inflazione acquisita per il 2026 pari al +2,6%. Nel primo trimestre 2026 il PIL è cresciuto dello 0,2% congiunturale e dello 0,7% tendenziale, un ritmo che colloca l'Italia tra i Paesi a crescita più contenuta in Europa. Il deficit sul PIL è migliorato ma resta ancora lontano dalla soglia del 3% fissata dalle regole di bilancio europee. La stessa Istat segnala che la traiettoria di crescita resta condizionata dalla durata dei conflitti internazionali in corso, dal prezzo dell'energia e dall'evoluzione dei negoziati commerciali con gli Stati Uniti, ora complicati anche dallo scontro personale tra Trump e Meloni.</p>
           <div class="card-foot">
             <div class="src-row">
               <a class="src-pill" href="https://www.ilsole24ore.com/art/istat-pil-atteso-07percento-2026-e-2027-ma-dipende-durata-conflitto-AI24szTD" target="_blank" rel="noopener">Il Sole 24 Ore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
@@ -932,7 +907,7 @@
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            Nel primo trimestre 2026 il PIL è cresciuto dello 0,2% congiunturale e dello 0,7% tendenziale. Il deficit sul PIL nel primo trimestre 2026 è migliorato al 7,8%, ancora lontano dalla soglia del 3% fissata dalle regole europee. La traiettoria di crescita resta esposta ai rischi geopolitici in corso, dal conflitto in Ucraina alle tensioni in Medio Oriente.
+            La traiettoria di crescita resta esposta ai rischi geopolitici in corso, dal conflitto in Ucraina alle tensioni in Medio Oriente, mentre il governo continua a rivendicare la tenuta dei conti pubblici come argine principale contro un possibile deterioramento del quadro macroeconomico nella seconda metà dell'anno.
           </div></div></div>
         </div>
       </article>
@@ -940,17 +915,32 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Economia</span>
-          <h3>Wall Street chiude il miglior primo semestre dal 2021: Dow Jones a un nuovo record di 52.900 punti</h3>
-          <p class="excerpt">I principali indici di Wall Street hanno archiviato la prima metà dell'anno in netto rialzo e chiuso la seduta di giovedì 2 luglio, vigilia della festività dell'Independence Day, con il Dow Jones balzato di 594,83 punti (+1,14%) fino al nuovo record storico di 52.900,07, la miglior performance di un primo semestre dal 2021. L'S&amp;P 500 ha chiuso sostanzialmente invariato a 7.483,24 punti, mentre il Nasdaq Composite ha ceduto lo 0,8% a 25.832,67 punti, appesantito dalla debolezza di Tesla e da un nuovo scivolone del comparto semiconduttori dopo settimane di rally quasi ininterrotto. Da inizio anno il Dow Jones guadagna l'8,9%, l'S&amp;P 500 il 9,6% e il Nasdaq il 12,8%, mentre il Russell 2000 delle small cap è balzato di quasi il 22%, la miglior partenza dal 1991; a trainare il rally sono stati soprattutto i titoli legati ai semiconduttori e all'intelligenza artificiale, con il settore chip che nel solo secondo trimestre ha aggiunto circa 2.000 miliardi di dollari alla capitalizzazione combinata di Micron, Intel e Advanced Micro Devices.</p>
+          <h3>Fine dello sconto sulle accise: benzina a 1,82 euro, rincari anche per il trasporto merci</h3>
+          <p class="excerpt">Il mancato rinnovo del taglio di 6 centesimi sulle accise ha fatto scattare da inizio luglio i rincari dei carburanti: la benzina è salita in media a 1,820 euro al litro e il gasolio a 1,899 euro, con ricadute dirette sui costi del trasporto merci su gomma, comparto già sotto pressione per l'aumento dei costi energetici e logistici degli ultimi mesi. Le associazioni di categoria del trasporto e della logistica, tra cui Confetra e Federagenti, chiedono al governo un intervento strutturale sul costo dell'energia, sostenendo che i rincari rischiano di erodere la competitività delle imprese italiane rispetto ai concorrenti europei in un momento già difficile per l'export nazionale. Il tema si intreccia con l'agenda economica più ampia della giornata, segnata anche dall'assemblea di Confindustria Toscana Centro a Firenze, dedicata al nuovo corso industriale del territorio con l'intervento del presidente nazionale Emanuele Orsini.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://www.today.it/rassegna/start/ultime-notizie-oggi-6-luglio-2026.html" target="_blank" rel="noopener">Today.it <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Il rincaro arriva in una fase in cui il governo è alle prese con più fronti aperti contemporaneamente: dallo scontro diplomatico con Washington, che pesa sull'export di vino ed energia, alla necessità di finanziare l'aumento della spesa per la difesa richiesto dal vertice NATO di Ankara, con margini di bilancio sempre più stretti.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Economia</span>
+          <h3>Mercato auto italiano, primo semestre in crescita: elettriche a +87%, ma l'Italia resta senza incentivi</h3>
+          <p class="excerpt">Il mercato dell'auto in Italia archivia un primo semestre 2026 in crescita, con 936.783 immatricolazioni totali e un +9,7% sullo stesso periodo del 2025; solo a giugno le targhe sono state 146.423 (+10,6%). Il dato più significativo riguarda l'elettrico: le auto a batteria sono cresciute dell'87,1% su base annua, raggiungendo una quota di mercato del 10,1%, mentre le ibride plug-in si sono attestate al 10,6%. Tra i modelli più venduti spicca la piccola Leapmotor T03, pensata per la mobilità urbana a basso costo, seguita dalla Dacia Spring e dalla Tesla Model 3. Resta però un nodo strutturale: l'Italia è l'unico grande mercato europeo privo di incentivi statali per l'acquisto di auto elettriche pure da parte dei privati, un fattore che secondo gli analisti di settore continua a frenare una transizione più rapida rispetto a Germania, Francia e Spagna.</p>
           <div class="card-foot">
             <div class="src-row">
-              <a class="src-pill en" href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-july-2-2026" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> TheStreet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill en" href="https://www.cnbc.com/2026/07/01/stock-market-today-live-updates.html" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> CNBC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.quattroruote.it/news/mercato/2026/07/01/mercato_auto_giugno_2026.html" target="_blank" rel="noopener">Quattroruote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.megamodo.com/mercato-auto-italia-primo-semestre-2026-crescita-balzo-elettriche" target="_blank" rel="noopener">Megamodo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            Sul fronte valutario il dollaro ha continuato a rafforzarsi contro le altre principali divise, con l'euro in oscillazione attorno a 1,14, mentre gli operatori guardano ora alle prossime mosse del presidente della Fed Kevin Warsh sull'orientamento della politica monetaria dopo il report più debole delle attese sui salari non agricoli di giugno. Wall Street resterà chiusa lunedì 6 luglio per l'osservanza posticipata dell'Independence Day.
+            La crescita delle elettriche resta trainata soprattutto da modelli di fascia economica pensati per la mobilità urbana, mentre le case automobilistiche italiane ed europee continuano a chiedere al governo un piano di incentivi strutturale, sul modello di quelli già attivi in altri grandi mercati continentali, per accelerare la sostituzione del parco circolante più anziano d'Europa.
           </div></div></div>
         </div>
       </article>
@@ -958,17 +948,17 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Economia</span>
-          <h3>Dazi Trump-Italia: vino e gas nel mirino dello scontro diplomatico</h3>
-          <p class="excerpt">Lo scontro personale tra Trump e Meloni rischia di tradursi in conseguenze economiche concrete: l'Italia importa circa il 45% del proprio gas naturale liquefatto dagli USA, un legame energetico che rende Roma particolarmente esposta a eventuali ritorsioni commerciali. L'export di vino italiano è già calato dell'11% nel primo trimestre 2026, con una flessione che sale fino al -20,5% sul solo mercato statunitense, storicamente tra i principali sbocchi per l'enologia nazionale. Il contesto risale a dichiarazioni di Trump a Davos, dove aveva lasciato intendere che la sua simpatia personale per Meloni avrebbe potuto tradursi in un trattamento tariffario di favore per l'Italia, ipotesi poi vanificata dal deterioramento dei rapporti personali tra i due leader nelle scorse settimane. Il vertice NATO di Ankara del 7-8 luglio rappresenta ora la prossima occasione concreta per un possibile disgelo diplomatico con ricadute dirette anche sul piano commerciale.</p>
+          <h3>Dazi Trump-Italia: vino e gas nel mirino dello scontro diplomatico, ora aggravato dal nuovo attacco social</h3>
+          <p class="excerpt">Lo scontro personale tra Trump e Meloni, riacutizzato dal fotomontaggio pubblicato dal presidente USA alla vigilia del vertice NATO, rischia di tradursi in conseguenze economiche sempre più concrete: l'Italia importa circa il 45% del proprio gas naturale liquefatto dagli USA, un legame energetico che rende Roma particolarmente esposta a eventuali ritorsioni commerciali. L'export di vino italiano ha già accusato un calo a doppia cifra sul mercato statunitense nei mesi scorsi, storicamente tra i principali sbocchi per l'enologia nazionale, e gli operatori del settore temono un ulteriore deterioramento se lo scontro personale tra i due leader dovesse tradursi in scelte tariffarie punitive. Il vertice di Ankara resta la prossima occasione concreta per un possibile disgelo diplomatico, anche se al momento non risulta in programma un incontro bilaterale formale tra Meloni e Trump.</p>
           <div class="card-foot">
             <div class="src-row">
-              <a class="src-pill" href="https://www.fanpage.it/politica/la-lite-tra-meloni-e-trump-mette-a-rischio-litalia-dazi-gas-e-vino-cosa-ce-in-ballo/" target="_blank" rel="noopener">Fanpage <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill" href="https://tg24.sky.it/politica/2026/06/21/scontro-trump-meloni-ultime-notizie" target="_blank" rel="noopener">Sky TG24 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.ilmessaggero.it/politica/trump_meloni_cosa_succede_ora-9634034.html" target="_blank" rel="noopener">il Messaggero <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.quotidiano.net/politica/attacco-di-trump-a-meloni-rapporti-italia-usa-qjr2z1po" target="_blank" rel="noopener">Quotidiano Nazionale <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            Il contesto risale a dichiarazioni di Trump a Davos, dove aveva lasciato intendere che la sua simpatia per Meloni avrebbe potuto valere un'esenzione tariffaria, ipotesi poi vanificata dal deterioramento dei rapporti personali. Il vertice NATO di Ankara del 7-8 luglio rappresenta la prossima occasione concreta per un possibile disgelo diplomatico con ricadute anche commerciali.
+            Il ministro Crosetto ha invitato a non confondere il piano personale con quello istituzionale, ricordando che "le persone passano, i rapporti tra Stati restano", mentre gli operatori economici restano in attesa di segnali più chiari sull'esito del vertice NATO per capire se la frizione diplomatica avrà o meno ricadute dirette sui dossier commerciali aperti tra Roma e Washington.
           </div></div></div>
         </div>
       </article>
@@ -976,25 +966,10 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Economia</span>
-          <h3>Piazza Affari riparte dai massimi, Prysmian in evidenza; petrolio in rialzo con la tensione su Hormuz</h3>
-          <p class="excerpt">Le borse europee sono ripartite dai massimi nella seduta del 3 luglio, con Piazza Affari che ha visto svettare il titolo Prysmian: il FTSE MIB si è portato a 52.736,48 punti (+0,58%), mentre lo spread BTP-Bund a dieci anni si è ridotto a 77,53 punti base (-0,60%) e l'oro spot ha guadagnato l'1,12% salendo a 117,13 euro. Il cambio euro/dollaro è salito a 1,1452 (+0,16%) e il future sull'S&amp;P 500 si è portato a 7.483,24 punti. Sul fronte energetico i prezzi del petrolio sono saliti nella seduta asiatica, con il Brent in progresso a 71,98 dollari al barile e il WTI in aumento a 69,05 dollari, sulla scia delle nuove tensioni nello Stretto di Hormuz dopo l'avvertimento iraniano alle petroliere in transito. Il quadro macroeconomico resta condizionato dall'incertezza sull'esito dei negoziati Iran-USA, sospesi per i funerali di Khamenei, e dalle possibili ripercussioni sui costi energetici globali in caso di un'escalation nello stretto, uno snodo per cui transita una quota rilevante del petrolio mondiale.</p>
+          <h3>Petrolio in rialzo con la tensione su Hormuz, spread BTP-Bund in area 77 punti</h3>
+          <p class="excerpt">I prezzi del petrolio restano sostenuti dalle tensioni nello Stretto di Hormuz, dove Teheran ha imposto restrizioni alle rotte delle petroliere in transito dopo la sospensione dei negoziati indiretti con Washington durante i funerali di Khamenei; il Brent si mantiene sopra i 71 dollari al barile e il WTI attorno ai 69. In Europa lo spread tra BTP e Bund tedesco a dieci anni resta in area 77 punti base, un livello che riflette la relativa stabilità percepita dai mercati sui conti pubblici italiani nonostante le tensioni politiche in corso con gli Stati Uniti. Gli investitori restano concentrati sull'esito del vertice NATO di Ankara e sulle sue possibili ricadute sui mercati dell'energia, in un contesto in cui la geopolitica continua a pesare più dei dati macroeconomici sulle scelte di allocazione del capitale nel breve termine.</p>
           <div class="card-foot">
-            <div class="src-row"><a class="src-pill" href="https://www.ilsole24ore.com/art/morning-note-l-agenda-venerdi-3-luglio-AIEq0mzD" target="_blank" rel="noopener">Il Sole 24 Ore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
-            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
-          </div>
-          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            In agenda per la giornata figurano anche l'assemblea 2026 di Confindustria Genova e la conferenza stampa Fim-Cisl a Torino sui dati di produzione e occupazione degli stabilimenti Stellantis nel secondo trimestre, appuntamenti che confermano l'attenzione del mercato sulla tenuta del comparto manifatturiero italiano nella seconda metà dell'anno.
-          </div></div></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body no-img">
-          <span class="tag">Economia</span>
-          <h3>Yen ai minimi dal 1986: la Bank of Japan sotto pressione</h3>
-          <p class="excerpt">Lo yen giapponese ha toccato il livello più debole contro il dollaro dal 1986, dopo essere sceso di oltre il 3% dall'inizio del 2026 e di oltre l'11% nell'arco degli ultimi tre anni. Il deprezzamento riflette il persistere di un differenziale di tassi ampio tra Stati Uniti e Giappone e alimenta pressioni inflattive interne sui beni importati, mettendo la Bank of Japan in una posizione scomoda tra la necessità di sostenere la valuta e quella di non soffocare una ripresa economica ancora fragile. Gli analisti valutano probabile un intervento verbale o diretto sul cambio da parte delle autorità di Tokyo nelle prossime settimane, mentre il differenziale con la politica monetaria della Fed resta la variabile chiave da monitorare.</p>
-          <div class="card-foot">
-            <div class="src-row"><a class="src-pill en" href="https://www.schwab.com/learn/story/stock-market-update-open" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Charles Schwab <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <div class="src-row"><a class="src-pill" href="https://www.soldionline.it/notizie/economia-politica/agenda-economica-del-6-luglio-2026" target="_blank" rel="noopener">SoldiOnline <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
           </div>
         </div>
       </article>
@@ -1016,8 +991,8 @@
         </div>
         <div class="card-body">
           <span class="tag">Cultura</span>
-          <h3>Premio Strega 2026: Michele Mari in testa alla sestina finalista, verso la finale dell'8 luglio</h3>
-          <p class="excerpt">È stata annunciata la sestina finalista dell'ottantesima edizione del Premio Strega, il riconoscimento letterario più seguito e discusso d'Italia: Michele Mari con "I convitati di pietra" (Einaudi) guida la classifica con 280 voti, seguito da Matteo Nucci con "Platone. Una storia d'amore" (Feltrinelli, 242 voti), Bianca Pitzorno con "La sonnambula" (Bompiani, 195 voti), Teresa Ciabatti con "Donnaregina" (Mondadori, 184 voti), Alcide Pierantozzi con "Lo sbilico" (Einaudi, 170 voti) ed Elena Rui con "Vedove di Camus" (L'orma). La serata finale, con proclamazione del vincitore, si terrà l'8 luglio in piazza del Campidoglio a Roma, in diretta televisiva su Rai3 condotta da Pino Strabioli e Gloria Campaner. Mari, autore già affermato della narrativa italiana contemporanea, parte favorito grazie al margine di voti ottenuto nella votazione di giugno, ma la storia del premio insegna che gli scarti nella votazione finale dell'Aula possono ribaltare i pronostici della vigilia.</p>
+          <h3>Premio Strega 2026: dopodomani la finale, Michele Mari resta il grande favorito</h3>
+          <p class="excerpt">Manca ormai solo un giorno alla proclamazione dell'ottantesima edizione del Premio Strega, il riconoscimento letterario più seguito e discusso d'Italia: Michele Mari con "I convitati di pietra" (Einaudi) resta il grande favorito grazie ai 280 voti ottenuti nella votazione di giugno, davanti a Matteo Nucci con "Platone. Una storia d'amore" (Feltrinelli, 242 voti), Bianca Pitzorno con "La sonnambula" (Bompiani, 195 voti), Teresa Ciabatti con "Donnaregina" (Mondadori, 184 voti), Alcide Pierantozzi con "Lo sbilico" (Einaudi, 170 voti) ed Elena Rui con "Vedove di Camus" (L'orma). La serata finale si terrà mercoledì 8 luglio in piazza del Campidoglio a Roma, in diretta televisiva su Rai3, con la proclamazione del vincitore che tradizionalmente muove per settimane le vendite in libreria dell'autore premiato. Mari, autore già affermato della narrativa italiana contemporanea, parte con un margine di voti significativo, ma la storia del premio insegna che gli scarti nella votazione finale dell'Aula possono sempre ribaltare i pronostici della vigilia.</p>
           <div class="card-foot">
             <div class="src-row">
               <a class="src-pill" href="https://premiostrega.it/PS/i-finalisti-della-ottantesima-edizione-del-premio-strega/" target="_blank" rel="noopener">Premio Strega <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
@@ -1049,8 +1024,8 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Cultura</span>
-          <h3>RIPIDO Illustration Festival: Brunico diventa galleria diffusa dal 4 luglio</h3>
-          <p class="excerpt">Dal 4 luglio al 16 agosto Brunico, in Alto Adige, si trasforma in una galleria diffusa dedicata interamente all'illustrazione contemporanea grazie al RIPIDO Illustration Festival, che porta in città mostre personali, progetti editoriali e opere collettive distribuite tra vie, negozi e spazi pubblici. Tra i protagonisti dell'edizione 2026 figura Beppe Giacobbe, storica firma dell'illustrazione italiana e a lungo collaboratore del Corriere della Sera, che presenta una selezione di lavori rappresentativa della sua carriera pluridecennale. Il festival si inserisce in un trend più ampio di valorizzazione dell'illustrazione come linguaggio autonomo, non più solo al servizio dell'editoria, capace di attirare pubblici trasversali e di rivitalizzare centri urbani di medie dimensioni durante la stagione estiva.</p>
+          <h3>RIPIDO Illustration Festival: Brunico è galleria diffusa fino al 16 agosto</h3>
+          <p class="excerpt">Fino al 16 agosto Brunico, in Alto Adige, resta una galleria diffusa dedicata interamente all'illustrazione contemporanea grazie al RIPIDO Illustration Festival, che porta in città mostre personali, progetti editoriali e opere collettive distribuite tra vie, negozi e spazi pubblici. Tra i protagonisti dell'edizione 2026 figura Beppe Giacobbe, storica firma dell'illustrazione italiana e a lungo collaboratore del Corriere della Sera, che presenta una selezione di lavori rappresentativa della sua carriera pluridecennale. Il festival si inserisce in un trend più ampio di valorizzazione dell'illustrazione come linguaggio autonomo, non più solo al servizio dell'editoria, capace di attirare pubblici trasversali e di rivitalizzare centri urbani di medie dimensioni durante la stagione estiva.</p>
           <div class="card-foot">
             <div class="src-row"><a class="src-pill" href="https://www.lobodilattice.com/mostre-eventi/ripido-illustration-festival-1" target="_blank" rel="noopener">LoboDiLattice <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
           </div>
@@ -1093,7 +1068,7 @@
     <div class="sec-head">
       <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v6.2L4.8 18a1.8 1.8 0 0 0 1.5 2.8h11.4a1.8 1.8 0 0 0 1.5-2.8L14 9.2V3"/></svg></div>
       <h2>Scienza e natura</h2>
-      <span class="sec-count">5 notizie</span>
+      <span class="sec-count">4 notizie</span>
     </div>
 
     <div class="cards">
@@ -1103,29 +1078,14 @@
         </div>
         <div class="card-body">
           <span class="tag">Scienza</span>
-          <h3>JUNO: la prima misura di precisione sui neutrini</h3>
-          <p class="excerpt">L'osservatorio di neutrini JUNO, in Cina, ha prodotto la sua prima misurazione scientifica di rilievo, ottenendo una delle stime più precise mai raggiunte sul comportamento di queste particelle elementari, fondamentali per capire l'asimmetria tra materia e antimateria nell'universo e per completare il quadro del modello standard della fisica. JUNO è tra gli esperimenti di fisica delle particelle più ambiziosi attualmente in corso a livello internazionale, con un rivelatore sotterraneo di dimensioni e sensibilità senza precedenti pensato specificamente per misurare l'ordinamento di massa dei neutrini, uno dei problemi aperti più rilevanti della fisica contemporanea. Questo primo risultato conferma le aspettative sulla capacità dello strumento di affinare in modo significativo le misure delle proprietà dei neutrini rispetto agli esperimenti precedenti, aprendo la strada a nuove verifiche sperimentali nei prossimi anni e rafforzando la posizione della Cina come polo di riferimento per la fisica delle alte energie.</p>
-          <div class="card-foot">
-            <div class="src-row"><a class="src-pill en" href="https://www.nature.com/news" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Nature <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
-            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
-          </div>
-          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            JUNO è tra gli esperimenti di fisica delle particelle più ambiziosi attualmente in corso, e questo primo risultato conferma le aspettative sulla sua capacità di affinare in modo significativo le misure delle proprietà dei neutrini rispetto agli esperimenti precedenti, aprendo la strada a nuove verifiche del modello standard nei prossimi anni.
-          </div></div></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body no-img">
-          <span class="tag">Scienza</span>
-          <h3>Scoperto il meccanismo genetico che rende "immortali" le cellule del melanoma</h3>
-          <p class="excerpt">Un gruppo di ricerca ha identificato l'ingrediente genetico mancante che permette alle cellule di melanoma di eludere la senescenza cellulare, il naturale processo di invecchiamento che normalmente blocca la proliferazione incontrollata delle cellule danneggiate. La scoperta chiarisce un tassello importante di come questo tumore della pelle, tra i più aggressivi quando diagnosticato in stadio avanzato, riesca a raggirare le difese naturali dell'organismo, aprendo la strada a nuovi possibili bersagli terapeutici pensati per riattivare artificialmente il meccanismo di invecchiamento nelle cellule tumorali. Comprendere a fondo questo meccanismo genetico di "immortalizzazione" rappresenta un tassello rilevante anche per la ricerca oncologica in senso più ampio, dato che processi simili sono coinvolti in numerosi altri tipi di cancro, con la prospettiva concreta di trattamenti più mirati e meno tossici rispetto alle terapie oggi disponibili.</p>
+          <h3>Alcuni cervelli "resistono" all'Alzheimer aiutando le cellule immature a sopravvivere ai danni</h3>
+          <p class="excerpt">Un nuovo studio suggerisce che alcuni cervelli riescono in parte a contrastare l'avanzata dell'Alzheimer non impedendo il danno neurologico in sé, ma aiutando le cellule cerebrali immature a sopravvivere piuttosto che soccombere al degrado tipico della malattia. La scoperta apre una prospettiva diversa rispetto all'approccio terapeutico tradizionale, focalizzato quasi esclusivamente sulla rimozione delle placche di beta-amiloide: se confermato, il meccanismo di resilienza cellulare individuato potrebbe diventare un nuovo bersaglio per farmaci capaci di rallentare il declino cognitivo agendo non sulla causa ma sulla capacità del cervello di "tenere botta" ai danni già in corso. I ricercatori sottolineano come questo tipo di resilienza vari molto da persona a persona, e che comprenderne i meccanismi genetici e molecolari potrebbe aiutare a spiegare perché alcuni pazienti con lo stesso carico di placche amiloidi sviluppano sintomi molto più lievi di altri.</p>
           <div class="card-foot">
             <div class="src-row"><a class="src-pill en" href="https://www.sciencedaily.com/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> ScienceDaily <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            Comprendere a fondo quale meccanismo genetico renda possibile questa "immortalizzazione" rappresenta un tassello importante per la ricerca oncologica in generale, dato che processi simili sono coinvolti anche in altri tipi di cancro, con la prospettiva di trattamenti più mirati rispetto alle terapie oggi disponibili.
+            La ricerca si aggiunge a un filone di studi crescente sulla "riserva cognitiva", il concetto secondo cui alcuni cervelli sono in grado di compensare meglio di altri il danno neurologico. Comprendere i meccanismi genetici alla base di questa resilienza potrebbe aprire la strada a terapie complementari a quelle già in uso contro l'Alzheimer.
           </div></div></div>
         </div>
       </article>
@@ -1133,21 +1093,25 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Scienza</span>
-          <h3>Un misterioso bagliore di raggi gamma al centro della Via Lattea: materia oscura o pulsar nascoste?</h3>
-          <p class="excerpt">Nuove analisi suggeriscono che l'eccesso di raggi gamma osservato al centro della nostra galassia, noto da oltre un decennio come "Galactic Center Excess", potrebbe derivare effettivamente da materia oscura piuttosto che da un affollamento di pulsar millisecondo nascoste e non ancora risolte individualmente dagli strumenti attuali. Il dibattito è tra i più accesi dell'astrofisica delle particelle: se confermata, l'ipotesi della materia oscura fornirebbe la prima prova indiretta concreta dell'esistenza di questa componente invisibile dell'universo, che si stima costituisca circa il 27% della massa-energia totale del cosmo ma che finora è sfuggita a ogni tentativo di rivelazione diretta nei laboratori sotterranei di tutto il mondo. Nuove osservazioni con telescopi a raggi gamma di prossima generazione dovrebbero permettere entro pochi anni di distinguere con maggiore sicurezza tra le due ipotesi.</p>
+          <h3>Un freno molecolare nei muscoli che invecchiano: scoperta la proteina che rallenta la riparazione</h3>
+          <p class="excerpt">Un gruppo di ricerca dell'UCLA ha scoperto che nelle cellule staminali muscolari degli organismi anziani si accumula una proteina chiamata NDRG1, che agisce come un vero e proprio freno, rallentando la capacità delle cellule di "entrare in azione" per riparare il tessuto muscolare dopo un infortunio. La scoperta aiuta a spiegare perché il recupero da lesioni muscolari diventi progressivamente più lento e meno efficace con l'avanzare dell'età, un fenomeno ben noto clinicamente ma le cui basi molecolari restavano finora poco chiare. I ricercatori ipotizzano che bloccare farmacologicamente l'azione di NDRG1 potrebbe restituire alle cellule staminali muscolari anziane una capacità di rigenerazione più simile a quella di un organismo giovane, con potenziali applicazioni sia in ambito geriatrico sia nella medicina dello sport per il recupero da infortuni.</p>
           <div class="card-foot">
-            <div class="src-row"><a class="src-pill en" href="https://www.nature.com/nature/articles?year=2026" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Nature <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <div class="src-row"><a class="src-pill en" href="https://www.sciencedaily.com/news/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> ScienceDaily <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Lo studio si inserisce in un filone di ricerca sempre più attivo sulla biologia dell'invecchiamento muscolare, un tema di crescente rilevanza per le società con popolazione che invecchia rapidamente, dove il mantenimento della massa e della funzionalità muscolare nella terza età è un fattore chiave per l'autonomia e la qualità della vita.
+          </div></div></div>
         </div>
       </article>
 
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Scienza</span>
-          <h3>Diesel più pulito: basta un po' d'acqua nel carburante per tagliare l'inquinamento del 60%</h3>
-          <p class="excerpt">Un gruppo di ricerca ha dimostrato che una modifica sorprendentemente semplice al carburante diesel — l'aggiunta di piccole quantità d'acqua in emulsione — può ridurre drasticamente le emissioni inquinanti dei motori diesel, con cali di oltre il 60% per alcuni inquinanti chiave legati alla combustione incompleta. Il meccanismo sfrutta la cosiddetta "micro-esplosione" delle goccioline d'acqua disperse nel carburante durante la combustione, che favorisce una polverizzazione più fine e una combustione più efficiente e completa, riducendo la formazione di particolato e ossidi di azoto. Si tratta di una soluzione a basso costo e potenzialmente applicabile su larga scala ai motori diesel già esistenti, un aspetto rilevante per il settore dei trasporti pesanti e della logistica, dove la transizione verso motorizzazioni completamente elettriche resta più lenta e complessa rispetto al trasporto passeggeri.</p>
+          <h3>Il segreto dei centenari: un'impronta chimica unica nel sangue li distingue dall'invecchiamento normale</h3>
+          <p class="excerpt">Un team di ricercatori ha individuato una vera e propria "impronta digitale" chimica nel sangue delle persone che superano i cento anni di vita in condizioni di salute notevolmente buone, un profilo metabolico distinto rispetto a quello osservato nel normale processo di invecchiamento. Lo studio ha analizzato centinaia di marcatori biochimici nel sangue di centenari confrontandoli con quelli di persone più giovani e di anziani con un invecchiamento più tipico, individuando pattern ricorrenti legati a infiammazione, metabolismo lipidico e funzione renale che sembrano proteggere questi individui dalle principali malattie croniche legate all'età. I ricercatori sperano che l'identificazione di questi marcatori possa in futuro aiutare a individuare precocemente le persone a rischio di invecchiamento patologico, aprendo la strada a interventi preventivi mirati anche per chi non possiede naturalmente questo profilo protettivo.</p>
           <div class="card-foot">
-            <div class="src-row"><a class="src-pill en" href="https://www.sciencedaily.com/news/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> ScienceDaily <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <div class="src-row"><a class="src-pill en" href="https://www.sciencedaily.com/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> ScienceDaily <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
           </div>
         </div>
       </article>
@@ -1174,7 +1138,7 @@
     <div class="sec-head">
       <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 5H5a3 3 0 0 0 3 4M16 5h3a3 3 0 0 1-3 4"/><path d="M12 13v3M9 20h6M10 20v-2.5a2 2 0 0 1 4 0V20" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <h2>Sport</h2>
-      <span class="sec-count">6 notizie</span>
+      <span class="sec-count">5 notizie</span>
     </div>
 
     <div class="cards">
@@ -1184,17 +1148,17 @@
         </div>
         <div class="card-body">
           <span class="tag">Ciclismo</span>
-          <h3>Tour de France 2026: domani il Grande Départ da Barcellona, oggi l'ultimo giorno di rifiniture</h3>
-          <p class="excerpt">Domani, sabato 4 luglio, prende il via da Barcellona la 113ª edizione del Tour de France, con una cronometro a squadre come tappa inaugurale per la prima volta dal 1971, un percorso tra il Fòrum e Montjuïc che passerà anche accanto alla Sagrada Família e per cui si attendono tra le 650mila e le 850mila persone lungo strada. Il percorso complessivo misura 3.333 km con 21 tappe e 54.450 metri di dislivello, comprensivi di 5 arrivi in salita e due prove contro il tempo. La presentazione ufficiale delle squadre si è tenuta giovedì davanti a circa 80mila spettatori, con Tadej Pogačar, Jonas Vingegaard e la giovane rivelazione di casa francese Paul Seixas tra i più acclamati. La sfida per la maglia gialla resta apertissima tra il campione uscente Pogačar, un redivivo Vingegaard reduce da una solida vittoria di classifica generale al Giro d'Italia, il britannico Tom Pidcock e lo stesso Seixas. L'arrivo finale è previsto il 26 luglio sugli Champs-Élysées di Parigi.</p>
+          <h3>Tour de France, oggi la terza tappa Granollers-Les Angles: Vingegaard in giallo per soli 6 secondi su Pogačar</h3>
+          <p class="excerpt">Oggi, lunedì 6 luglio, è in programma la terza tappa della 113ª edizione del Tour de France, la Granollers-Les Angles di 196 km con 3.950 metri di dislivello, che riporta la corsa in territorio francese dopo il Grande Départ spagnolo. I corridori dovranno affrontare la salita del Col de Toses (9,3 km al 6,5%), poi il Col du Calvaire (11,4 km al 4,2%) prima dell'ultimo strappo verso il traguardo di Les Angles, 1,7 km al 6,7% di pendenza media, un arrivo che promette scintille tra i big della generale. La classifica vede al comando Jonas Vingegaard (Visma) con appena 6 secondi di vantaggio su Tadej Pogačar (UAE Emirates) e 15 su Remco Evenepoel (Red Bull-Bora-Hansgrohe), un margine risicatissimo che rende questa terza tappa già decisiva per gli equilibri generali. La diretta è visibile in chiaro su Rai2 dalle 14.45 e in streaming su RaiPlay.</p>
           <div class="card-foot">
             <div class="src-row">
-              <a class="src-pill en" href="https://www.cyclingnews.com/races/tour-de-france-2026/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Cyclingnews <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill" href="https://sport.sky.it/ciclismo/tour-de-france-2026-tappe-percorso" target="_blank" rel="noopener">Sky Sport <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://tg24.sky.it/sport/2026/07/06/tour-de-france-2026-tappa-oggi-classifica" target="_blank" rel="noopener">Sky TG24 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.oasport.it/2026/07/tour-de-france-2026-tappa-di-oggi-granollers-les-angles-orari-tv-favoriti-attenzione-ala-fuga-bidone/" target="_blank" rel="noopener">OA Sport <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            La seconda tappa, in programma il 5 luglio, collegherà Tarragona a Barcellona chiudendo con diverse ripetute salite su Montjuïc. È la terza volta che il Tour parte dalla Spagna, dopo Bilbao nel 2023, a conferma della crescente proiezione internazionale della Grande Boucle anche fuori dai confini francesi, con la corsa seguita in diretta anche da NBC Sports e Peacock negli Stati Uniti.
+            Il primo assaggio di Pirenei orientali di questa terza tappa arriva presto nella corsa, molto prima del previsto rispetto alle edizioni degli ultimi anni, e già promette di selezionare il gruppo dei favoriti per la generale finale, con l'arrivo a Parigi sugli Champs-Élysées fissato per il 26 luglio.
           </div></div></div>
         </div>
       </article>
@@ -1202,17 +1166,17 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Tennis</span>
-          <h3>Wimbledon 2026: oggi Sinner sfida Brooksby al terzo turno, azzurri in campo con Cobolli e Sonego</h3>
-          <p class="excerpt">Jannik Sinner scende in campo oggi, venerdì 3 luglio, sul Campo 1 di Wimbledon contro lo statunitense Jenson Brooksby, numero 81 del ranking mondiale, che ha eliminato l'australiano Aleksandar Vukic e il peruviano Ignacio Buse (31esima testa di serie) per arrivare al terzo turno. I due si sono affrontati una sola volta, cinque anni fa, con vittoria di Sinner 7-6(2) 6-1 in semifinale all'ATP 500 di Washington. Il numero uno del mondo arriva dal successo in tre set sul portoghese Nuno Borges (7-6, 7-6, 6-4), la 95ª vittoria Slam in carriera che lo rende l'italiano con più successi nella storia dei Major maschili in singolare, superando Nicola Pietrangeli. Nella giornata di ieri sono avanzati al terzo turno anche Flavio Cobolli, che ha superato l'australiano James Duckworth 7-6(4) 3-6 7-6(3) 6-1 e troverà ora il russo Karen Khachanov, e Lorenzo Sonego, che ha piegato il canadese Gabriel Diallo al quinto set dopo oltre quattro ore di gioco e sfiderà l'americano Taylor Fritz, sesta testa di serie.</p>
+          <h3>Wimbledon: Sinner vola ai quarti battendo Mochizuki, martedì la sfida con Struff</h3>
+          <p class="excerpt">Jannik Sinner ha superato agli ottavi di finale di Wimbledon il giapponese Shintaro Mochizuki con il punteggio di 6-3, 7-6, 6-3, in un match durato 2 ore e 36 minuti che ha confermato la solidità del numero uno del mondo anche contro avversari ostici e imprevedibili come il tennista nipponico, capace a sua volta di eliminare a sorpresa lo spagnolo Rafael Jódar nel turno precedente. Ai quarti di finale, in programma martedì 7 luglio sul Centre Court, il campione altoatesino se la vedrà con il tedesco Jan-Lennard Struff, match che promette equilibrio vista l'esperienza e la potenza al servizio del teutonico. La partita sarà trasmessa in esclusiva su Sky Sport, con diretta streaming disponibile su Sky Go e NOW per gli abbonati, in un tabellone maschile che vede Sinner sempre più vicino a un'altra semifinale Slam dopo la 95ª vittoria in carriera nei tornei del Grande Slam.</p>
           <div class="card-foot">
             <div class="src-row">
-              <a class="src-pill" href="https://www.oasport.it/2026/07/quando-gioca-jannik-sinner-al-terzo-turno-di-wimbledon-prossimo-avversario-ha-eliminato-una-testa-di-serie/" target="_blank" rel="noopener">OA Sport <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill" href="https://sport.sky.it/tennis/2026/07/02/wimbledon-2026-cobolli-sonego-risultati" target="_blank" rel="noopener">Sky Sport <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.today.it/sport/tennis/sinner-quarti-wimbledon-2026.html" target="_blank" rel="noopener">Today.it <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.eurosport.it/tennis/wimbledon/2026/quando-torna-in-campo-jannik-sinner-a-wimbledon-match-di-quarti-di-finale-con-jan-lennard-struff-martedi-7-luglio-dove-vederlo-in-tv-e-streaming_sto23316618/story.shtml" target="_blank" rel="noopener">Eurosport <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
           </div>
           <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            Il match con Brooksby è considerato sulla carta abbordabile per Sinner, ma gli analisti avvertono che può rivelarsi più tattico di quanto suggerisca il ranking, vista l'imprevedibilità del gioco dello statunitense. Nel tabellone maschile avanza anche Novak Djokovic, mentre l'ampia rappresentanza azzurra tra singolare maschile e femminile conferma il momento d'oro del movimento tennistico italiano.
+            Mochizuki si era rivelato un ostacolo scomodo sulla carta, ma Sinner lo ha "disinnescato" senza patemi eccessivi, gestendo bene soprattutto il tie-break del secondo set. La rappresentanza azzurra a Wimbledon 2026 conferma il momento d'oro del movimento tennistico italiano, con più giocatori italiani avanzati oltre i primi turni del singolare maschile.
           </div></div></div>
         </div>
       </article>
@@ -1220,8 +1184,8 @@
       <article class="card">
         <div class="card-body no-img">
           <span class="tag">Calcio</span>
-          <h3>Calciomercato: Juventus a un passo da Kolo Muani, Inter chiude per Provedel, Milan su Jashari</h3>
-          <p class="excerpt">Prosegue serrato il calciomercato estivo di Serie A. La Juventus continua il pressing sul Paris Saint-Germain per l'attaccante francese Randal Kolo Muani e resta in attesa di sviluppi, lavorando in parallelo sui fronti Muharemovic ed Ekhator: quest'ultimo, giovane attaccante, è già stato ufficializzato dal club bianconero per 16 milioni di euro, con l'austriaco David Puczka che si è mosso in direzione opposta. L'Inter ha invece chiuso l'accordo con la Lazio per il portiere Ivan Provedel, che si trasferisce a Milano per 3 milioni di euro più bonus con le visite mediche fissate per la prossima settimana, dopo i saluti a Sommer, Acerbi, de Vrij e Darmian; sul fronte cessioni resta da monitorare l'interesse del Real Madrid per Alessandro Bastoni. Il Milan, che ha già ufficializzato l'arrivo a titolo definitivo di Gonçalo Ramos dal PSG fino al 2031, ha avviato contatti con gli agenti di diversi calciatori, incluso un incontro chiave sul futuro del centrocampista svizzero Ardon Jashari.</p>
+          <h3>Calciomercato: Juventus su Kolo Muani, Inter con Provedel, Milan chiude per Ramos e insegue Jashari</h3>
+          <p class="excerpt">Prosegue serrato il calciomercato estivo di Serie A. La Juventus continua il pressing sul Paris Saint-Germain per l'attaccante francese Randal Kolo Muani e lavora in parallelo sui fronti Muharemovic ed Ekhator, quest'ultimo già ufficializzato dal club bianconero per 16 milioni di euro. L'Inter ha chiuso l'accordo con la Lazio per il portiere Ivan Provedel, che si trasferisce a Milano per 3 milioni di euro più bonus dopo i saluti a Sommer, Acerbi, de Vrij e Darmian; sul fronte cessioni resta da monitorare l'interesse del Real Madrid per Alessandro Bastoni. Il Milan, che ha già ufficializzato l'arrivo a titolo definitivo di Gonçalo Ramos dal PSG fino al 2031, ha avviato contatti con gli agenti di diversi calciatori, incluso un incontro chiave sul futuro del centrocampista svizzero Ardon Jashari, obiettivo dichiarato del club rossonero per rinforzare il centrocampo in vista della prossima stagione.</p>
           <div class="card-foot">
             <div class="src-row"><a class="src-pill" href="https://www.fanpage.it/sport/live/calciomercato-2-luglio-2026/" target="_blank" rel="noopener">Fanpage <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
             <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
@@ -1234,26 +1198,8 @@
 
       <article class="card">
         <div class="card-body no-img">
-          <span class="tag">Ciclismo</span>
-          <h3>Campionati nazionali: Ganna settimo titolo a cronometro, Longo Borghini in linea a Pordenone</h3>
-          <p class="excerpt">Nella settimana che precede il Tour de France, Filippo Ganna ha conquistato il settimo titolo italiano a cronometro della carriera lungo il percorso Vicoforte-Barolo, circa 40 chilometri con 500 metri di dislivello, confermandosi il miglior cronoman italiano del panorama mondiale e vestendo nuovamente la maglia tricolore nelle prove contro il tempo. Elisa Longo Borghini ha invece conquistato il titolo italiano in linea a Pordenone, proseguendo la propria stagione da protagonista del ciclismo femminile azzurro. All'estero titoli anche per Wilco Kelderman in Olanda, tornato alla vittoria nel campionato nazionale undici anni dopo il suo unico precedente successo del 2015, per la sorpresa Rune Herregodts in Belgio a Brasschaat, e per Mireia Benito in Spagna, vittoriosa per il quarto anno consecutivo nella cronometro femminile. Le maglie nazionali conquistate in questi giorni accompagneranno i corridori per l'intera stagione, Tour de France compreso.</p>
-          <div class="card-foot">
-            <div class="src-row">
-              <a class="src-pill" href="https://cyclingpro.net/spaziociclismo/continental/campionati-nazionali-2026-tutti-i-vincitori/" target="_blank" rel="noopener">SpazioCiclismo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-              <a class="src-pill" href="https://www.tuttobiciweb.it/" target="_blank" rel="noopener">TuttoBiciWeb <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-            </div>
-            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
-          </div>
-          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
-            Kelderman è tornato alla vittoria nel campionato olandese undici anni dopo il suo unico precedente titolo del 2015; in Belgio Herregodts ha sorpreso tutti conquistando il titolo a Brasschaat; in Spagna Benito ha vinto per il quarto anno consecutivo la cronometro femminile. Le maglie conquistate accompagneranno i corridori per l'intera stagione, Tour de France compreso.
-          </div></div></div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body no-img">
           <span class="tag">Tennis</span>
-          <h3>Wimbledon, Djokovic ancora in corsa: agli ottavi possibile derby generazionale</h3>
+          <h3>Wimbledon, Djokovic ancora in corsa: possibile derby generazionale nei prossimi turni</h3>
           <p class="excerpt">Novak Djokovic prosegue il proprio cammino a Wimbledon 2026 dopo aver superato Stefanos Tsitsipas nei turni precedenti, confermandosi uno dei protagonisti più attesi anche in questa edizione nonostante l'età avanzata per gli standard del tennis professionistico. Il serbo, che a Wimbledon vanta un palmarès tra i più ricchi della storia del torneo, resta un avversario temutissimo sull'erba londinese e la sua eventuale corsa verso le fasi finali continuerebbe ad alimentare il dibattito sul suo possibile ultimo, grande capitolo Slam in carriera, in un tabellone maschile 2026 che vede una folta pattuglia di giovani talenti, italiani compresi, pronti a contendergli il passaggio del turno.</p>
           <div class="card-foot">
             <div class="src-row"><a class="src-pill" href="https://www.skysports.com/tennis/news/32498/13557566/wimbledon-2026-mens-draw-schedule-results-including-jack-draper-jannik-sinner-and-novak-djokovic" target="_blank" rel="noopener">Sky Sports <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
@@ -1263,11 +1209,108 @@
 
       <article class="card">
         <div class="card-body no-img">
-          <span class="tag">Calcio</span>
-          <h3>Mondiale per club, Senegal eliminato in rimonta dal Belgio: le sorprese del tabellone</h3>
-          <p class="excerpt">Il Senegal ha subito una clamorosa rimonta, sprecando un vantaggio di 2-0 e perdendo 3-2 contro il Belgio, uscendo così dal torneo agli ottavi in una delle eliminazioni più a sorpresa della fase finale. Nello stesso turno la Spagna campione d'Europa in carica ha invece dominato l'Austria conquistando senza patemi il passaggio agli ottavi, confermandosi tra le favorite principali per il proseguo della manifestazione. Le due gare rientrano in un tabellone che si sta rivelando particolarmente ricco di colpi di scena, con diverse big già costrette a fare i conti con l'eliminazione precoce e outsider che stanno approfittando degli scivoloni delle squadre più quotate.</p>
+          <span class="tag">Ciclismo</span>
+          <h3>Tour de France: dopo la cronosquadre di Barcellona, tappa 2 vinta in volata, ora l'assaggio pirenaico</h3>
+          <p class="excerpt">Il Tour de France 2026 è entrato nel vivo dopo il Grande Départ di Barcellona, con la cronometro a squadre inaugurale che ha assegnato la prima maglia gialla e la seconda tappa che ha regalato spettacolo tra Tarragona e Barcellona, chiusa con ripetute salite su Montjuïc. La generale resta cortissima, con Jonas Vingegaard che veste il giallo per soli 6 secondi su Tadej Pogačar, in un duello che si preannuncia serratissimo lungo tutte le tre settimane di corsa. Filippo Ganna, fresco di settimo titolo italiano a cronometro conquistato pochi giorni prima della partenza, punta a un piazzamento di rilievo nelle tappe cronometrate, mentre il gruppo azzurro guarda con attenzione anche alle prime fughe di giornata, tradizionalmente un terreno favorevole per i corridori italiani di secondo piano in cerca di visibilità.</p>
           <div class="card-foot">
-            <div class="src-row"><a class="src-pill en" href="https://edition.cnn.com/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> CNN <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <div class="src-row">
+              <a class="src-pill en" href="https://www.cyclingnews.com/races/tour-de-france-2026/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> Cyclingnews <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.olympics.com/en/news/tour-de-france-2026-stage-3-preview-monday-6-july-route-profile-schedule-climbs-watch" target="_blank" rel="noopener">Olympics.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- MOTORI -->
+  <section class="topic" id="motori">
+    <div class="sec-head">
+      <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.2"/><path d="M12 3.5v2.4M12 18.1v2.4M20.5 12h-2.4M5.9 12H3.5M17.7 6.3l-1.7 1.7M8 16l-1.7 1.7M17.7 17.7 16 16M8 8 6.3 6.3" stroke-linecap="round"/></svg></div>
+      <h2>Motori</h2>
+      <span class="sec-count">5 notizie</span>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-img-wrap">
+          <img class="card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Silverstone_Circuit_2020.png?width=1400" alt="Circuito di Silverstone" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#motori .cards article:nth-child(1) .card-body').classList.add('no-img');">
+        </div>
+        <div class="card-body">
+          <span class="tag">Formula 1</span>
+          <h3>Leclerc vince a Silverstone: la Ferrari taglia il traguardo delle 250 vittorie in F1, proprio dove arrivò la prima nel 1951</h3>
+          <p class="excerpt">Charles Leclerc ha vinto il Gran Premio di Gran Bretagna a Silverstone, la sua prima vittoria dopo 624 giorni di digiuno dall'ultimo trionfo ad Austin nel 2024, regalando alla Ferrari il traguardo storico delle 250 vittorie in Formula 1, proprio sullo stesso circuito dove il Cavallino ottenne il suo primo successo iridato nel 1951 con José Froilán González. George Russell (Mercedes) ha chiuso secondo davanti a Lewis Hamilton, terzo con l'altra Ferrari, mentre Kimi Antonelli, autore di una pole e di una sprint vinta nel weekend, si è dovuto ritirare per un problema tecnico che ha di fatto spianato la strada al successo del monegasco. Leclerc ha ammesso con onestà che "senza il problema di Kimi avremmo perso": la chiave della vittoria è stata una decisione tecnica coraggiosa presa dopo una sprint qualifica difficile, quando il pilota ha scelto di stravolgere la filosofia di assetto della propria monoposto, discostandosi dalle scelte del compagno di squadra Hamilton per inseguire un proprio pacchetto aerodinamico più aggressivo in frenata. Il risultato si è visto fin dalla partenza, con uno scatto fulmineo su Antonelli che gli ha permesso di imporre un ritmo insostenibile per gli avversari lungo tutta la gara.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://www.ilsole24ore.com/art/formula-1-ferrari-leclerc-vince-silverstone-terzo-hamilton-AIAQMd1D" target="_blank" rel="noopener">Il Sole 24 Ore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.quotidianomotori.com/formula-1/ferrari-250-vittorie-formula-1-silverstone-leclerc-elkann/" target="_blank" rel="noopener">Quotidiano Motori <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Per capire perché una semplice modifica di assetto possa ribaltare l'esito di una gara, basta pensare alla monoposto come a un sistema meccanico in equilibrio continuo tra deportanza aerodinamica, bilanciamento dei pesi e gestione delle gomme: cambiare la filosofia di setup significa ridistribuire il carico tra asse anteriore e posteriore, una scelta rischiosa che può regalare più grip in curva ma penalizzare la velocità di punta in rettilineo. Con questo successo la Ferrari sale a 255 punti nel mondiale costruttori e chiude un cerchio simbolico proprio a Silverstone, il circuito della sua prima, storica vittoria di 75 anni fa.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">MotoGP</span>
+          <h3>MotoGP, si va al Sachsenring: Jorge Martin nuovo leader del mondiale, il circuito resta il feudo di Marc Marquez</h3>
+          <p class="excerpt">La MotoGP fa tappa in Germania dal 10 al 12 luglio per l'undicesimo appuntamento delle 22 gare in calendario nel 2026, sul tracciato del Sachsenring, storicamente il feudo di Marc Marquez, capace di vincere ben nove edizioni del Gran Premio nella classe regina. Dopo il GP d'Olanda il mondiale ha un nuovo leader: Jorge Martin ha scavalcato Marco Bezzecchi e lo precede ora di 8 punti in classifica generale, con Ogura e lo stesso Marquez rispettivamente quarto e quinto, staccati di 25 e 40 punti dalla vetta. Il weekend tedesco sarà trasmesso in diretta esclusiva su Sky Sport MotoGP e Sky Sport 1, con qualifiche e Sprint Race della MotoGP visibili in chiaro su TV8, una delle tappe più seguite dagli appassionati italiani di motociclismo per la rivalità sempre accesa tra i piloti di vertice del campionato.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://www.gpone.com/it/2026/07/06/motogp/gran-premio-di-germania-sachsenring-gli-orari-in-tv-su-sky-tv8-e-now.html" target="_blank" rel="noopener">GPOne <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://www.oasport.it/2026/07/motogp-gp-germania-2026-programma-orari-tv-streaming-calendario-10-12-luglio-al-sachsenring-titolo-alessandro-passanti/" target="_blank" rel="noopener">OA Sport <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Il Sachsenring è un tracciato particolare per la meccanica delle moto: quasi tutte le curve sono a sinistra, undici su tredici, un layout che stressa in modo asimmetrico gomme e sospensioni e che negli anni ha premiato i piloti capaci di adattare al meglio l'assetto della moto a questa specificità geometrica, uno dei motivi del dominio quasi ventennale di Marquez su questo circuito.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Motori</span>
+          <h3>Mercato auto italiano: primo semestre a +9,7%, elettriche a +87% ma senza incentivi statali</h3>
+          <p class="excerpt">Il mercato dell'auto in Italia archivia un primo semestre 2026 in crescita, con 936.783 immatricolazioni totali e un +9,7% sullo stesso periodo del 2025; solo a giugno le targhe sono state 146.423, in aumento del 10,6%. Il dato più interessante dal punto di vista industriale riguarda l'elettrico: le auto a batteria sono cresciute dell'87,1% su base annua, raggiungendo una quota di mercato del 10,1%, mentre le ibride plug-in si sono attestate al 10,6%, segno di una transizione tecnologica che sta finalmente accelerando anche nel nostro Paese. Tra i modelli più venduti spicca la piccola Leapmotor T03, pensata per la mobilità urbana a basso costo, seguita dalla Dacia Spring e dalla Tesla Model 3, a conferma di come il segmento delle city car elettriche stia trainando i volumi complessivi. Resta però un nodo strutturale importante: l'Italia è l'unico grande mercato europeo privo di incentivi statali per l'acquisto di auto elettriche pure da parte dei privati, un fattore che frena una transizione più rapida rispetto a Germania, Francia e Spagna.</p>
+          <div class="card-foot">
+            <div class="src-row">
+              <a class="src-pill" href="https://www.quattroruote.it/news/mercato/2026/07/01/mercato_auto_giugno_2026.html" target="_blank" rel="noopener">Quattroruote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="src-pill" href="https://it.motor1.com/news/800328/auto-piu-vendute-italia-2026-primo-semestre/" target="_blank" rel="noopener">Motor1 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            Per un futuro tecnico del settore, questi numeri raccontano una transizione industriale in corso: le case costruttrici stanno riconvertendo linee produttive intere dal motore endotermico alla trazione elettrica, con impatti diretti sulle competenze richieste in officina, dalla diagnostica delle batterie alla gestione termica dei pacchi accumulatori, competenze sempre più centrali anche nella manutenzione ordinaria.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Industria</span>
+          <h3>Fincantieri lancia un polo per la cantieristica subacquea con otto aziende, 1,1 miliardi di ricavi</h3>
+          <p class="excerpt">Fincantieri ha annunciato la creazione di un nuovo polo industriale dedicato al settore subacqueo, aggregando otto aziende specializzate per un giro d'affari complessivo di 1,1 miliardi di euro e 200 milioni di euro di ebitda. L'operazione rafforza il posizionamento del gruppo cantieristico triestino in un comparto ad alta intensità tecnologica e ingegneristica, quello dei sistemi e veicoli subacquei, sempre più strategico sia in ambito civile sia in quello della difesa navale, dove la domanda è in forte crescita in vista degli investimenti previsti dal riarmo europeo discusso al vertice NATO di Ankara. Il titolo Fincantieri ha guadagnato oltre il 10% in borsa nella seduta odierna, la performance migliore di Piazza Affari, trainata proprio dalle attese di nuove commesse nel comparto navale-militare, dove l'Italia vanta una tradizione industriale e ingegneristica di lungo corso, dalla cantieristica bellica alle piattaforme offshore.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill" href="https://quifinanza.it/dirette/borse-ultime-notizie-6-luglio-2026/1006724/" target="_blank" rel="noopener">QuiFinanza <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <button class="expand-btn">Approfondisci<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+          <div class="expand-wrap"><div class="expand-inner"><div class="expand-content">
+            I sistemi subacquei di ultima generazione combinano meccanica di precisione, materiali resistenti alla pressione delle grandi profondità e componentistica elettronica avanzata: un campo che negli ultimi anni sta attirando sempre più investimenti anche da parte di aziende italiane della subfornitura meccanica, chiamate a riconvertirsi verso produzioni ad alta specializzazione per restare competitive sui mercati internazionali.
+          </div></div></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body no-img">
+          <span class="tag">Motori</span>
+          <h3>Diesel più pulito: basta un po' d'acqua nel carburante per tagliare l'inquinamento del 60%</h3>
+          <p class="excerpt">Un gruppo di ricerca ha dimostrato che una modifica sorprendentemente semplice al carburante diesel — l'aggiunta di piccole quantità d'acqua in emulsione — può ridurre drasticamente le emissioni inquinanti dei motori diesel, con cali di oltre il 60% per alcuni inquinanti chiave legati alla combustione incompleta. Il meccanismo sfrutta la cosiddetta "micro-esplosione" delle goccioline d'acqua disperse nel carburante durante la combustione: il calore fa evaporare istantaneamente l'acqua intrappolata all'interno di ogni goccia di gasolio, facendola letteralmente scoppiare dall'interno e polverizzando il carburante in particelle molto più fini, che bruciano in modo più completo ed efficiente riducendo la formazione di particolato e ossidi di azoto. Si tratta di una soluzione a basso costo e potenzialmente applicabile su larga scala ai motori diesel già esistenti, senza bisogno di sostituire il propulsore, un aspetto particolarmente rilevante per il settore dei trasporti pesanti e della logistica, dove la transizione verso motorizzazioni completamente elettriche resta più lenta e complessa rispetto al trasporto passeggeri.</p>
+          <div class="card-foot">
+            <div class="src-row"><a class="src-pill en" href="https://www.sciencedaily.com/news/" target="_blank" rel="noopener"><span class="flag">🇬🇧</span> ScienceDaily <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
           </div>
         </div>
       </article>
@@ -1279,96 +1322,81 @@
     <div class="sec-head">
       <div class="sec-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="14" height="14" rx="3"/><path d="m21 8-4 3 4 3z"/></svg></div>
       <h2>Video</h2>
-      <span class="sec-count">6 video</span>
+      <span class="sec-count">5 video</span>
     </div>
 
     <div class="cards">
       <article class="card">
         <div class="card-img-wrap">
-          <img class="card-img" src="https://img.youtube.com/vi/9-Sh4VTJ9Ss/hqdefault.jpg" alt="Attacco russo su Kiev, servizio BBC" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#video .cards article:nth-child(1) .card-body').classList.add('no-img');">
+          <img class="card-img" src="https://img.youtube.com/vi/lUrENpqufcY/hqdefault.jpg" alt="Processione funebre per Khamenei a Teheran" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#video .cards article:nth-child(1) .card-body').classList.add('no-img');">
           <div class="play-badge"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="card-body">
           <span class="tag">Video</span>
-          <h3>Kiev sotto attacco: le immagini del massiccio raid russo che ha causato almeno 30 morti</h3>
-          <p class="excerpt">Il servizio della BBC racconta la notte di attacchi missilistici e con droni su Kiev, il più devastante da settimane, con edifici residenziali colpiti nel distretto di Darnytskyi. Le immagini mostrano i soccorsi tra le macerie e le reazioni delle autorità ucraine, mentre la città osserva oggi una giornata di lutto cittadino.</p>
+          <h3>Teheran, la processione funebre per Khamenei attraversa la capitale</h3>
+          <p class="excerpt">Le immagini della processione funebre per la Guida suprema Ali Khamenei, con decine di migliaia di persone che affollano le strade di Teheran nel quinto giorno di esequie di Stato. Il video documenta anche la disposizione della salma nella Grande Mosalla prima del proseguimento del corteo verso Qom e le città sacre irachene.</p>
           <div class="card-foot">
-            <div class="src-row"><a class="src-pill" href="https://www.youtube.com/watch?v=9-Sh4VTJ9Ss" target="_blank" rel="noopener">BBC News <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <div class="src-row"><a class="src-pill" href="https://www.youtube.com/watch?v=lUrENpqufcY" target="_blank" rel="noopener">YouTube <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
           </div>
         </div>
       </article>
 
       <article class="card">
         <div class="card-img-wrap">
-          <img class="card-img" src="https://img.youtube.com/vi/5YniXqpJ_jQ/hqdefault.jpg" alt="Presentazione ufficiale delle squadre del Tour de France 2026 a Barcellona" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#video .cards article:nth-child(2) .card-body').classList.add('no-img');">
+          <img class="card-img" src="https://img.youtube.com/vi/_baBEIj4DdI/hqdefault.jpg" alt="Kiev sotto attacco, residenti nella metropolitana" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#video .cards article:nth-child(2) .card-body').classList.add('no-img');">
           <div class="play-badge"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="card-body">
           <span class="tag">Video</span>
-          <h3>Barcellona accoglie il Tour: la presentazione ufficiale delle squadre davanti alla Sagrada Família</h3>
-          <p class="excerpt">Il video integrale della presentazione delle 22 squadre della 113ª edizione del Tour de France, andata in scena giovedì a Barcellona davanti a circa 80mila spettatori. Sfilano tutti i big della corsa, da Pogačar a Vingegaard, alla vigilia della cronosquadre inaugurale di domani.</p>
+          <h3>Kiev sotto attacco: gli abitanti passano la notte nella metropolitana</h3>
+          <p class="excerpt">Il servizio racconta la notte tra il 5 e il 6 luglio a Kiev, con i residenti costretti a rifugiarsi nella metropolitana durante il nuovo massiccio attacco russo con missili e droni che ha causato 14 morti nella regione. Le immagini mostrano i danni agli edifici residenziali e le prime reazioni delle autorità cittadine.</p>
           <div class="card-foot">
-            <div class="src-row"><a class="src-pill" href="https://www.youtube.com/watch?v=5YniXqpJ_jQ" target="_blank" rel="noopener">YouTube <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <div class="src-row"><a class="src-pill" href="https://www.youtube.com/watch?v=_baBEIj4DdI" target="_blank" rel="noopener">YouTube <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
           </div>
         </div>
       </article>
 
       <article class="card">
         <div class="card-img-wrap">
-          <img class="card-img" src="https://img.youtube.com/vi/Aq0tVTZBLlg/hqdefault.jpg" alt="Sinner batte Borges a Wimbledon 2026" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#video .cards article:nth-child(3) .card-body').classList.add('no-img');">
+          <img class="card-img" src="https://img.youtube.com/vi/pyiHuIpIWxY/hqdefault.jpg" alt="Inno italiano a Silverstone dopo la vittoria di Leclerc" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#video .cards article:nth-child(3) .card-body').classList.add('no-img');">
           <div class="play-badge"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="card-body">
           <span class="tag">Video</span>
-          <h3>Sinner-Borges, gli highlights del secondo turno di Wimbledon</h3>
-          <p class="excerpt">Gli highlights ufficiali della vittoria in tre set di Jannik Sinner su Nuno Borges, 7-6(4) 7-6(2) 6-4, che vale la 95ª vittoria Slam in carriera e il record assoluto italiano ai Major. Oggi il campione altoatesino affronta Jenson Brooksby al terzo turno.</p>
+          <h3>L'inno italiano risuona a Silverstone: la festa Ferrari dopo la vittoria di Leclerc</h3>
+          <p class="excerpt">Le immagini del podio e della premiazione a Silverstone dopo la vittoria di Charles Leclerc, la 250ª della storia della Ferrari in Formula 1, con il team radio della gara e i festeggiamenti del muretto box del Cavallino subito dopo il traguardo.</p>
           <div class="card-foot">
-            <div class="src-row"><a class="src-pill" href="https://www.youtube.com/watch?v=Aq0tVTZBLlg" target="_blank" rel="noopener">YouTube <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <div class="src-row"><a class="src-pill" href="https://www.youtube.com/watch?v=pyiHuIpIWxY" target="_blank" rel="noopener">YouTube <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
           </div>
         </div>
       </article>
 
       <article class="card">
         <div class="card-img-wrap">
-          <img class="card-img" src="https://img.youtube.com/vi/QSNqlEkfc_A/hqdefault.jpg" alt="Iran si prepara ai funerali di Khamenei" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#video .cards article:nth-child(4) .card-body').classList.add('no-img');">
+          <img class="card-img" src="https://img.youtube.com/vi/RPjqkEzvquY/hqdefault.jpg" alt="Sinner batte Mochizuki a Wimbledon 2026" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#video .cards article:nth-child(4) .card-body').classList.add('no-img');">
           <div class="play-badge"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="card-body">
           <span class="tag">Video</span>
-          <h3>Iran blindata per i funerali di Khamenei: sicurezza rafforzata tra i timori di nuove tragedie</h3>
-          <p class="excerpt">Un servizio sui preparativi di sicurezza in Iran nel giorno di apertura dei funerali di Stato della Guida suprema Ali Khamenei, che proseguiranno fino al 9 luglio tra Iran e Iraq con un afflusso record di pellegrini atteso, tra i 15 e i 20 milioni secondo le autorità. Il video ripercorre anche i precedenti disastri di folla che pesano sulle scelte delle autorità.</p>
+          <h3>Sinner-Mochizuki, gli highlights degli ottavi di Wimbledon</h3>
+          <p class="excerpt">Gli highlights ufficiali della vittoria in tre set di Jannik Sinner sul giapponese Shintaro Mochizuki, 6-3 7-6 6-3, che vale il pass per i quarti di finale. Domani il campione altoatesino affronta il tedesco Jan-Lennard Struff sul Centre Court.</p>
           <div class="card-foot">
-            <div class="src-row"><a class="src-pill" href="https://www.youtube.com/watch?v=QSNqlEkfc_A" target="_blank" rel="noopener">YouTube <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <div class="src-row"><a class="src-pill" href="https://www.youtube.com/watch?v=RPjqkEzvquY" target="_blank" rel="noopener">YouTube <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
           </div>
         </div>
       </article>
 
       <article class="card">
         <div class="card-img-wrap">
-          <img class="card-img" src="https://img.youtube.com/vi/n-YG3Y4dVTs/hqdefault.jpg" alt="Servizio sull'omicidio del pizzaiolo a Reggio Emilia" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#video .cards article:nth-child(5) .card-body').classList.add('no-img');">
+          <img class="card-img" src="https://img.youtube.com/vi/hngI1PYsLxo/hqdefault.jpg" alt="Anteprima terza tappa Tour de France 2026" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#video .cards article:nth-child(5) .card-body').classList.add('no-img');">
           <div class="play-badge"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <div class="card-body">
           <span class="tag">Video</span>
-          <h3>Omicidio del pizzaiolo a Reggio Emilia: per la procura c'è premeditazione</h3>
-          <p class="excerpt">Il servizio sull'omicidio di Raffaele Stipa, titolare della pizzeria ucciso a coltellate dal cliente abituale Andrea Pellati, con la ricostruzione della procura di Reggio Emilia sulla dinamica dell'aggressione e le prime dichiarazioni della sorella della vittima, ferita nello stesso agguato.</p>
+          <h3>Tour de France, l'anteprima della terza tappa Granollers-Les Angles</h3>
+          <p class="excerpt">Analisi tecnica del percorso della terza tappa del Tour de France 2026, con il primo assaggio di salite pirenaiche della corsa e i favoriti per la vittoria di tappa e il consolidamento della maglia gialla, ancora contesa per pochi secondi tra Vingegaard e Pogačar.</p>
           <div class="card-foot">
-            <div class="src-row"><a class="src-pill" href="https://www.youtube.com/watch?v=n-YG3Y4dVTs" target="_blank" rel="noopener">YouTube <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-img-wrap">
-          <img class="card-img" src="https://img.youtube.com/vi/frLKa3C9CU8/hqdefault.jpg" alt="Barcellona si prepara al Grand Départ del Tour de France" loading="lazy" onerror="this.closest('.card-img-wrap').remove();document.querySelector('#video .cards article:nth-child(6) .card-body').classList.add('no-img');">
-          <div class="play-badge"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
-        </div>
-        <div class="card-body">
-          <span class="tag">Video</span>
-          <h3>Barcellona si veste di giallo per il Grand Départ del Tour</h3>
-          <p class="excerpt">Le immagini dei preparativi in città alla vigilia della partenza della 113ª edizione del Tour de France, con la cronosquadre inaugurale tra Parc del Fòrum e Montjuïc.</p>
-          <div class="card-foot">
-            <div class="src-row"><a class="src-pill" href="https://www.youtube.com/watch?v=frLKa3C9CU8" target="_blank" rel="noopener">YouTube <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+            <div class="src-row"><a class="src-pill" href="https://www.youtube.com/watch?v=hngI1PYsLxo" target="_blank" rel="noopener">YouTube <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
           </div>
         </div>
       </article>
@@ -1382,16 +1410,16 @@
       <h2>Cosa approfondire oggi</h2>
     </div>
     <div class="dd-grid">
-      <div class="dd-card"><div class="dd-num">01</div><h4>Kiev in lutto, Ankara alle porte (7-8 luglio)</h4><p>Il bilancio del più grave attacco russo su Kiev da settimane sale a 30 morti, mentre Roma prepara la missione al vertice NATO: in ballo la corsa verso il 5% del PIL in spese militari, il fondo SAFE da cui dipendono 14,9 miliardi per l'Italia, e un possibile nuovo faccia a faccia Meloni-Trump.</p></div>
-      <div class="dd-card"><div class="dd-num">02</div><h4>Iniziano oggi i funerali di Khamenei, tensione su Hormuz</h4><p>Prendono il via a Teheran le esequie di Stato della Guida suprema, attesi 15-20 milioni di pellegrini in sette giorni di cerimonie fino a Mashhad. I negoziati USA-Iran restano sospesi mentre Teheran minaccia "una risposta forte" alle petroliere che non rispettino le rotte imposte nello Stretto di Hormuz.</p></div>
-      <div class="dd-card"><div class="dd-num">03</div><h4>Legge elettorale, il caso Vannacci blocca la riforma fino al 14 luglio</h4><p>Il nodo tra Fratelli d'Italia (che vorrebbe le preferenze) e Lega e Forza Italia (scettiche) si complica con l'affondo del generale Vannacci contro Meloni. Il Foglio racconta una premier "tentata di sacrificare" le preferenze pur di chiudere entro l'estate.</p></div>
+      <div class="dd-card"><div class="dd-num">01</div><h4>Trump attacca ancora Meloni alla vigilia di Ankara</h4><p>Il fotomontaggio con "serve un ordine restrittivo" pubblicato da Trump su Truth Social riaccende lo scontro diplomatico proprio a un giorno dal vertice NATO del 7-8 luglio, dove i due leader si rivedranno di persona per la prima volta dopo settimane di accuse social incrociate.</p></div>
+      <div class="dd-card"><div class="dd-num">02</div><h4>Nuova notte di attacchi su Kiev, Zelensky chiede "decisioni forti"</h4><p>Il bilancio dei raid russi sale a 14 morti nella regione di Kiev, alla vigilia di un vertice NATO che dovrà decidere sul sostegno militare a Kiev da 70 miliardi e sulla road map del 5% del PIL in spesa per la difesa per tutti gli alleati, Italia compresa.</p></div>
+      <div class="dd-card"><div class="dd-num">03</div><h4>Ferrari, le 250 vittorie in F1 arrivano proprio a Silverstone</h4><p>La vittoria di Leclerc nel Gran Premio di Gran Bretagna chiude idealmente il cerchio aperto nel 1951 sullo stesso circuito: un traguardo che intreccia storia dell'ingegneria motoristica italiana e presente della Formula 1, con la MotoGP pronta a fare tappa al Sachsenring dal 10 luglio.</p></div>
     </div>
   </section>
 
 </main>
 
 <footer>
-  Briefing generato automaticamente il 3 luglio 2026, ore 15:29 · Fonti: ANSA, il Giornale, l'Unità, Il Foglio, Corriere della Sera, Il Sole 24 Ore, Il Fatto Quotidiano, Fanpage, Sky TG24, Sky Sport, Adnkronos, Euronews, Teleborsa, il Resto del Carlino, il Giorno, Il Quotidiano del Sud, Leggo, Meteo.it, Kyiv Independent, CBS News, Washington Post, Al Jazeera, NATO, Daily Sabah, CNBC, CNN, TheStreet, Charles Schwab, Premio Strega, Illibraio, Ministero della Cultura, L'Opinionista, LoboDiLattice, Arte.it, Nature, ScienceDaily, OA Sport, Sky Sports, Cyclingnews, SpazioCiclismo, TuttoBiciWeb, BBC News, YouTube · Immagini: Wikimedia Commons, YouTube
+  Briefing generato automaticamente il 6 luglio 2026, ore 15:40 · Fonti: ANSA, Euronews, Il Fatto Quotidiano, QuiFinanza, Il Sole 24 Ore, Today.it, il Messaggero, Quotidiano Nazionale, Adnkronos, Sky TG24, Formiche.net, Il Post, ACLED, NPR, CBS News, Fox News, RomaToday, Borsa Italiana, Quattroruote, Megamodo, Motor1, Premio Strega, Illibraio, Ministero della Cultura, L'Opinionista, LoboDiLattice, Arte.it, ScienceDaily, Nature, Eurosport, OA Sport, Sky Sports, Cyclingnews, Olympics.com, Fanpage, il Sole 24 Ore Motori, Quotidiano Motori, GPOne, SoldiOnline, YouTube · Immagini: Wikimedia Commons, YouTube
 </footer>
 
 <button id="toTop" aria-label="Torna su" title="Torna su"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
@@ -1432,11 +1460,22 @@
   }, {threshold:0.1, rootMargin:'0px 0px -30px 0px'});
   revealEls.forEach(el => io.observe(el));
 
+  // SINTESI BREVE DI DEFAULT: le card con "Approfondisci" mostrano solo un'anteprima
+  // dell'excerpt (2 righe), il testo completo si apre insieme al resto dei dettagli.
+  document.querySelectorAll('.card-body').forEach(body => {
+    const excerpt = body.querySelector(':scope > .excerpt');
+    const hasExpand = body.querySelector('.expand-btn');
+    if(excerpt && hasExpand) excerpt.classList.add('clamped');
+  });
+
   // EXPAND / COLLAPSE
   document.querySelectorAll('.expand-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      const wrap = btn.closest('.card-body').querySelector('.expand-wrap');
+      const body = btn.closest('.card-body');
+      const wrap = body.querySelector('.expand-wrap');
+      const excerpt = body.querySelector(':scope > .excerpt');
       const open = wrap.classList.toggle('open');
+      if(excerpt) excerpt.classList.toggle('expanded', open);
       btn.classList.toggle('open', open);
       btn.firstChild.textContent = open ? 'Mostra meno' : 'Approfondisci';
     });
@@ -1586,10 +1625,10 @@
 
     const listenBtn = document.createElement('button');
     listenBtn.type = 'button';
-    listenBtn.className = 'icon-action listen-btn';
+    listenBtn.className = 'icon-action listen-btn listen-btn-prominent';
     listenBtn.title = 'Ascolta questa notizia';
     listenBtn.setAttribute('aria-label', 'Ascolta questa notizia');
-    listenBtn.innerHTML = ICON_LISTEN;
+    listenBtn.innerHTML = ICON_LISTEN + '<span class="listen-label">Ascolta</span>';
     listenBtn.addEventListener('click', () => speakCard(card, listenBtn));
 
     const shareBtn = document.createElement('button');
